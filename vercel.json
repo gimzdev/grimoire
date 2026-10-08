@@ -1,0 +1,5 @@
+{
+  "redirects": [
+    { "source": "/:path*", "has": [{ "type": "host", "value": "www.wowgrimoire.app" }], "destination": "https://wowgrimoire.app/:path*", "permanent": true }
+  ]
+}

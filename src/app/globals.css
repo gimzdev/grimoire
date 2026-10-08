@@ -1,0 +1,483 @@
+@import 'tailwindcss';
+
+/* ───────────────────────────────────────────────────────────────────────────
+   Grimoire design tokens
+   Near-black surfaces so the official art keeps its colour, warm white type, and the
+   game's gold kept for the main actions and what is active. Everything else that is
+   coloured comes from the game itself: classes, factions and item quality.
+   ─────────────────────────────────────────────────────────────────────────── */
+@theme static {
+  /* One family throughout: Mona Sans, variable in weight and width. */
+  --font-sans: 'Mona Sans Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Mona Sans Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Mona Sans Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-mark: 'IM Fell English SC', Georgia, 'Times New Roman', serif;
+
+  /* Surfaces, darkest first */
+  --color-abyss: #08090c;
+  --color-night: #0d0f13;
+  --color-slate: #13161b;
+  --color-dusk: #1a1e24;
+  --color-iron: #2b3038;
+  --color-ash: #4b515b;
+  /* Type */
+  --color-vellum: #f4f1ea;
+  --color-parch: #d7d2c8;
+  --color-mist: #a29d93;
+  --color-fog: #77736c;
+  /* Gold */
+  --color-gilt: #f2b640;
+  --color-gilt-bright: #ffd47a;
+  --color-gilt-deep: #a2681a;
+  --color-bronze: #5c4320;
+  /* Status */
+  --color-leaf: #9ccc74;
+  --color-leaf-bright: #c6e6a5;
+  --color-leaf-deep: #22321a;
+  --color-ember: #ec8a3a;
+  --color-blood: #e5533c;
+  --color-moss: #8fc067;
+  --color-wax: #b3261e;
+  --color-wax-bright: #d6402f;
+  --color-alliance: #4f8fe6;
+  --color-horde: #d64133;
+
+  /* Item quality, lifted a touch from the game's values so they read on dark panels */
+  --color-q0: #9d9d9d;
+  --color-q1: #ffffff;
+  --color-q2: #1eff00;
+  --color-q3: #2b8cff;
+  --color-q4: #b45cf7;
+  --color-q5: #ff8a1f;
+  --color-q6: #e6cc80;
+
+  /* In-game tooltip text colors */
+  --color-tt-yellow: #ffd100;
+  --color-tt-green: #1eff00;
+  --color-tt-red: #ff3b30;
+  --color-tt-grey: #9d9d9d;
+
+  --color-warrior: #c69b6d;
+  --color-paladin: #f48cba;
+  --color-hunter: #aad372;
+  --color-rogue: #fff468;
+  --color-priest: #ffffff;
+  --color-shaman: #2b8cff;
+  --color-mage: #3fc7eb;
+  --color-warlock: #8788ee;
+  --color-druid: #ff7c0a;
+
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --animate-unveil: unveil 0.6s var(--ease-out-quint) both;
+  --animate-rise: rise 0.6s var(--ease-out-quint) both;
+  --animate-pop: pop 0.28s var(--ease-out-quint) both;
+  --animate-menu: menu 0.16s var(--ease-out-quint) both;
+
+  @keyframes unveil {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes pop {
+    0% {
+      transform: scale(0.92);
+    }
+    60% {
+      transform: scale(1.06);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes menu {
+    from {
+      opacity: 0;
+      transform: translateY(-4px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+@custom-variant hover-device (@media (hover: hover) and (pointer: fine));
+
+@layer base {
+  html {
+    color-scheme: dark;
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 6rem;
+  }
+  body {
+    background-color: var(--color-abyss);
+    color: var(--color-vellum);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    font-weight: 420;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'lnum' 1;
+  }
+  ::selection {
+    background: rgb(242 182 64 / 0.3);
+    color: #fff;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-gilt);
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 660;
+    letter-spacing: -0.026em;
+    text-wrap: balance;
+    overflow-wrap: break-word;
+  }
+  h3 {
+    letter-spacing: -0.016em;
+  }
+  b,
+  strong {
+    font-weight: 640;
+  }
+  button:not(:disabled),
+  [role='button']:not([aria-disabled='true']) {
+    cursor: pointer;
+  }
+  img {
+    user-select: none;
+    -webkit-user-drag: none;
+    /* If a picture fails to load, hide its alt text instead of printing it over the art. */
+    color: transparent;
+  }
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+  /* The list a select opens is drawn by the browser; on Windows it ignores a see-through field background and shows pale text on white. */
+  select {
+    color-scheme: dark;
+    background-color: #14171c;
+    cursor: pointer;
+  }
+  select option,
+  select optgroup {
+    background-color: #14171c;
+    color: #f4f1ea;
+  }
+  select option:checked {
+    background-color: #2b3038;
+  }
+  .font-display {
+    font-weight: 650;
+    letter-spacing: -0.014em;
+  }
+}
+
+/* Lining figures. Mona Sans's tabular figures are drawn for code (slab 1, narrow 0), so numbers stay proportional. */
+@utility num {
+  font-variant-numeric: lining-nums proportional-nums;
+}
+
+/* Width settings for Mona Sans. */
+@utility wide {
+  font-stretch: 125%;
+}
+@utility semiwide {
+  font-stretch: 112%;
+}
+@utility condensed {
+  font-stretch: 82%;
+}
+
+@utility scroll-thin {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-ash) transparent;
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* A panel: a raised dark surface with a hairline edge and a faint top highlight. */
+@utility frame {
+  position: relative;
+  background: linear-gradient(180deg, rgb(20 23 28 / 0.94), rgb(14 16 20 / 0.96));
+  border: 1px solid rgb(255 255 255 / 0.07);
+  border-radius: 20px;
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.04),
+    0 24px 48px -32px rgb(0 0 0 / 0.9);
+}
+
+/* Frosted glass, only ever over art: the nav, the hero search, the class dock. */
+@utility glass {
+  background: rgb(13 14 18 / 0.52);
+  border: 1px solid rgb(255 255 255 / 0.12);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.07),
+    0 16px 40px -20px rgb(0 0 0 / 0.7);
+  backdrop-filter: blur(20px) saturate(1.5);
+  -webkit-backdrop-filter: blur(20px) saturate(1.5);
+}
+
+/* A quieter surface for rows and chips that sit inside a panel or straight on the page. */
+@utility well {
+  background: rgb(255 255 255 / 0.04);
+  border-radius: 12px;
+}
+
+/* Inputs and selects. */
+@utility field {
+  height: 2.75rem;
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgb(255 255 255 / 0.1);
+  background: rgb(255 255 255 / 0.04);
+  padding: 0 0.9rem;
+  font-size: 15px;
+  color: var(--color-vellum);
+  outline: none;
+  transition:
+    border-color 0.15s,
+    background-color 0.15s,
+    box-shadow 0.15s;
+  &:hover {
+    border-color: rgb(255 255 255 / 0.18);
+  }
+  &:focus {
+    border-color: rgb(242 182 64 / 0.7);
+    box-shadow: 0 0 0 3px rgb(242 182 64 / 0.15);
+  }
+}
+
+/* A gold hairline along the top edge of a panel, for the one panel on a page that matters most. */
+@utility gilt {
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -1px -1px auto;
+    height: 1px;
+    border-radius: inherit;
+    background: linear-gradient(90deg, transparent, rgb(242 182 64 / 0.7) 30%, rgb(242 182 64 / 0.7) 70%, transparent);
+    pointer-events: none;
+  }
+}
+
+@layer components {
+  /* ── Game icons ─────────────────────────────────────────────────────────
+     Blizzard icons ship with a baked-in border; scaling crops it so ours can sit on top. */
+  .wi {
+    position: relative;
+    display: inline-grid;
+    place-items: center;
+    flex: none;
+    overflow: hidden;
+    border-radius: 6px;
+    background: #0b0c0f;
+    box-shadow:
+      0 0 0 1px #000,
+      0 2px 6px rgb(0 0 0 / 0.5);
+    isolation: isolate;
+  }
+  .wi > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.1);
+  }
+  .wi::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow:
+      inset 0 0 0 1px rgb(255 255 255 / 0.14),
+      inset 0 0 0 2px rgb(0 0 0 / 0.3);
+    pointer-events: none;
+  }
+  .wi[data-q='0']::after { box-shadow: inset 0 0 0 1px var(--color-q0); }
+  .wi[data-q='2']::after { box-shadow: inset 0 0 0 1px rgb(30 255 0 / 0.75); }
+  .wi[data-q='3']::after { box-shadow: inset 0 0 0 1px var(--color-q3); }
+  .wi[data-q='4']::after { box-shadow: inset 0 0 0 1px var(--color-q4); }
+  .wi[data-q='5']::after { box-shadow: inset 0 0 0 1px var(--color-q5); }
+  .wi[data-q='6']::after { box-shadow: inset 0 0 0 1px var(--color-q6); }
+  .wi[data-broken]::before {
+    content: attr(data-initials);
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    color: var(--color-mist);
+    font-family: var(--font-display);
+    font-size: 0.42em;
+    background: radial-gradient(circle at 30% 25%, #2a2d33, #101216);
+  }
+  .wi[data-broken] > img {
+    display: none;
+  }
+
+  /* ── In-game tooltip ─────────────────────────────────────────────────── */
+  .wtt {
+    background: linear-gradient(180deg, rgb(10 14 32 / 0.97), rgb(5 8 20 / 0.97));
+    border: 1px solid #6b7489;
+    border-radius: 6px;
+    box-shadow:
+      0 0 0 1px rgb(0 0 0 / 0.85),
+      inset 0 0 0 1px rgb(255 255 255 / 0.04),
+      0 18px 40px rgb(0 0 0 / 0.65);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 420;
+    line-height: 1.32;
+    padding: 9px 11px 10px;
+  }
+  .wtt-name {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 1.2;
+  }
+
+  /* Prose for guides */
+  .prose-grim {
+    color: var(--color-parch);
+    font-family: var(--font-sans);
+    font-size: 17px;
+    line-height: 1.75;
+  }
+  .prose-grim > * + * {
+    margin-top: 1.05em;
+  }
+  .prose-grim h2 {
+    color: var(--color-vellum);
+    font-size: 1.8rem;
+    line-height: 1.2;
+    margin-top: 2.2em;
+  }
+  .prose-grim h3 {
+    color: var(--color-gilt-bright);
+    font-size: 1.3rem;
+    margin-top: 1.8em;
+  }
+  .prose-grim strong {
+    color: var(--color-vellum);
+    font-weight: 640;
+  }
+  .prose-grim a:not([data-tip]) {
+    color: var(--color-gilt-bright);
+    text-decoration: underline;
+    text-decoration-color: rgb(255 212 122 / 0.35);
+    text-underline-offset: 3px;
+  }
+  .prose-grim a:not([data-tip]):hover {
+    text-decoration-color: currentColor;
+  }
+  .prose-grim ul,
+  .prose-grim ol {
+    padding-left: 1.3em;
+  }
+  .prose-grim ul {
+    list-style: none;
+  }
+  .prose-grim ul > li {
+    position: relative;
+  }
+  .prose-grim ul > li::before {
+    content: '';
+    position: absolute;
+    left: -1em;
+    top: 0.7em;
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background: var(--color-gilt-deep);
+  }
+  .prose-grim ol {
+    list-style: decimal;
+  }
+  .prose-grim ol > li::marker {
+    color: var(--color-gilt);
+    font-weight: 650;
+  }
+  .prose-grim li + li {
+    margin-top: 0.4em;
+  }
+  .prose-grim blockquote {
+    border: 1px solid rgb(156 204 116 / 0.22);
+    background: rgb(156 204 116 / 0.06);
+    padding: 0.85em 1.15em;
+    color: var(--color-vellum);
+    border-radius: 14px;
+  }
+  .prose-grim table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-sans);
+    font-size: 15.5px;
+  }
+  .prose-grim th {
+    text-align: left;
+    font-weight: 600;
+    color: var(--color-vellum);
+    border-bottom: 1px solid var(--color-iron);
+    padding: 0.5em 0.6em;
+  }
+  .prose-grim td {
+    border-bottom: 1px solid rgb(255 255 255 / 0.06);
+    padding: 0.5em 0.6em;
+    vertical-align: top;
+  }
+  .prose-grim code {
+    font-size: 0.9em;
+    background: var(--color-slate);
+    border: 1px solid var(--color-iron);
+    border-radius: 6px;
+    padding: 0.05em 0.35em;
+  }
+  .prose-grim hr {
+    border: 0;
+    height: 1px;
+    background: rgb(255 255 255 / 0.08);
+    margin: 2.2em 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Select fields sit on a solid colour so the list they open is readable everywhere. */
+select.field {
+  background-color: #14171c;
+}
