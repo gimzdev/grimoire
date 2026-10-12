@@ -161,7 +161,7 @@ export default function ForeverPage() {
             <h3 className="text-[1.6rem] leading-tight text-vellum">Rulesets, not realms</h3>
             <p className="mt-1.5 text-[15px] leading-relaxed text-parch">Pick how you want to play, not a server. Group with anyone on your ruleset; battlegrounds mix them, except Hardcore.</p>
           </ArtCard>
-          <ArtCard art="dustwallow" href="/guides/pvp" minH="min-h-[300px]">
+          <ArtCard art="unknownPaths" href="/guides/pvp" minH="min-h-[300px]">
             <h3 className="text-[1.6rem] leading-tight text-vellum">Darkspear Islands</h3>
             <p className="mt-1.5 text-[15px] leading-relaxed text-parch">A new fifteen-player battleground on the Echo Isles that mixes a central flag with capture points.</p>
           </ArtCard>

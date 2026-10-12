@@ -12,16 +12,16 @@ import { RACE_COPY } from '@/lib/copy';
 import { getClasses, getRace, getRaces } from '@/lib/data';
 
 const RACE_ART: Record<string, ArtKey> = {
-  human: 'keyArt',
-  dwarf: 'trailer',
-  'night-elf': 'ashenvaleGlade',
-  gnome: 'paintedValley',
-  'high-order-skyborne': 'zephras',
-  orc: 'barrens',
-  undead: 'darkshore',
-  tauren: 'mulgore',
-  troll: 'unknownPaths',
-  'windshaper-skyborne': 'skyborne',
+  human: 'raceHuman',
+  dwarf: 'raceDwarf',
+  'night-elf': 'raceNightElf',
+  gnome: 'raceGnome',
+  'high-order-skyborne': 'raceHighOrder',
+  orc: 'raceOrc',
+  undead: 'raceUndead',
+  tauren: 'raceTauren',
+  troll: 'raceTroll',
+  'windshaper-skyborne': 'raceWindshaper',
 };
 
 export function generateStaticParams() {

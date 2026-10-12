@@ -8,7 +8,7 @@ import { ItemTooltip } from '@/components/tooltips';
 import { Container, SectionTitle } from '@/components/ui';
 import { chance } from '@/components/world-links';
 import { resolveArt } from '@/lib/art-server';
-import { getClasses, getDungeons, getGuides, getItem, getMeta, getMinorItem, getNpc, getNpcLoot, getQuests, getZones } from '@/lib/data';
+import { getClasses, getDungeons, getGuides, getItem, getMeta, getMinorItem, getNpc, getNpcLoot, getQuests, getRaces, getZones } from '@/lib/data';
 import { isLadderZone } from '@/lib/world';
 import { itemTipExtra } from '@/lib/item-source';
 import { categoryName } from '@/lib/quests';
@@ -128,7 +128,7 @@ function WhatsNew() {
       text: 'Zephras Isle, Riverglades, Shen’dralas and Mount Hyjal, with hundreds of new quests between them.',
     },
     {
-      art: 'dalaranNight',
+      art: 'paintedValley',
       href: '/guides/new-dungeons',
       tag: 'Levels 13 to 60',
       title: `${dungeons === 9 ? 'Nine' : dungeons} new dungeons`,
@@ -167,8 +167,59 @@ function WhatsNew() {
             <p className="mt-1.5 text-[14.5px] leading-relaxed text-parch">{t.text}</p>
           </ArtCard>
         ))}
+        <Combos />
       </div>
     </section>
+  );
+}
+
+/* ── New class combinations ────────────────────────────────────────────── */
+
+/** The six new class combinations, the same ones the What's new page lists. The Undead Paladin comes first, and it is the one in the picture. */
+function Combos() {
+  const races = new Map(getRaces().map((r) => [r.slug, r]));
+  const combos = getClasses().flatMap((c) =>
+    c.newRaces.flatMap((slug) => {
+      const race = races.get(slug);
+      return race && !slug.includes('skyborne') ? [{ cls: c, race }] : [];
+    })
+  );
+  const a = resolveArt('undead');
+  return (
+    <div className="group relative isolate overflow-hidden rounded-[20px] bg-slate lg:col-span-4 lg:grid lg:grid-cols-[minmax(0,58fr)_minmax(0,42fr)]">
+      {/* The whole card opens Races and racials. The combination links sit above this one, so each still goes to its own race. */}
+      <Link href="/races" aria-label="Races and racials" className="absolute inset-0 z-20 rounded-[inherit]" />
+      {/* The picture melts into the card: down on phones and tablets, to the right beside the text. */}
+      <div className="relative h-[280px] overflow-hidden sm:h-[320px] lg:h-auto lg:min-h-[300px]">
+        <Image src={a.src} alt={a.alt} fill sizes="(min-width: 1320px) 740px, (min-width: 1024px) 58vw, 100vw" quality={75} className="object-cover transition-transform duration-700 ease-[var(--ease-out-quint)] group-hover:scale-[1.03]" style={{ objectPosition: a.focus ?? 'center' }} />
+        <div aria-hidden className="absolute inset-0 bg-[linear-gradient(0deg,var(--color-slate),transparent_50%)] lg:bg-[linear-gradient(270deg,var(--color-slate),transparent_42%)]" />
+        <span className="glass absolute left-4 top-4 rounded-full px-3 py-1 text-[12.5px] font-semibold text-vellum">Undead Paladin</span>
+      </div>
+      <div className="relative flex flex-col justify-center p-6 pt-2 sm:p-8 sm:pt-2 lg:py-8 lg:pl-2 lg:pr-9">
+        <h3 className="text-[1.9rem] leading-[1.05] text-vellum sm:text-[2.2rem]">Six new class combinations</h3>
+        <p className="mt-2.5 max-w-md text-balance text-[15.5px] leading-relaxed text-mist">These races gained a class they could never play before.</p>
+        <ul className="mt-5 flex flex-wrap gap-2">
+          {combos.map(({ cls, race }) => (
+            <li key={cls.slug + race.slug}>
+              <Link
+                href={`/races/${race.slug}`}
+                className="glass relative z-30 inline-flex items-center gap-2 rounded-full py-1 pl-1 pr-3.5 text-[14px] font-medium text-parch transition-colors hover:border-white/25 hover:text-vellum"
+              >
+                {/* The race icon, then the class icon tucked against it. The words beside them carry the name. */}
+                <span aria-hidden className="flex">
+                  <WowIcon icon={race.icon} size={26} name={race.name} rounded />
+                  <WowIcon icon={cls.icon} size={26} name={cls.name} rounded className="-ml-1.5" />
+                </span>
+                <span>
+                  {race.name} <span style={{ color: cls.color }}>{cls.name}</span>
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div aria-hidden className="pointer-events-none absolute inset-0 z-10 rounded-[inherit] ring-1 ring-inset ring-white/[0.09] transition-colors group-hover:ring-white/25" />
+    </div>
   );
 }
 

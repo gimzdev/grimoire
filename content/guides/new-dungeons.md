@@ -2,7 +2,7 @@
 title: The nine new dungeons
 description: Every new dungeon in World of Warcraft: Forever from level 13 to 60: where they are, their bosses, how to start their quests, and the best rewards found so far.
 category: Leveling
-art: dalaranNight
+art: paintedValley
 icon: inv_misc_key_03
 updated: 2026-10-07
 order: 5

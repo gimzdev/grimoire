@@ -19,7 +19,7 @@ export default function DungeonsPage() {
   const bgs = all.filter((d) => d.kind === 'battleground');
   return (
     <>
-      <Vista art="dustwallow" title="Dungeons and raids" kicker="Nine new dungeons, three raids on December 9">
+      <Vista art="paintedValley" title="Dungeons and raids" kicker="Nine new dungeons, three raids on December 9">
         Forever adds a dungeon for every stretch of the road to 60 and opens its first raid tier five weeks after launch.
       </Vista>
       <Container className="space-y-20">
@@ -59,7 +59,7 @@ export default function DungeonsPage() {
           <SectionTitle title="Nine new dungeons">Four have been previewed in full; the other five are announced with their levels.</SectionTitle>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {fresh.map((d) => (
-              <ArtCard key={d.slug} art={d.art ?? 'dustwallow'} href={`/dungeons/${d.slug}`} minH="min-h-[230px]">
+              <ArtCard key={d.slug} art={d.art ?? 'paintedValley'} href={`/dungeons/${d.slug}`} minH="min-h-[230px]">
                 <div className="flex flex-wrap gap-2">
                   <Badge tone={d.levelSource === 'beta' ? 'new' : 'neutral'}>{d.status}</Badge>
                   {d.levels && (

@@ -55,7 +55,7 @@ export default async function DungeonPage({ params }: { params: Promise<{ slug: 
   return (
     <>
       <Vista
-        art={d.art ?? (d.kind === 'raid' ? 'paintedValley' : 'dustwallow')}
+        art={d.art ?? 'paintedValley'}
         kicker={
           <span className="flex flex-wrap items-center gap-2">
             {kind}, {d.location}

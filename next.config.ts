@@ -9,10 +9,12 @@ const nextConfig: NextConfig = {
   outputFileTracingIncludes: { '/**': ['./data/**/*', './content/**/*', './public/art/**/*'] },
   images: {
     formats: ['image/avif', 'image/webp'],
-    // Official artwork from Blizzard's CDNs (resized here); icons load straight from Wowhead's CDN without the optimizer.
+    // Official artwork from Blizzard's CDNs and screenshots from Wowhead's gallery (resized here); icons load straight from Wowhead's CDN without the optimizer.
     remotePatterns: [
       { protocol: 'https', hostname: 'blz-contentstack-images.akamaized.net' },
       { protocol: 'https', hostname: 'bnetcmsus-a.akamaihd.net' },
+      // In-game screenshots from Wowhead's gallery, used on the race, class and zone pages.
+      { protocol: 'https', hostname: 'wow.zamimg.com', pathname: '/uploads/screenshots/**' },
     ],
     deviceSizes: [640, 828, 1080, 1440, 1920, 2560],
     imageSizes: [96, 160, 256, 384],

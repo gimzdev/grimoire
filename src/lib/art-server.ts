@@ -20,5 +20,5 @@ export function resolveArt(key: ArtKey | string | undefined): Art {
 
 /** A small copy of a picture through the image optimizer, for blurred washes where detail does not matter. */
 export function artThumb(key: ArtKey | string | undefined, width = 640) {
-  return `/_next/image?url=${encodeURIComponent(resolveArt(key).src)}&w=${width}&q=50`;
+  return `/_next/image?url=${encodeURIComponent(resolveArt(key).src)}&w=${width}&q=60`;
 }
