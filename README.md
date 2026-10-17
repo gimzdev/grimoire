@@ -17,6 +17,8 @@ Talent calculator, gear planner and database for World of Warcraft: Forever.
 </tr>
 </table>
 
+<hr>
+
 Grimoire is a field guide for World of Warcraft: Forever. Plan a talent build, find the best item for each
 slot, look up where a quest or drop comes from, and follow a leveling route. There are no accounts, keys or
 database: the game data ships with the site, so every page is fast.
