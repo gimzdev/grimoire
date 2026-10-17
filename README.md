@@ -6,8 +6,6 @@ Talent calculator, gear planner and database for World of Warcraft: Forever.
 
 [wowgrimoire.app](https://wowgrimoire.app) · Next.js · React
 
-</div>
-
 <table>
 <tr>
 <td align="center" width="50%"><img src="docs/screenshots/grimoire-home.png" alt="Home"><br><sub>Home</sub></td>
@@ -19,15 +17,20 @@ Talent calculator, gear planner and database for World of Warcraft: Forever.
 </tr>
 </table>
 
+Grimoire is a field guide for World of Warcraft: Forever. Plan a talent build, find the best item for each
+slot, look up where a quest or drop comes from, and follow a leveling route. There are no accounts, keys or
+database: the game data ships with the site, so every page is fast.
+
 | | |
-|---|---|
+|:---|:---|
 | **Talent calculator** | The nine rebuilt classes, with what changed from Classic; copy a build or its link |
-| **Gear planner** | Best item for every slot at your level, plus alternatives |
-| **Database** | Items, quests, NPCs, zones, dungeons, raids; loot tables and drop chances |
+| **Gear planner** | The best item for every slot at your level, and the alternatives |
+| **Database** | Items, quests, NPCs, zones, dungeons and raids, with loot tables and drop chances |
 | **Guides** | Getting started, leveling 1 to 60, every class |
 | **Planners** | Leveling route, raid composer, Legacy planner |
-| **Search** | Ctrl K from any page |
 
-No accounts, keys or database: the game data ships with the site.
+Press Ctrl K on any page to search items, quests and talents.
 
 <sub>Fan-made, not affiliated with or endorsed by Blizzard Entertainment. World of Warcraft is a trademark of Blizzard Entertainment, Inc. Icons from Wowhead; Classic data from VMaNGOS.</sub>
+
+</div>
