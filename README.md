@@ -1,148 +1,40 @@
 <div align="center">
 
-<h1>Grimoire</h1>
+# Grimoire
 
-<h3>Talents, guides and a database for World of Warcraft: Forever</h3>
+Talent calculator, gear planner and database for World of Warcraft: Forever.
 
-[![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org)
-[![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org)
+[wowgrimoire.app](https://wowgrimoire.app) · Next.js · React
 
-<hr>
+</div>
 
-<h2>About</h2>
-
-<p>Grimoire is a fan-made field guide for World of Warcraft: Forever.<br>
-It combines planning tools, written guides and a database<br>
-of the game's items, quests, zones, dungeons and raids.</p>
-
-<p>Search finds items, quests and every talent. Press Ctrl K from any page.<br>
-Guides cover getting started, leveling 1 to 60, how talents changed,<br>
-and each class.</p>
-
-<hr>
-
-<h2>Screenshots</h2>
-
-<table align="center">
+<table>
 <tr>
-<td align="center" width="50%">
-
-<img src="docs/screenshots/grimoire-home.png" alt="Home" width="100%">
-
-<sub>Home</sub>
-
-</td>
-<td align="center" width="50%">
-
-<img src="docs/screenshots/grimoire-talent-calculator.png" alt="Talent calculator" width="100%">
-
-<sub>Talent calculator</sub>
-
-</td>
+<td align="center" width="50%"><img src="docs/screenshots/grimoire-home.png" alt="Home"><br><sub>Home</sub></td>
+<td align="center" width="50%"><img src="docs/screenshots/grimoire-talent-calculator.png" alt="Talent calculator"><br><sub>Talent calculator</sub></td>
 </tr>
 <tr>
-<td align="center" width="50%">
-
-<img src="docs/screenshots/grimoire-gear-planner.png" alt="Gear planner" width="100%">
-
-<sub>Gear planner</sub>
-
-</td>
-<td align="center" width="50%">
-
-<img src="docs/screenshots/grimoire-item-database.png" alt="Item database" width="100%">
-
-<sub>Item database</sub>
-
-</td>
+<td align="center" width="50%"><img src="docs/screenshots/grimoire-gear-planner.png" alt="Gear planner"><br><sub>Gear planner</sub></td>
+<td align="center" width="50%"><img src="docs/screenshots/grimoire-item-database.png" alt="Item database"><br><sub>Item database</sub></td>
 </tr>
 </table>
 
-<hr>
+## What's in it
 
+- **Talent calculator** for the nine rebuilt classes, with what changed from Classic; copy a build or its link
+- **Gear planner**: the best item for every slot at your level, and the alternatives
+- **Database**: items, quests, NPCs, zones, dungeons and raids, with loot tables and drop chances
+- **Guides**: getting started, leveling 1 to 60, every class; plus a leveling route, a raid composer and a Legacy planner
 
-<h2>Tools</h2>
+Search finds items, quests and talents from any page with Ctrl K.
 
-<table align="center">
-<tr>
-<td align="center" width="33%">
-
-<h3>Talent calculator</h3>
-
-Rebuilt trees, nine classes<br>
-Marks Classic changes<br>
-Copy a build or a link
-
-</td>
-<td align="center" width="33%">
-
-<h3>Gear planner</h3>
-
-Best item for every slot<br>
-at your level<br>
-Alternatives by stat weight<br>
-The link holds the whole set
-
-</td>
-<td align="center" width="33%">
-
-<h3>Leveling route</h3>
-
-Zones, quests, dungeons<br>
-for your faction<br>
-at every level
-
-</td>
-</tr>
-<tr>
-<td align="center" width="33%">
-
-<h3>Raid composer</h3>
-
-Drop in a roster<br>
-See which buffs and<br>
-roles are missing
-
-</td>
-<td align="center" width="33%">
-
-<h3>Legacy planner</h3>
-
-Every Legacy challenge<br>
-and the perks it buys
-
-</td>
-<td align="center" width="33%">
-
-<h3>Database</h3>
-
-Items, quests, item sets<br>
-Trainer abilities<br>
-Zones, dungeons and raids<br>
-Loot tables, drop chances
-
-</td>
-</tr>
-</table>
-
-<hr>
-
-<h2>Setup</h2>
+## Run it
 
 ```bash
-git clone https://github.com/gimzdev/grimoire.git
-cd grimoire
-
 npm install
 npm run dev
 ```
 
-<hr>
+No accounts, keys or databases: the game data ships with the site.
 
-[![Live](https://img.shields.io/badge/Live-000000?style=for-the-badge&logo=rocket&logoColor=white)](https://wowgrimoire.app)
-
-<p><sub>Icons from Wowhead. Classic quest and loot data from the VMaNGOS project.<br>
-Grimoire is a fan-made site and isn't affiliated with or endorsed by Blizzard Entertainment.<br>
-World of Warcraft and all related names are trademarks of Blizzard Entertainment, Inc.</sub></p>
-
-</div>
+<sub>Grimoire is a fan-made site, not affiliated with or endorsed by Blizzard Entertainment. World of Warcraft and related names are trademarks of Blizzard Entertainment, Inc. Icons from Wowhead; Classic quest and loot data from VMaNGOS.</sub>
