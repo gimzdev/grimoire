@@ -19,22 +19,15 @@ Talent calculator, gear planner and database for World of Warcraft: Forever.
 </tr>
 </table>
 
-## What's in it
+| | |
+|---|---|
+| **Talent calculator** | The nine rebuilt classes, with what changed from Classic; copy a build or its link |
+| **Gear planner** | Best item for every slot at your level, plus alternatives |
+| **Database** | Items, quests, NPCs, zones, dungeons, raids; loot tables and drop chances |
+| **Guides** | Getting started, leveling 1 to 60, every class |
+| **Planners** | Leveling route, raid composer, Legacy planner |
+| **Search** | Ctrl K from any page |
 
-- **Talent calculator** for the nine rebuilt classes, with what changed from Classic; copy a build or its link
-- **Gear planner**: the best item for every slot at your level, and the alternatives
-- **Database**: items, quests, NPCs, zones, dungeons and raids, with loot tables and drop chances
-- **Guides**: getting started, leveling 1 to 60, every class; plus a leveling route, a raid composer and a Legacy planner
+No accounts, keys or database: the game data ships with the site.
 
-Search finds items, quests and talents from any page with Ctrl K.
-
-## Run it
-
-```bash
-npm install
-npm run dev
-```
-
-No accounts, keys or databases: the game data ships with the site.
-
-<sub>Grimoire is a fan-made site, not affiliated with or endorsed by Blizzard Entertainment. World of Warcraft and related names are trademarks of Blizzard Entertainment, Inc. Icons from Wowhead; Classic quest and loot data from VMaNGOS.</sub>
+<sub>Fan-made, not affiliated with or endorsed by Blizzard Entertainment. World of Warcraft is a trademark of Blizzard Entertainment, Inc. Icons from Wowhead; Classic data from VMaNGOS.</sub>
