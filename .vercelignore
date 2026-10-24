@@ -1,0 +1,9 @@
+.env*
+node_modules
+.next
+.data
+.grimoire-settings
+.grimoire-secrets
+*.sh
+.grimoire
+.grimoire-files

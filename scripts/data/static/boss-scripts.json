@@ -1,0 +1,4585 @@
+{
+ "_": "For each VMaNGOS C++ creature script with an AI, by script name: the spells it casts and the creatures it summons as its own creature, and whether the creature spell list still runs under it. Extracted by scripts/data/boss-scripts.mjs from the VMaNGOS core (GPL-2.0-or-later, https://github.com/vmangos/core); facts only, no code.",
+ "core": "4c51bb778df3dbe182b901d8c31ddf4f2e2e5347",
+ "scripts": {
+  "AV_landmine": {
+   "file": "src/scripts/battlegrounds/battleground_alterac.cpp",
+   "ai": "MineNPC_AI",
+   "spells": [
+    9143,
+    22498,
+    29419
+   ],
+   "lists": false
+  },
+  "AV_mines": {
+   "file": "src/scripts/battlegrounds/battleground_alterac.cpp",
+   "ai": "BasicAI",
+   "spells": [],
+   "lists": true
+  },
+  "av_warrider": {
+   "file": "src/scripts/battlegrounds/battleground_alterac.cpp",
+   "ai": "AV_WarRiderAI",
+   "spells": [
+    15285,
+    21188,
+    22088
+   ],
+   "lists": false
+  },
+  "boss_alzzin_the_wildshaper": {
+   "file": "src/scripts/kalimdor/feralas/dire_maul/instance_dire_maul.cpp",
+   "ai": "boss_alzzin_the_wildshaperAI",
+   "spells": [
+    7948,
+    10101,
+    19319,
+    21157,
+    22128,
+    22660,
+    22661,
+    22662,
+    22688,
+    22689,
+    22691
+   ],
+   "summons": [
+    11460
+   ],
+   "lists": false
+  },
+  "boss_anubrekhan": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/naxxramas/boss_anubrekhan.cpp",
+   "ai": "boss_anubrekhanAI",
+   "spells": [
+    28783,
+    28785
+   ],
+   "summons": [
+    16573,
+    16698
+   ],
+   "lists": false
+  },
+  "boss_anubshiah": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackrock_depths/boss_anubshiah.cpp",
+   "ai": "boss_anubshiahAI",
+   "spells": [
+    12493,
+    13787,
+    15470,
+    15471,
+    15472
+   ],
+   "lists": false
+  },
+  "boss_arcanist_doan": {
+   "file": "src/scripts/eastern_kingdoms/tirisfal_glades/scarlet_monastery/boss_arcanist_doan.cpp",
+   "ai": "boss_arcanist_doanAI",
+   "spells": [
+    8988,
+    9433,
+    9435,
+    9438,
+    13323
+   ],
+   "lists": false
+  },
+  "boss_archaedas": {
+   "file": "src/scripts/eastern_kingdoms/uldaman/boss_archaedas.cpp",
+   "ai": "boss_archaedasAI",
+   "spells": [
+    6524
+   ],
+   "lists": false
+  },
+  "boss_arlokk": {
+   "file": "src/scripts/eastern_kingdoms/stranglethorn_vale/zulgurub/boss_arlokk.cpp",
+   "ai": "boss_arlokkAI",
+   "spells": [
+    3391,
+    12540,
+    15582,
+    15589,
+    24190,
+    24210,
+    24212,
+    24213,
+    24693
+   ],
+   "onDeath": [
+    24693
+   ],
+   "summons": [
+    15101
+   ],
+   "lists": false
+  },
+  "boss_ayamiss": {
+   "file": "src/scripts/kalimdor/silithus/ruins_of_ahnqiraj/boss_ayamiss.cpp",
+   "ai": "boss_ayamissAI",
+   "spells": [
+    3391,
+    8269,
+    25725,
+    25748,
+    25749,
+    25852
+   ],
+   "summons": [
+    15546,
+    15555
+   ],
+   "lists": false
+  },
+  "boss_baron_geddon": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/molten_core/boss_baron_geddon.cpp",
+   "ai": "boss_baron_geddonAI",
+   "spells": [
+    19659,
+    19695,
+    19698,
+    20475,
+    20478
+   ],
+   "lists": false
+  },
+  "boss_baroness_anastari": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/stratholme/boss_baroness_anastari.cpp",
+   "ai": "boss_baroness_anastariAI",
+   "spells": [
+    16565,
+    16867,
+    17244,
+    18327
+   ],
+   "lists": false
+  },
+  "boss_boss_ras_frostwhisper": {
+   "file": "src/scripts/eastern_kingdoms/western_plaguelands/scholomance/boss_ras_frostwhisper.cpp",
+   "ai": "boss_rasfrostAI",
+   "spells": [
+    8398,
+    18099,
+    18100,
+    18763,
+    21369,
+    26070
+   ],
+   "lists": false
+  },
+  "boss_broodlord": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackwing_lair/boss_broodlord_lashlayer.cpp",
+   "ai": "boss_broodlordAI",
+   "spells": [
+    15284,
+    18670,
+    23331,
+    24573
+   ],
+   "lists": false
+  },
+  "boss_buru": {
+   "file": "src/scripts/kalimdor/silithus/ruins_of_ahnqiraj/boss_buru.cpp",
+   "ai": "boss_buruAI",
+   "spells": [
+    96,
+    1557,
+    1834,
+    20512,
+    24721,
+    25640
+   ],
+   "summons": [
+    15514,
+    15521
+   ],
+   "lists": false
+  },
+  "boss_cannon_master_willey": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/stratholme/boss_cannon_master_willey.cpp",
+   "ai": "boss_cannon_master_willeyAI",
+   "spells": [
+    10101,
+    15615,
+    20463
+   ],
+   "summons": [
+    11054
+   ],
+   "lists": false
+  },
+  "boss_chorush": {
+   "file": "src/scripts/kalimdor/feralas/dire_maul/boss_gordok_king.cpp",
+   "ai": "boss_chorushAI",
+   "spells": [
+    8376,
+    13745,
+    15234,
+    15305,
+    15331,
+    15982,
+    16170,
+    17139,
+    17194,
+    17290,
+    22883,
+    22884
+   ],
+   "lists": false
+  },
+  "boss_chromaggus": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackwing_lair/boss_chromaggus.cpp",
+   "ai": "boss_chromaggusAI",
+   "spells": [
+    22277,
+    22278,
+    22279,
+    22280,
+    22281,
+    23128,
+    23153,
+    23154,
+    23155,
+    23168,
+    23169,
+    23170,
+    23187,
+    23308,
+    23310,
+    23313,
+    23315,
+    28747
+   ],
+   "lists": false
+  },
+  "boss_cthun": {
+   "file": "src/scripts/kalimdor/silithus/temple_of_ahnqiraj/boss_cthun.cpp",
+   "ai": "cthunAI",
+   "spells": [
+    26156,
+    26232,
+    26235
+   ],
+   "summons": [
+    15589,
+    15726,
+    15802,
+    15896
+   ],
+   "lists": false
+  },
+  "boss_dathrohan_balnazzar": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/stratholme/boss_dathrohan_balnazzar.cpp",
+   "ai": "boss_dathrohan_balnazzarAI",
+   "spells": [
+    12098,
+    13704,
+    17281,
+    17284,
+    17286,
+    17287,
+    17288,
+    17399,
+    17405
+   ],
+   "summons": [
+    10390,
+    10391
+   ],
+   "lists": false
+  },
+  "boss_doctor_theolen_krastinov": {
+   "file": "src/scripts/eastern_kingdoms/western_plaguelands/scholomance/boss_doctor_theolen_krastinov.cpp",
+   "ai": "boss_theolenkrastinovAI",
+   "spells": [
+    8269,
+    16509,
+    18103
+   ],
+   "lists": false
+  },
+  "boss_doomrel": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackrock_depths/boss_tomb_of_seven.cpp",
+   "ai": "boss_doomrelAI",
+   "spells": [
+    12493,
+    12742,
+    13787,
+    15092,
+    15245
+   ],
+   "lists": false
+  },
+  "boss_dragon_of_nightmare": {
+   "file": "src/scripts/world/dragons_of_nightmare/boss_dragon_of_nightmare.cpp",
+   "ai": "boss_emerissAI",
+   "spells": [],
+   "lists": true
+  },
+  "boss_ebonroc": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackwing_lair/boss_ebonroc.cpp",
+   "ai": "boss_ebonrocAI",
+   "spells": [
+    3391,
+    22539,
+    23339,
+    23340
+   ],
+   "lists": false
+  },
+  "boss_emperor_dagran_thaurissan": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackrock_depths/boss_emperor_dagran_thaurissan.cpp",
+   "ai": "boss_emperor_dagran_thaurissanAI",
+   "spells": [
+    15636,
+    17492
+   ],
+   "lists": false
+  },
+  "boss_eranikus": {
+   "file": "src/scripts/kalimdor/moonglade/moonglade.cpp",
+   "ai": "boss_eranikusAI",
+   "spells": [
+    24818,
+    24839,
+    25586,
+    25846
+   ],
+   "summons": [
+    15633,
+    15634
+   ],
+   "lists": false
+  },
+  "boss_eye_of_cthun": {
+   "file": "src/scripts/kalimdor/silithus/temple_of_ahnqiraj/boss_cthun.cpp",
+   "ai": "eye_of_cthunAI",
+   "spells": [
+    16245,
+    26134,
+    26137
+   ],
+   "lists": false
+  },
+  "boss_faerlina": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/naxxramas/boss_faerlina.cpp",
+   "ai": "boss_faerlinaAI",
+   "spells": [
+    28794,
+    28796,
+    28798
+   ],
+   "lists": false
+  },
+  "boss_fankriss": {
+   "file": "src/scripts/kalimdor/silithus/temple_of_ahnqiraj/boss_fankriss.cpp",
+   "ai": "boss_fankrissAI",
+   "spells": [
+    720,
+    731,
+    1121,
+    25646
+   ],
+   "summons": [
+    15630,
+    15962
+   ],
+   "lists": false
+  },
+  "boss_ferra": {
+   "file": "src/scripts/kalimdor/feralas/dire_maul/instance_dire_maul.cpp",
+   "ai": "boss_ferraAI",
+   "spells": [
+    17156,
+    22911
+   ],
+   "lists": false
+  },
+  "boss_feugen": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/naxxramas/boss_thaddius.cpp",
+   "ai": "boss_feugenAI",
+   "spells": [
+    28125,
+    28134,
+    28135,
+    28337
+   ],
+   "lists": false
+  },
+  "boss_firemaw": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackwing_lair/boss_firemaw.cpp",
+   "ai": "boss_firemawAI",
+   "spells": [
+    3391,
+    22539,
+    23339,
+    23341
+   ],
+   "lists": false
+  },
+  "boss_flamegor": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackwing_lair/boss_flamegor.cpp",
+   "ai": "boss_flamegorAI",
+   "spells": [
+    3391,
+    22539,
+    23339,
+    23342
+   ],
+   "lists": false
+  },
+  "boss_gahzranka": {
+   "file": "src/scripts/eastern_kingdoms/stranglethorn_vale/zulgurub/boss_gahzranka.cpp",
+   "ai": "boss_gahzrankaAI",
+   "spells": [
+    16099,
+    22421,
+    24326
+   ],
+   "lists": false
+  },
+  "boss_garr": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/molten_core/boss_garr.cpp",
+   "ai": "boss_garrAI",
+   "spells": [
+    19492,
+    19496,
+    19516,
+    20482,
+    23487
+   ],
+   "lists": false
+  },
+  "boss_gehennas": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/molten_core/boss_gehennas.cpp",
+   "ai": "boss_gehennasAI",
+   "spells": [
+    19716,
+    19717,
+    19728,
+    19729
+   ],
+   "lists": false
+  },
+  "boss_general_angerforge": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackrock_depths/boss_general_angerforge.cpp",
+   "ai": "boss_general_angerforgeAI",
+   "spells": [
+    15572
+   ],
+   "lists": false
+  },
+  "boss_gluth": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/naxxramas/boss_gluth.cpp",
+   "ai": "boss_gluthAI",
+   "spells": [
+    25646,
+    26662,
+    28371,
+    28374,
+    28375,
+    29685
+   ],
+   "summons": [
+    16360
+   ],
+   "lists": false
+  },
+  "boss_golemagg": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/molten_core/boss_golemagg.cpp",
+   "ai": "boss_golemaggAI",
+   "spells": [
+    19798,
+    20228,
+    20544,
+    20553
+   ],
+   "lists": false
+  },
+  "boss_gorosh_the_dervish": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackrock_depths/boss_gorosh_the_dervish.cpp",
+   "ai": "boss_gorosh_the_dervishAI",
+   "spells": [
+    15589,
+    15708,
+    21049
+   ],
+   "lists": false
+  },
+  "boss_gothik": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/naxxramas/boss_gothik.cpp",
+   "ai": "boss_gothikAI",
+   "spells": [
+    28025,
+    28026,
+    28679,
+    29230,
+    29317
+   ],
+   "summons": [
+    16137
+   ],
+   "lists": false
+  },
+  "boss_grizzle": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackrock_depths/boss_grizzle.cpp",
+   "ai": "boss_grizzleAI",
+   "spells": [
+    6524,
+    8269
+   ],
+   "lists": false
+  },
+  "boss_grobbulus": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/naxxramas/boss_grobbulus.cpp",
+   "ai": "boss_grobbulusAI",
+   "spells": [
+    26662,
+    28137,
+    28157,
+    28169,
+    28240
+   ],
+   "summons": [
+    16290
+   ],
+   "lists": false
+  },
+  "boss_guards": {
+   "file": "src/scripts/kalimdor/feralas/dire_maul/instance_dire_maul.cpp",
+   "ai": "boss_guardsAI",
+   "spells": [
+    8269,
+    10101,
+    11972,
+    14516,
+    15749
+   ],
+   "lists": false
+  },
+  "boss_hakkar": {
+   "file": "src/scripts/eastern_kingdoms/stranglethorn_vale/zulgurub/boss_hakkar.cpp",
+   "ai": "boss_hakkarAI",
+   "spells": [
+    24324,
+    24327,
+    24328,
+    24686,
+    24687,
+    24688,
+    24689,
+    24690,
+    27680
+   ],
+   "lists": false
+  },
+  "boss_halycon": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackrock_spire/boss_halycon.cpp",
+   "ai": "boss_halyconAI",
+   "spells": [
+    10887,
+    14099
+   ],
+   "summons": [
+    10268
+   ],
+   "lists": false
+  },
+  "boss_heigan": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/naxxramas/boss_heigan.cpp",
+   "ai": "boss_heiganAI",
+   "spells": [
+    29310,
+    29350,
+    29998,
+    30211
+   ],
+   "summons": [
+    17293
+   ],
+   "lists": false
+  },
+  "boss_herod": {
+   "file": "src/scripts/eastern_kingdoms/tirisfal_glades/scarlet_monastery/boss_herod.cpp",
+   "ai": "boss_herodAI",
+   "spells": [
+    8260,
+    8269,
+    8989,
+    15496
+   ],
+   "summons": [
+    4295,
+    6575
+   ],
+   "lists": false
+  },
+  "boss_high_inquisitor_fairbanks": {
+   "file": "src/scripts/eastern_kingdoms/tirisfal_glades/scarlet_monastery/boss_high_inquisitor_fairbanks.cpp",
+   "ai": "boss_high_inquisitor_fairbanksAI",
+   "spells": [
+    8282,
+    8399,
+    11647,
+    12039,
+    12096,
+    15090
+   ],
+   "lists": false
+  },
+  "boss_high_interrogator_gerstahn": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackrock_depths/boss_high_interrogator_gerstahn.cpp",
+   "ai": "boss_high_interrogator_gerstahnAI",
+   "spells": [
+    12040,
+    13704,
+    14032,
+    14033
+   ],
+   "lists": false
+  },
+  "boss_highlord_mograine": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/naxxramas/boss_four_horsemen.cpp",
+   "ai": "boss_highlord_mograineAI",
+   "spells": [
+    25104,
+    28834,
+    28836,
+    28881,
+    28928,
+    29061
+   ],
+   "onDeath": [
+    28928
+   ],
+   "lists": false
+  },
+  "boss_highlord_omokk": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackrock_spire/boss_highlord_omokk.cpp",
+   "ai": "boss_highlordomokkAI",
+   "spells": [
+    18106,
+    18368,
+    20686,
+    22356,
+    24317,
+    24375
+   ],
+   "lists": false
+  },
+  "boss_houndmaster_loksey": {
+   "file": "src/scripts/eastern_kingdoms/tirisfal_glades/scarlet_monastery/boss_houndmaster_loksey.cpp",
+   "ai": "boss_houndmaster_lokseyAI",
+   "spells": [
+    6742,
+    17164
+   ],
+   "lists": false
+  },
+  "boss_huhuran": {
+   "file": "src/scripts/kalimdor/silithus/temple_of_ahnqiraj/boss_huhuran.cpp",
+   "ai": "boss_huhuranAI",
+   "spells": [
+    26050,
+    26051,
+    26053,
+    26068,
+    26180
+   ],
+   "lists": false
+  },
+  "boss_illucia_barov": {
+   "file": "src/scripts/eastern_kingdoms/western_plaguelands/scholomance/boss_illucia_barov.cpp",
+   "ai": "boss_illuciabarovAI",
+   "spells": [
+    6215,
+    15487,
+    18671,
+    20603
+   ],
+   "lists": false
+  },
+  "boss_immol_thar": {
+   "file": "src/scripts/kalimdor/feralas/dire_maul/boss_immol_thar.cpp",
+   "ai": "boss_immol_tharAI",
+   "spells": [
+    5568,
+    8269,
+    16128
+   ],
+   "summons": [
+    14396
+   ],
+   "lists": false
+  },
+  "boss_instructor_malicia": {
+   "file": "src/scripts/eastern_kingdoms/western_plaguelands/scholomance/boss_instructor_malicia.cpp",
+   "ai": "boss_instructormaliciaAI",
+   "spells": [
+    9889,
+    10917,
+    10929,
+    11672,
+    17831
+   ],
+   "lists": false
+  },
+  "boss_interrogator_vishas": {
+   "file": "src/scripts/eastern_kingdoms/tirisfal_glades/scarlet_monastery/boss_interrogator_vishas.cpp",
+   "ai": "boss_interrogator_vishasAI",
+   "spells": [
+    2767
+   ],
+   "lists": false
+  },
+  "boss_ironaya": {
+   "file": "src/scripts/eastern_kingdoms/uldaman/boss_ironaya.cpp",
+   "ai": "boss_ironayaAI",
+   "spells": [
+    8374,
+    10101,
+    11876
+   ],
+   "lists": false
+  },
+  "boss_jandice_barov": {
+   "file": "src/scripts/eastern_kingdoms/western_plaguelands/scholomance/boss_jandice_barov.cpp",
+   "ai": "boss_jandicebarovAI",
+   "spells": [
+    16098,
+    26096
+   ],
+   "onDeath": [
+    26096
+   ],
+   "summons": [
+    11439
+   ],
+   "lists": false
+  },
+  "boss_jeklik": {
+   "file": "src/scripts/eastern_kingdoms/stranglethorn_vale/zulgurub/boss_jeklik.cpp",
+   "ai": "boss_jeklikAI",
+   "spells": [
+    6605,
+    12097,
+    13540,
+    16098,
+    23918,
+    23919,
+    23952,
+    23953,
+    23954,
+    23966,
+    24693
+   ],
+   "onDeath": [
+    24693
+   ],
+   "summons": [
+    11368,
+    14965
+   ],
+   "lists": false
+  },
+  "boss_jindo": {
+   "file": "src/scripts/eastern_kingdoms/stranglethorn_vale/zulgurub/boss_jindo.cpp",
+   "ai": "boss_jindoAI",
+   "spells": [
+    17172,
+    24262,
+    24306,
+    24308,
+    24309,
+    24466
+   ],
+   "lists": false
+  },
+  "boss_kelthuzad": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/naxxramas/boss_kelthuzad.cpp",
+   "ai": "boss_kelthuzadAI",
+   "spells": [
+    27808,
+    27810,
+    27819,
+    28408,
+    28478,
+    28479,
+    28498,
+    29423
+   ],
+   "summons": [
+    16427,
+    16428,
+    16429,
+    16441
+   ],
+   "lists": false
+  },
+  "boss_king_gordok": {
+   "file": "src/scripts/kalimdor/feralas/dire_maul/boss_gordok_king.cpp",
+   "ai": "boss_king_gordokAI",
+   "spells": [
+    15572,
+    15708,
+    16727,
+    22886
+   ],
+   "lists": false
+  },
+  "boss_kri": {
+   "file": "src/scripts/kalimdor/silithus/temple_of_ahnqiraj/boss_bug_trio.cpp",
+   "ai": "boss_kriAI",
+   "spells": [
+    3391,
+    19983,
+    25786,
+    25812
+   ],
+   "onDeath": [
+    25786
+   ],
+   "lists": false
+  },
+  "boss_kromcrush": {
+   "file": "src/scripts/kalimdor/feralas/dire_maul/instance_dire_maul.cpp",
+   "ai": "boss_kromcrushAI",
+   "spells": [
+    15716,
+    19134,
+    22857,
+    22859
+   ],
+   "summons": [
+    11450
+   ],
+   "lists": false
+  },
+  "boss_kurinnaxx": {
+   "file": "src/scripts/kalimdor/silithus/ruins_of_ahnqiraj/boss_kurinnaxx.cpp",
+   "ai": "boss_kurinnaxxAI",
+   "spells": [
+    3391,
+    25646,
+    25814,
+    26524,
+    26527
+   ],
+   "lists": false
+  },
+  "boss_lady_blaumeux": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/naxxramas/boss_four_horsemen.cpp",
+   "ai": "boss_lady_blaumeuxAI",
+   "spells": [
+    25104,
+    28833,
+    28836,
+    28931,
+    29061
+   ],
+   "onDeath": [
+    28931
+   ],
+   "summons": [
+    16697
+   ],
+   "lists": false
+  },
+  "boss_landslide": {
+   "file": "src/scripts/kalimdor/desolace/maraudon/boss_landslide.cpp",
+   "ai": "boss_landslideAI",
+   "spells": [
+    5568,
+    18670,
+    21808
+   ],
+   "lists": false
+  },
+  "boss_loatheb": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/naxxramas/boss_loatheb.cpp",
+   "ai": "boss_loathebAI",
+   "spells": [
+    29201,
+    29204,
+    29865,
+    30281
+   ],
+   "summons": [
+    16236,
+    16286
+   ],
+   "lists": false
+  },
+  "boss_lord_alexei_barov": {
+   "file": "src/scripts/eastern_kingdoms/western_plaguelands/scholomance/boss_lord_alexei_barov.cpp",
+   "ai": "boss_lordalexeibarovAI",
+   "spells": [
+    15570,
+    17820
+   ],
+   "lists": false
+  },
+  "boss_lord_hel_nurath": {
+   "file": "src/scripts/kalimdor/feralas/dire_maul/dreadsteed_ritual.cpp",
+   "ai": "boss_lordHelNurathAI",
+   "spells": [
+    17146,
+    18670,
+    20989,
+    23224
+   ],
+   "lists": false
+  },
+  "boss_lorekeeper_polkelt": {
+   "file": "src/scripts/eastern_kingdoms/western_plaguelands/scholomance/boss_lorekeeper_polkelt.cpp",
+   "ai": "boss_lorekeeperpolkeltAI",
+   "spells": [
+    8245,
+    12038,
+    18151,
+    24928
+   ],
+   "lists": false
+  },
+  "boss_lucifron": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/molten_core/boss_lucifron.cpp",
+   "ai": "boss_lucifronAI",
+   "spells": [
+    19460,
+    19702,
+    19703
+   ],
+   "lists": false
+  },
+  "boss_maexxna": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/naxxramas/boss_maexxna.cpp",
+   "ai": "boss_maexxnaAI",
+   "spells": [
+    28741,
+    28747,
+    28776,
+    29434,
+    29484
+   ],
+   "lists": false
+  },
+  "boss_magister_kalendris": {
+   "file": "src/scripts/kalimdor/feralas/dire_maul/instance_dire_maul.cpp",
+   "ai": "boss_magister_kalendrisAI",
+   "spells": [
+    7645,
+    17146,
+    17287,
+    22917,
+    22919
+   ],
+   "lists": false
+  },
+  "boss_magistrate_barthilas": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/stratholme/boss_magistrate_barthilas.cpp",
+   "ai": "boss_magistrate_barthilasAI",
+   "spells": [
+    10887,
+    14099,
+    16791,
+    16793
+   ],
+   "lists": false
+  },
+  "boss_magmus": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackrock_depths/boss_magmus.cpp",
+   "ai": "boss_magmusAI",
+   "spells": [
+    13900,
+    24375
+   ],
+   "lists": false
+  },
+  "boss_majordomo": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/molten_core/boss_majordomo_executus.cpp",
+   "ai": "boss_majordomoAI",
+   "spells": [
+    19484,
+    19527,
+    19774,
+    20534,
+    20618,
+    20619,
+    20620,
+    21075,
+    21086,
+    21087,
+    21090,
+    21094
+   ],
+   "summons": [
+    11502
+   ],
+   "lists": false
+  },
+  "boss_maleki_the_pallid": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/stratholme/boss_maleki_the_pallid.cpp",
+   "ai": "boss_maleki_the_pallidAI",
+   "spells": [
+    16869,
+    17238,
+    17243,
+    17503
+   ],
+   "lists": false
+  },
+  "boss_mandokir": {
+   "file": "src/scripts/eastern_kingdoms/stranglethorn_vale/zulgurub/boss_mandokir.cpp",
+   "ai": "boss_mandokirAI",
+   "spells": [
+    13736,
+    16856,
+    19134,
+    23243,
+    24312,
+    24314,
+    24315,
+    24318,
+    24408
+   ],
+   "summons": [
+    14988,
+    15117
+   ],
+   "lists": false
+  },
+  "boss_marli": {
+   "file": "src/scripts/eastern_kingdoms/stranglethorn_vale/zulgurub/boss_marli.cpp",
+   "ai": "boss_marliAI",
+   "spells": [
+    3391,
+    22911,
+    24083,
+    24084,
+    24085,
+    24099,
+    24109,
+    24110,
+    24111,
+    24300,
+    24693
+   ],
+   "onDeath": [
+    24693
+   ],
+   "summons": [
+    15041
+   ],
+   "lists": false
+  },
+  "boss_moam": {
+   "file": "src/scripts/kalimdor/silithus/ruins_of_ahnqiraj/boss_moam.cpp",
+   "ai": "boss_moamAI",
+   "spells": [
+    15550,
+    18941,
+    23777,
+    25672,
+    25684,
+    25685,
+    25754,
+    27631
+   ],
+   "onDeath": [
+    27631
+   ],
+   "lists": false
+  },
+  "boss_moira_bronzebeard": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackrock_depths/boss_emperor_dagran_thaurissan.cpp",
+   "ai": "boss_moira_bronzebeardAI",
+   "spells": [
+    10934,
+    15586,
+    15587,
+    15654
+   ],
+   "lists": false
+  },
+  "boss_mr_smite": {
+   "file": "src/scripts/eastern_kingdoms/westfall/deadmines/boss_mr_smite.cpp",
+   "ai": "boss_mr_smiteAI",
+   "spells": [
+    3391,
+    6432,
+    6435,
+    6436
+   ],
+   "lists": false
+  },
+  "boss_mushgog": {
+   "file": "src/scripts/kalimdor/feralas/feralas.cpp",
+   "ai": "MushgogAI",
+   "spells": [
+    8599,
+    12747,
+    21748,
+    22948
+   ],
+   "lists": false
+  },
+  "boss_nefarian": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackwing_lair/boss_nefarian.cpp",
+   "ai": "boss_nefarianAI",
+   "spells": [
+    10610,
+    20691,
+    22539,
+    22686,
+    22687,
+    22992,
+    23362,
+    23364
+   ],
+   "lists": false
+  },
+  "boss_nerubenkan": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/stratholme/boss_nerubenkan.cpp",
+   "ai": "boss_nerubenkanAI",
+   "spells": [
+    4962,
+    6016
+   ],
+   "summons": [
+    10577,
+    10876
+   ],
+   "lists": false
+  },
+  "boss_noth": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/naxxramas/boss_noth.cpp",
+   "ai": "boss_nothAI",
+   "spells": [
+    29208,
+    29209,
+    29210,
+    29211,
+    29212,
+    29213,
+    29216,
+    29217,
+    29224,
+    29225,
+    29226,
+    29227,
+    29230,
+    29231,
+    29238,
+    29239,
+    29247,
+    29248,
+    29249,
+    29255,
+    29256,
+    29257,
+    29258,
+    29262,
+    29267,
+    29268
+   ],
+   "summons": [
+    16982
+   ],
+   "lists": false
+  },
+  "boss_noxxion": {
+   "file": "src/scripts/kalimdor/desolace/maraudon/boss_noxxion.cpp",
+   "ai": "boss_noxxionAI",
+   "spells": [
+    21687,
+    22916
+   ],
+   "summons": [
+    13456
+   ],
+   "lists": false
+  },
+  "boss_omen": {
+   "file": "src/scripts/kalimdor/moonglade/boss_omen.cpp",
+   "ai": "boss_omenAI",
+   "spells": [],
+   "lists": true
+  },
+  "boss_onyxia": {
+   "file": "src/scripts/kalimdor/dustwallow_marsh/onyxias_lair/boss_onyxia.cpp",
+   "ai": "boss_onyxiaAI",
+   "spells": [
+    15847,
+    17131,
+    18392,
+    18431,
+    18435,
+    18500,
+    19633,
+    19983,
+    22191,
+    22197
+   ],
+   "summons": [
+    11262
+   ],
+   "lists": false,
+   "unresolved": [
+    "m_pPointData->uiSpellId"
+   ]
+  },
+  "boss_ossirian": {
+   "file": "src/scripts/kalimdor/silithus/ruins_of_ahnqiraj/boss_ossirian.cpp",
+   "ai": "boss_ossirianAI",
+   "spells": [
+    25176,
+    25188,
+    25189,
+    25195
+   ],
+   "summons": [
+    15428
+   ],
+   "lists": false
+  },
+  "boss_ouro": {
+   "file": "src/scripts/kalimdor/silithus/temple_of_ahnqiraj/boss_ouro.cpp",
+   "ai": "boss_ouroAI",
+   "spells": [
+    26058,
+    26063,
+    26100,
+    26102,
+    26103,
+    26133,
+    26262,
+    26284,
+    26594,
+    26615,
+    26616,
+    26617
+   ],
+   "lists": false
+  },
+  "boss_overlord_wyrmthalak": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackrock_spire/boss_overlord_wyrmthalak.cpp",
+   "ai": "boss_overlordwyrmthalakAI",
+   "spells": [
+    11130,
+    20686,
+    20691,
+    23511
+   ],
+   "summons": [
+    9216,
+    9268
+   ],
+   "lists": false
+  },
+  "boss_patchwerk": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/naxxramas/boss_patchwerk.cpp",
+   "ai": "boss_patchwerkAI",
+   "spells": [
+    20477,
+    27680,
+    28131,
+    28308,
+    32309
+   ],
+   "lists": false
+  },
+  "boss_plugger_spazzring": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackrock_depths/blackrock_depths.cpp",
+   "ai": "boss_plugger_spazzringAI",
+   "spells": [
+    8994,
+    12739,
+    12742,
+    13338,
+    13787
+   ],
+   "lists": false
+  },
+  "boss_postmaster_malown": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/stratholme/boss_postmaster_malown.cpp",
+   "ai": "boss_postmaster_malownAI",
+   "spells": [
+    6253,
+    7713,
+    8552,
+    12889,
+    17831
+   ],
+   "lists": false
+  },
+  "boss_prince_tortheldrin": {
+   "file": "src/scripts/kalimdor/feralas/dire_maul/instance_dire_maul.cpp",
+   "ai": "boss_prince_tortheldrinAI",
+   "spells": [
+    8876,
+    15589,
+    20537,
+    22920,
+    22995
+   ],
+   "lists": false
+  },
+  "boss_ragnaros": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/molten_core/boss_ragnaros.cpp",
+   "ai": "boss_ragnarosAI",
+   "spells": [
+    20563,
+    20565,
+    20566,
+    20567,
+    20568,
+    21154,
+    21387,
+    21859
+   ],
+   "summons": [
+    12143
+   ],
+   "lists": false
+  },
+  "boss_ramstein_the_gorger": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/stratholme/boss_ramstein_the_gorger.cpp",
+   "ai": "boss_ramstein_the_gorgerAI",
+   "spells": [
+    5568,
+    17307
+   ],
+   "lists": false
+  },
+  "boss_razorgore": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackwing_lair/boss_razorgore.cpp",
+   "ai": "boss_razorgoreAI",
+   "spells": [
+    19632,
+    22425,
+    23023,
+    24375
+   ],
+   "summons": [
+    14453
+   ],
+   "lists": false
+  },
+  "boss_razuvious": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/naxxramas/boss_razuvious.cpp",
+   "ai": "boss_razuviousAI",
+   "spells": [
+    26613,
+    29107,
+    29125
+   ],
+   "onDeath": [
+    29125
+   ],
+   "summons": [
+    16803
+   ],
+   "lists": false
+  },
+  "boss_renataki": {
+   "file": "src/scripts/eastern_kingdoms/stranglethorn_vale/zulgurub/boss_renataki.cpp",
+   "ai": "boss_renatakiAI",
+   "spells": [
+    3391,
+    8269,
+    24240,
+    24649,
+    24698
+   ],
+   "lists": false
+  },
+  "boss_sapphiron": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/naxxramas/boss_sapphiron.cpp",
+   "ai": "boss_sapphironAI",
+   "spells": [
+    15847,
+    19983,
+    26662,
+    28522,
+    28524,
+    28529,
+    28542,
+    29357,
+    30101
+   ],
+   "onDeath": [
+    29357
+   ],
+   "summons": [
+    16474,
+    17025
+   ],
+   "lists": false
+  },
+  "boss_sartura": {
+   "file": "src/scripts/kalimdor/silithus/temple_of_ahnqiraj/boss_sartura.cpp",
+   "ai": "boss_sarturaAI",
+   "spells": [
+    25174,
+    26083,
+    26527,
+    27680
+   ],
+   "lists": false
+  },
+  "boss_shadow_hunter_voshgajin": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackrock_spire/boss_shadow_hunter_voshgajin.cpp",
+   "ai": "boss_shadowvoshAI",
+   "spells": [
+    16708,
+    20691,
+    24673
+   ],
+   "lists": false
+  },
+  "boss_shazzrah": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/molten_core/boss_shazzrah.cpp",
+   "ai": "boss_shazzrahAI",
+   "spells": [
+    19712,
+    19713,
+    19714,
+    19715,
+    23138
+   ],
+   "lists": false
+  },
+  "boss_silver_hand_bosses": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/stratholme/boss_order_of_silver_hand.cpp",
+   "ai": "boss_silver_hand_bossesAI",
+   "spells": [
+    13874,
+    25263
+   ],
+   "lists": false
+  },
+  "boss_sir_zeliek": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/naxxramas/boss_four_horsemen.cpp",
+   "ai": "boss_sir_zeliekAI",
+   "spells": [
+    25104,
+    28835,
+    28836,
+    28883,
+    28934,
+    29061
+   ],
+   "onDeath": [
+    28934
+   ],
+   "lists": false
+  },
+  "boss_skarrtheunbreakable": {
+   "file": "src/scripts/kalimdor/feralas/feralas.cpp",
+   "ai": "SkarrTheUnbreakableAI",
+   "spells": [
+    15496,
+    15708,
+    16033
+   ],
+   "lists": false
+  },
+  "boss_skeram": {
+   "file": "src/scripts/kalimdor/silithus/temple_of_ahnqiraj/boss_skeram.cpp",
+   "ai": "boss_skeramAI",
+   "spells": [
+    747,
+    785,
+    2313,
+    26192,
+    26194,
+    26525,
+    26526
+   ],
+   "lists": false
+  },
+  "boss_stalagg": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/naxxramas/boss_thaddius.cpp",
+   "ai": "boss_stalaggAI",
+   "spells": [
+    28125,
+    28134,
+    28135,
+    28337
+   ],
+   "lists": false
+  },
+  "boss_sulfuron": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/molten_core/boss_sulfuron_harbinger.cpp",
+   "ai": "boss_sulfuronAI",
+   "spells": [
+    19777,
+    19778,
+    19779,
+    19780,
+    19781
+   ],
+   "lists": false
+  },
+  "boss_tendris_warpwood": {
+   "file": "src/scripts/kalimdor/feralas/dire_maul/boss_tendris_warpwood.cpp",
+   "ai": "boss_tendris_warpwoodAI",
+   "spells": [
+    5568,
+    8269,
+    22916,
+    22924,
+    22994
+   ],
+   "summons": [
+    14566
+   ],
+   "lists": false
+  },
+  "boss_thaddius": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/naxxramas/boss_thaddius.cpp",
+   "ai": "boss_thaddiusAI",
+   "spells": [
+    27680,
+    28089,
+    28136,
+    28160,
+    28167,
+    28299
+   ],
+   "summons": [
+    16218
+   ],
+   "lists": false
+  },
+  "boss_thane_korthazz": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/naxxramas/boss_four_horsemen.cpp",
+   "ai": "boss_thane_korthazzAI",
+   "spells": [
+    25104,
+    28832,
+    28836,
+    28884,
+    28932,
+    29061
+   ],
+   "onDeath": [
+    28932
+   ],
+   "lists": false
+  },
+  "boss_the_beast": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackrock_spire/boss_the_beast.cpp",
+   "ai": "boss_thebeastAI",
+   "spells": [
+    14100,
+    14144,
+    15506,
+    16636,
+    16785,
+    16788
+   ],
+   "lists": false
+  },
+  "boss_the_ravenian": {
+   "file": "src/scripts/eastern_kingdoms/western_plaguelands/scholomance/boss_the_ravenian.cpp",
+   "ai": "boss_theravenianAI",
+   "spells": [
+    10101,
+    15550,
+    20691,
+    25174
+   ],
+   "lists": false
+  },
+  "boss_therazza": {
+   "file": "src/scripts/kalimdor/feralas/feralas.cpp",
+   "ai": "TheRazzaAI",
+   "spells": [
+    16033,
+    22937
+   ],
+   "lists": false
+  },
+  "boss_thermaplugg": {
+   "file": "src/scripts/eastern_kingdoms/dun_morogh/gnomeregan/boss_thermaplugg.cpp",
+   "ai": "boss_thermapluggAI",
+   "spells": [
+    10101,
+    11130,
+    11511,
+    11795
+   ],
+   "summons": [
+    7915
+   ],
+   "lists": false
+  },
+  "boss_timmy_the_cruel": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/stratholme/boss_timmy_the_cruel.cpp",
+   "ai": "boss_timmy_the_cruelAI",
+   "spells": [
+    8599,
+    17470
+   ],
+   "lists": false
+  },
+  "boss_tuubid": {
+   "file": "src/scripts/kalimdor/silithus/ruins_of_ahnqiraj/ruins_of_ahnqiraj.cpp",
+   "ai": "TuubidAI",
+   "spells": [
+    24317,
+    25471,
+    26350
+   ],
+   "lists": false
+  },
+  "boss_vaelastrasz": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackwing_lair/boss_vaelastrasz.cpp",
+   "ai": "boss_vaelAI",
+   "spells": [
+    15847,
+    19983,
+    23461,
+    23462,
+    23513,
+    23642
+   ],
+   "summons": [
+    10162
+   ],
+   "lists": false
+  },
+  "boss_vectus": {
+   "file": "src/scripts/eastern_kingdoms/western_plaguelands/scholomance/boss_vectus.cpp",
+   "ai": "boss_vectusAI",
+   "spells": [
+    16046,
+    18399
+   ],
+   "lists": false
+  },
+  "boss_veklor": {
+   "file": "src/scripts/kalimdor/silithus/temple_of_ahnqiraj/boss_twinemperors.cpp",
+   "ai": "boss_veklorAI",
+   "spells": [
+    568,
+    800,
+    7393,
+    26006,
+    26607,
+    26638,
+    26662
+   ],
+   "lists": false
+  },
+  "boss_veknilash": {
+   "file": "src/scripts/kalimdor/silithus/temple_of_ahnqiraj/boss_twinemperors.cpp",
+   "ai": "boss_veknilashAI",
+   "spells": [
+    800,
+    18943,
+    26007,
+    26613,
+    26638,
+    26662
+   ],
+   "lists": false
+  },
+  "boss_vem": {
+   "file": "src/scripts/kalimdor/silithus/temple_of_ahnqiraj/boss_bug_trio.cpp",
+   "ai": "boss_vemAI",
+   "spells": [
+    18813,
+    19128,
+    25790,
+    26561
+   ],
+   "onDeath": [
+    25790
+   ],
+   "lists": false
+  },
+  "boss_venoxis": {
+   "file": "src/scripts/eastern_kingdoms/stranglethorn_vale/zulgurub/boss_venoxis.cpp",
+   "ai": "boss_venoxisAI",
+   "spells": [
+    3391,
+    8269,
+    23849,
+    23858,
+    23859,
+    23860,
+    23861,
+    23862,
+    23865,
+    23895,
+    23979,
+    24693
+   ],
+   "onDeath": [
+    24693
+   ],
+   "lists": false
+  },
+  "boss_victor_nefarius": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackwing_lair/boss_victor_nefarius.cpp",
+   "ai": "boss_victor_nefariusAI",
+   "spells": [
+    17507,
+    22663,
+    22665,
+    22666,
+    22667,
+    22677,
+    22678
+   ],
+   "summons": [
+    11583,
+    14302
+   ],
+   "lists": false
+  },
+  "boss_viscidus": {
+   "file": "src/scripts/kalimdor/silithus/temple_of_ahnqiraj/boss_viscidus.cpp",
+   "ai": "boss_viscidusAI",
+   "spells": [
+    25865,
+    25866,
+    25867,
+    25868,
+    25869,
+    25870,
+    25871,
+    25872,
+    25873,
+    25874,
+    25875,
+    25876,
+    25877,
+    25878,
+    25879,
+    25880,
+    25881,
+    25882,
+    25883,
+    25884,
+    25893,
+    25897,
+    25904,
+    25926,
+    25937,
+    25991,
+    25993,
+    25994,
+    26003,
+    26034,
+    26036,
+    26601,
+    26608,
+    27934
+   ],
+   "summons": [
+    15922
+   ],
+   "lists": false
+  },
+  "boss_warmaster_voone": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackrock_spire/boss_warmaster_voone.cpp",
+   "ai": "boss_warmastervooneAI",
+   "spells": [
+    10966,
+    15284,
+    15615,
+    15618,
+    15708,
+    16075,
+    16076
+   ],
+   "lists": false
+  },
+  "boss_xorothian_dreadsteed": {
+   "file": "src/scripts/kalimdor/feralas/dire_maul/dreadsteed_ritual.cpp",
+   "ai": "boss_xorothianDreadsteedAI",
+   "spells": [
+    16636,
+    22713,
+    23159
+   ],
+   "onDeath": [
+    23159
+   ],
+   "lists": false
+  },
+  "boss_yauj": {
+   "file": "src/scripts/kalimdor/silithus/temple_of_ahnqiraj/boss_bug_trio.cpp",
+   "ai": "boss_yaujAI",
+   "spells": [
+    19408,
+    24213,
+    25807
+   ],
+   "summons": [
+    15621
+   ],
+   "lists": false
+  },
+  "boss_zevrim": {
+   "file": "src/scripts/kalimdor/feralas/dire_maul/boss_zevrim.cpp",
+   "ai": "boss_zevrimAI",
+   "spells": [
+    22478,
+    22651
+   ],
+   "lists": false
+  },
+  "celebras_spirit": {
+   "file": "src/scripts/kalimdor/desolace/maraudon/boss_celebras_the_cursed.cpp",
+   "ai": "celebrasSpiritAI",
+   "spells": [],
+   "lists": false
+  },
+  "celebras_the_cursed": {
+   "file": "src/scripts/kalimdor/desolace/maraudon/boss_celebras_the_cursed.cpp",
+   "ai": "celebras_the_cursedAI",
+   "spells": [
+    12747,
+    21807,
+    21968
+   ],
+   "lists": false
+  },
+  "commander_felstrom": {
+   "file": "src/scripts/eastern_kingdoms/duskwood/duskwood.cpp",
+   "ai": "npc_commander_felstromAI",
+   "spells": [
+    3488
+   ],
+   "lists": false
+  },
+  "creature_spawn_fankriss": {
+   "file": "src/scripts/kalimdor/silithus/temple_of_ahnqiraj/boss_fankriss.cpp",
+   "ai": "creature_spawn_fankrissAI",
+   "spells": [
+    26662
+   ],
+   "lists": false
+  },
+  "creature_vekniss_hatchling": {
+   "file": "src/scripts/kalimdor/silithus/temple_of_ahnqiraj/boss_fankriss.cpp",
+   "ai": "creature_vekniss_hatchlingAI",
+   "spells": [],
+   "lists": false
+  },
+  "custom_npc_summon_debugAI": {
+   "file": "src/scripts/custom/custom_creatures.cpp",
+   "ai": "npc_summon_debugAI",
+   "spells": [],
+   "summons": [
+    12458
+   ],
+   "lists": false
+  },
+  "custom_npc_training_dummy": {
+   "file": "src/scripts/custom/custom_creatures.cpp",
+   "ai": "npc_training_dummyAI",
+   "spells": [],
+   "lists": false
+  },
+  "dark_touched_warriorAI": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/naxxramas/instance_naxxramas.cpp",
+   "ai": "mob_dark_touched_warriorAI",
+   "spells": [],
+   "lists": false
+  },
+  "deathknight_understudy_ai": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/naxxramas/boss_razuvious.cpp",
+   "ai": "mob_deathknightUnderstudyAI",
+   "spells": [],
+   "lists": false
+  },
+  "LazyPeons": {
+   "file": "src/scripts/kalimdor/durotar/durotar.cpp",
+   "ai": "LazyPeonAI",
+   "spells": [
+    17743
+   ],
+   "lists": false
+  },
+  "mob_ancient_core_hound": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/molten_core/molten_core.cpp",
+   "ai": "mob_ancient_core_houndAI",
+   "spells": [
+    19319,
+    19364,
+    19365,
+    19366,
+    19367,
+    19369,
+    19372,
+    19630,
+    19771
+   ],
+   "lists": false
+  },
+  "mob_annora": {
+   "file": "src/scripts/eastern_kingdoms/uldaman/uldaman.cpp",
+   "ai": "AnnoraAI",
+   "spells": [],
+   "lists": false
+  },
+  "mob_anubisath_guardian": {
+   "file": "src/scripts/kalimdor/silithus/ruins_of_ahnqiraj/ruins_of_ahnqiraj.cpp",
+   "ai": "mob_anubisath_guardianAI",
+   "spells": [
+    8269,
+    13022,
+    19595,
+    22997,
+    24340,
+    25698,
+    25699,
+    26546,
+    26554
+   ],
+   "lists": false
+  },
+  "mob_anubisath_sentinel": {
+   "file": "src/scripts/kalimdor/silithus/temple_of_ahnqiraj/mob_anubisath_sentinel.cpp",
+   "ai": "aqsentinelAI",
+   "spells": [
+    2400,
+    23382,
+    24318,
+    26565
+   ],
+   "onDeath": [
+    2400,
+    26565
+   ],
+   "lists": false,
+   "unresolved": [
+    "id"
+   ]
+  },
+  "mob_archaedas_minions": {
+   "file": "src/scripts/eastern_kingdoms/uldaman/boss_archaedas.cpp",
+   "ai": "mob_archaedas_minionsAI",
+   "spells": [
+    5568,
+    10260
+   ],
+   "lists": false
+  },
+  "mob_batrider": {
+   "file": "src/scripts/eastern_kingdoms/stranglethorn_vale/zulgurub/boss_jeklik.cpp",
+   "ai": "mob_batriderAI",
+   "spells": [
+    19629,
+    23970
+   ],
+   "lists": false,
+   "unresolved": [
+    "target->GetPositionY()"
+   ]
+  },
+  "mob_brain_wash": {
+   "file": "src/scripts/eastern_kingdoms/stranglethorn_vale/zulgurub/boss_jindo.cpp",
+   "ai": "mob_brain_wash_totemAI",
+   "spells": [
+    23198,
+    24261
+   ],
+   "lists": false
+  },
+  "mob_buru_egg": {
+   "file": "src/scripts/kalimdor/silithus/ruins_of_ahnqiraj/boss_buru.cpp",
+   "ai": "mob_buru_eggAI",
+   "spells": [
+    19593
+   ],
+   "onDeath": [
+    19593
+   ],
+   "summons": [
+    15521
+   ],
+   "lists": false
+  },
+  "mob_captured_felwood_ooze": {
+   "file": "src/scripts/kalimdor/ungoro_crater/ungoro_crater.cpp",
+   "ai": "mob_captured_felwood_oozeAI",
+   "spells": [
+    16032
+   ],
+   "lists": false
+  },
+  "mob_chained_spirit": {
+   "file": "src/scripts/eastern_kingdoms/stranglethorn_vale/zulgurub/boss_mandokir.cpp",
+   "ai": "mob_chainedSpiritsAI",
+   "spells": [
+    24341
+   ],
+   "lists": false
+  },
+  "mob_claw_tentacle": {
+   "file": "src/scripts/kalimdor/silithus/temple_of_ahnqiraj/boss_cthun.cpp",
+   "ai": "claw_tentacleAI",
+   "spells": [
+    26234,
+    26262
+   ],
+   "lists": false
+  },
+  "mob_core_hound": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/molten_core/molten_core.cpp",
+   "ai": "mob_core_houndAI",
+   "spells": [
+    17683,
+    19771,
+    19823,
+    19951
+   ],
+   "lists": false
+  },
+  "mob_core_rager": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/molten_core/boss_golemagg.cpp",
+   "ai": "mob_core_ragerAI",
+   "spells": [
+    17683,
+    19820
+   ],
+   "lists": false
+  },
+  "mob_cryptguards": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/naxxramas/boss_anubrekhan.cpp",
+   "ai": "mob_cryptguardsAI",
+   "spells": [
+    26350,
+    28747,
+    28969,
+    28991
+   ],
+   "lists": false
+  },
+  "mob_diseased_maggot": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/naxxramas/boss_loatheb.cpp",
+   "ai": "mob_rottingMaggotAI",
+   "spells": [
+    30079
+   ],
+   "lists": false
+  },
+  "mob_eye_stalk": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/naxxramas/boss_loatheb.cpp",
+   "ai": "mob_eyeStalkAI",
+   "spells": [
+    26234,
+    29407
+   ],
+   "lists": false
+  },
+  "mob_eye_tentacle": {
+   "file": "src/scripts/kalimdor/silithus/temple_of_ahnqiraj/boss_cthun.cpp",
+   "ai": "eye_tentacleAI",
+   "spells": [
+    26143,
+    26262
+   ],
+   "lists": false
+  },
+  "mob_firelord": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/molten_core/molten_core.cpp",
+   "ai": "mob_firelordAI",
+   "spells": [
+    19393,
+    19396,
+    19569
+   ],
+   "lists": false
+  },
+  "mob_firesworn": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/molten_core/boss_garr.cpp",
+   "ai": "mob_fireswornAI",
+   "spells": [
+    3391,
+    15732,
+    19497,
+    19515,
+    20483
+   ],
+   "onDeath": [
+    19497,
+    19515
+   ],
+   "lists": false
+  },
+  "mob_firewalker": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/molten_core/molten_core.cpp",
+   "ai": "FirewalkerAI",
+   "spells": [
+    19635,
+    19636,
+    19637
+   ],
+   "lists": false
+  },
+  "mob_flesh_hunter": {
+   "file": "src/scripts/kalimdor/silithus/ruins_of_ahnqiraj/ruins_of_ahnqiraj.cpp",
+   "ai": "mob_flesh_hunterAI",
+   "spells": [
+    3391,
+    25371,
+    25373,
+    25378,
+    25383,
+    25424
+   ],
+   "lists": false
+  },
+  "mob_freed_soul": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/stratholme/stratholme.cpp",
+   "ai": "mob_freed_soulAI",
+   "spells": [],
+   "lists": true
+  },
+  "mob_giant_claw_tentacle": {
+   "file": "src/scripts/kalimdor/silithus/temple_of_ahnqiraj/boss_cthun.cpp",
+   "ai": "giant_claw_tentacleAI",
+   "spells": [
+    26234,
+    26262
+   ],
+   "lists": false
+  },
+  "mob_giant_eye_tentacle": {
+   "file": "src/scripts/kalimdor/silithus/temple_of_ahnqiraj/boss_cthun.cpp",
+   "ai": "giant_eye_tentacleAI",
+   "spells": [
+    26134,
+    26262
+   ],
+   "lists": false
+  },
+  "mob_giant_flesh_tentacle": {
+   "file": "src/scripts/kalimdor/silithus/temple_of_ahnqiraj/boss_cthun.cpp",
+   "ai": "flesh_tentacleAI",
+   "spells": [],
+   "lists": false
+  },
+  "mob_guardian_icecrownAI": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/naxxramas/boss_kelthuzad.cpp",
+   "ai": "mob_guardian_icecrownAI",
+   "spells": [
+    28470
+   ],
+   "lists": false
+  },
+  "mob_hive_zara_soldier": {
+   "file": "src/scripts/kalimdor/silithus/ruins_of_ahnqiraj/ruins_of_ahnqiraj.cpp",
+   "ai": "HiveZaraSoldierAI",
+   "spells": [
+    22857,
+    25497
+   ],
+   "lists": false
+  },
+  "mob_hive_zara_stinger": {
+   "file": "src/scripts/kalimdor/silithus/ruins_of_ahnqiraj/ruins_of_ahnqiraj.cpp",
+   "ai": "HiveZaraStingerAI",
+   "spells": [
+    25190
+   ],
+   "lists": false
+  },
+  "mob_HiveRegal_HunterKiller": {
+   "file": "src/scripts/kalimdor/silithus/silithus.cpp",
+   "ai": "mob_HiveRegal_HunterKillerAI",
+   "spells": [
+    11427,
+    15588,
+    25815,
+    25821
+   ],
+   "lists": false
+  },
+  "mob_illusionofjandicebarov": {
+   "file": "src/scripts/eastern_kingdoms/western_plaguelands/scholomance/boss_jandice_barov.cpp",
+   "ai": "mob_illusionofjandicebarovAI",
+   "spells": [
+    15584
+   ],
+   "lists": false
+  },
+  "mob_jadespine_basilisk": {
+   "file": "src/scripts/eastern_kingdoms/uldaman/uldaman.cpp",
+   "ai": "mob_jadespine_basiliskAI",
+   "spells": [
+    3636
+   ],
+   "lists": false
+  },
+  "mob_lava_surger": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/molten_core/molten_core.cpp",
+   "ai": "mob_lava_surgerAI",
+   "spells": [
+    19196
+   ],
+   "lists": false
+  },
+  "mob_maws": {
+   "file": "src/scripts/kalimdor/azshara/azshara.cpp",
+   "ai": "mob_mawsAI",
+   "spells": [
+    19812,
+    25743,
+    25744
+   ],
+   "lists": false
+  },
+  "mob_ohgan": {
+   "file": "src/scripts/eastern_kingdoms/stranglethorn_vale/zulgurub/boss_mandokir.cpp",
+   "ai": "mob_ohganAI",
+   "spells": [
+    3391,
+    7160,
+    24317
+   ],
+   "lists": false
+  },
+  "mob_phalanx": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackrock_depths/blackrock_depths.cpp",
+   "ai": "mob_phalanxAI",
+   "spells": [
+    14099,
+    15285,
+    15588
+   ],
+   "lists": false
+  },
+  "mob_prowler": {
+   "file": "src/scripts/eastern_kingdoms/stranglethorn_vale/zulgurub/boss_arlokk.cpp",
+   "ai": "mob_prowlerAI",
+   "spells": [
+    3391,
+    22766
+   ],
+   "lists": false
+  },
+  "mob_qiraji_gladiator": {
+   "file": "src/scripts/kalimdor/silithus/ruins_of_ahnqiraj/ruins_of_ahnqiraj.cpp",
+   "ai": "QirajiGladiatorAI",
+   "spells": [
+    5568,
+    10966,
+    25164
+   ],
+   "lists": false
+  },
+  "mob_qiraji_mindslayer": {
+   "file": "src/scripts/kalimdor/silithus/temple_of_ahnqiraj/instance_temple_of_ahnqiraj.cpp",
+   "ai": "AI_QirajiMindslayer",
+   "spells": [
+    26044,
+    26048,
+    26049,
+    26079
+   ],
+   "onDeath": [
+    26049
+   ],
+   "lists": false
+  },
+  "mob_qiraji_swarmguard": {
+   "file": "src/scripts/kalimdor/silithus/ruins_of_ahnqiraj/ruins_of_ahnqiraj.cpp",
+   "ai": "QirajiSwarmguardAI",
+   "spells": [
+    25174
+   ],
+   "lists": false
+  },
+  "mob_qiraji_warrior": {
+   "file": "src/scripts/kalimdor/silithus/ruins_of_ahnqiraj/ruins_of_ahnqiraj.cpp",
+   "ai": "QirajiWarriorAI",
+   "spells": [
+    8599,
+    10966,
+    15588
+   ],
+   "lists": false
+  },
+  "mob_restless_soul": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/stratholme/stratholme.cpp",
+   "ai": "mob_restless_soulAI",
+   "spells": [],
+   "summons": [
+    11136
+   ],
+   "lists": false
+  },
+  "mob_rotting_maggot": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/naxxramas/boss_loatheb.cpp",
+   "ai": "mob_rottingMaggotAI",
+   "spells": [
+    30079
+   ],
+   "lists": false
+  },
+  "mob_sartura_royal_guard": {
+   "file": "src/scripts/kalimdor/silithus/temple_of_ahnqiraj/boss_sartura.cpp",
+   "ai": "mob_sartura_royal_guardAI",
+   "spells": [
+    19813,
+    26038
+   ],
+   "lists": false
+  },
+  "mob_scarlet_trainee": {
+   "file": "src/scripts/eastern_kingdoms/tirisfal_glades/scarlet_monastery/boss_herod.cpp",
+   "ai": "mob_scarlet_traineeAI",
+   "spells": [],
+   "lists": false
+  },
+  "mob_shade_of_jindo": {
+   "file": "src/scripts/eastern_kingdoms/stranglethorn_vale/zulgurub/boss_jindo.cpp",
+   "ai": "mob_shade_of_jindoAI",
+   "spells": [
+    24307,
+    24458
+   ],
+   "lists": false
+  },
+  "mob_shadow_fissure": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/naxxramas/boss_kelthuzad.cpp",
+   "ai": "mob_shadow_fissureAI",
+   "spells": [
+    27812
+   ],
+   "lists": false
+  },
+  "mob_silicate_feeder": {
+   "file": "src/scripts/kalimdor/silithus/ruins_of_ahnqiraj/ruins_of_ahnqiraj.cpp",
+   "ai": "SilicateFeederAI",
+   "spells": [
+    17742
+   ],
+   "onDeath": [
+    17742
+   ],
+   "lists": false
+  },
+  "mob_stone_keeper": {
+   "file": "src/scripts/eastern_kingdoms/uldaman/uldaman.cpp",
+   "ai": "mob_stone_keeperAI",
+   "spells": [
+    5568
+   ],
+   "lists": false
+  },
+  "mob_swarmguard_needler": {
+   "file": "src/scripts/kalimdor/silithus/ruins_of_ahnqiraj/ruins_of_ahnqiraj.cpp",
+   "ai": "SwarmguardNeedlerAI",
+   "spells": [
+    20684
+   ],
+   "lists": false
+  },
+  "mob_tornado_ossirian": {
+   "file": "src/scripts/kalimdor/silithus/ruins_of_ahnqiraj/ruins_of_ahnqiraj.cpp",
+   "ai": "OssirianTornadoAI",
+   "spells": [
+    10092,
+    25160
+   ],
+   "lists": false
+  },
+  "mob_twins_bug": {
+   "file": "src/scripts/kalimdor/silithus/temple_of_ahnqiraj/boss_twinemperors.cpp",
+   "ai": "mob_TwinsBug",
+   "spells": [
+    6016,
+    26050
+   ],
+   "lists": false,
+   "unresolved": [
+    "whatKindOfbad"
+   ]
+  },
+  "mob_vekniss_guardian": {
+   "file": "src/scripts/kalimdor/silithus/temple_of_ahnqiraj/boss_sartura.cpp",
+   "ai": "mob_vekniss_guardianAI",
+   "spells": [
+    8599,
+    26025
+   ],
+   "lists": false
+  },
+  "mob_viscidus_glob": {
+   "file": "src/scripts/kalimdor/silithus/temple_of_ahnqiraj/boss_viscidus.cpp",
+   "ai": "mob_viscidus_globAI",
+   "spells": [
+    26633
+   ],
+   "lists": false
+  },
+  "mob_viscidus_trigger": {
+   "file": "src/scripts/kalimdor/silithus/temple_of_ahnqiraj/boss_viscidus.cpp",
+   "ai": "mob_viscidus_triggerAI",
+   "spells": [
+    25989,
+    26575
+   ],
+   "lists": false
+  },
+  "mob_webwrap": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/naxxramas/boss_maexxna.cpp",
+   "ai": "mob_webwrapAI",
+   "spells": [],
+   "lists": false
+  },
+  "mob_yenniku": {
+   "file": "src/scripts/eastern_kingdoms/stranglethorn_vale/stranglethorn_vale.cpp",
+   "ai": "mob_yennikuAI",
+   "spells": [],
+   "lists": false
+  },
+  "mob_zara_larva": {
+   "file": "src/scripts/kalimdor/silithus/ruins_of_ahnqiraj/boss_ayamiss.cpp",
+   "ai": "mob_zara_larvaAI",
+   "spells": [
+    25721
+   ],
+   "lists": false
+  },
+  "mob_zombie_chow": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/naxxramas/boss_gluth.cpp",
+   "ai": "mob_zombieChow",
+   "spells": [
+    28375,
+    29307
+   ],
+   "lists": false
+  },
+  "mobs_cristal_zuggurat": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/stratholme/stratholme.cpp",
+   "ai": "mobs_cristal_zugguratAI",
+   "spells": [],
+   "summons": [
+    10399
+   ],
+   "lists": false
+  },
+  "mobs_spectral_ghostly_citizen": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/stratholme/stratholme.cpp",
+   "ai": "mobs_spectral_ghostly_citizenAI",
+   "spells": [
+    6754,
+    16336
+   ],
+   "summons": [
+    11122
+   ],
+   "lists": false
+  },
+  "naxxramas_gargoyle_ai": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/naxxramas/instance_naxxramas.cpp",
+   "ai": "mob_naxxramasGarboyleAI",
+   "spells": [
+    18950,
+    28995,
+    29153,
+    29325
+   ],
+   "lists": false
+  },
+  "naxxramas_plague_slime_ai": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/naxxramas/instance_naxxramas.cpp",
+   "ai": "mob_naxxramasPlagueSlimeAI",
+   "spells": [],
+   "lists": false,
+   "unresolved": [
+    "spell"
+   ]
+  },
+  "npc_AlteracBowman": {
+   "file": "src/scripts/battlegrounds/battleground_alterac.cpp",
+   "ai": "npc_AlteracBowmanAI",
+   "spells": [
+    17507,
+    22121
+   ],
+   "lists": false
+  },
+  "npc_alzzins_minion": {
+   "file": "src/scripts/kalimdor/feralas/dire_maul/instance_dire_maul.cpp",
+   "ai": "npc_alzzins_minionAI",
+   "spells": [],
+   "lists": true
+  },
+  "npc_ame01": {
+   "file": "src/scripts/kalimdor/ungoro_crater/ungoro_crater.cpp",
+   "ai": "npc_ame01AI",
+   "spells": [],
+   "lists": true
+  },
+  "npc_anachronos_the_ancient": {
+   "file": "src/scripts/kalimdor/silithus/silithus.cpp",
+   "ai": "npc_anachronos_the_ancientAI",
+   "spells": [
+    25108,
+    25158,
+    25159,
+    25166
+   ],
+   "summons": [
+    15414,
+    15421,
+    15422,
+    15423,
+    15424
+   ],
+   "lists": false
+  },
+  "npc_andorhal_tower": {
+   "file": "src/scripts/eastern_kingdoms/western_plaguelands/western_plaguelands.cpp",
+   "ai": "npc_andorhal_towerAI",
+   "spells": [],
+   "lists": true
+  },
+  "npc_aqwar_ch_attack": {
+   "file": "src/scripts/world/world_event_wareffort.cpp",
+   "ai": "npc_aqwar_cenarionhold_attackAI",
+   "spells": [],
+   "lists": false
+  },
+  "npc_AQwar_collector": {
+   "file": "src/scripts/world/world_event_wareffort.cpp",
+   "ai": "npc_AQwar_collectorAI",
+   "spells": [],
+   "lists": false
+  },
+  "npc_aqwar_saurfang": {
+   "file": "src/scripts/world/world_event_wareffort.cpp",
+   "ai": "npc_aqwar_saurfangAI",
+   "spells": [
+    14100,
+    15749,
+    16044,
+    24573,
+    26341
+   ],
+   "lists": false
+  },
+  "npc_arcane_aberration": {
+   "file": "src/scripts/kalimdor/feralas/dire_maul/instance_dire_maul.cpp",
+   "ai": "npc_arcane_aberrationAI",
+   "spells": [
+    15979,
+    22936
+   ],
+   "lists": false
+  },
+  "npc_arcanite_dragonling": {
+   "file": "src/scripts/world/npcs_special.cpp",
+   "ai": "npc_arcanite_dragonlingAI",
+   "spells": [
+    8873,
+    9658
+   ],
+   "lists": true
+  },
+  "npc_archmage_tervosh": {
+   "file": "src/scripts/kalimdor/dustwallow_marsh/dustwallow_marsh.cpp",
+   "ai": "npc_archmage_tervoshAI",
+   "spells": [
+    7077,
+    7141
+   ],
+   "lists": true
+  },
+  "npc_arei": {
+   "file": "src/scripts/kalimdor/felwood/felwood.cpp",
+   "ai": "npc_areiAI",
+   "spells": [
+    5337,
+    14888
+   ],
+   "summons": [
+    7138,
+    7139
+   ],
+   "lists": true
+  },
+  "npc_artorius": {
+   "file": "src/scripts/kalimdor/winterspring/winterspring.cpp",
+   "ai": "npc_artoriusAI",
+   "spells": [
+    23257,
+    23298,
+    23299
+   ],
+   "summons": [
+    14503
+   ],
+   "lists": false
+  },
+  "npc_AV_blood_collector": {
+   "file": "src/scripts/battlegrounds/battleground_alterac.cpp",
+   "ai": "AV_NpcEventAI",
+   "spells": [
+    11206,
+    12492,
+    15234,
+    15616,
+    15786,
+    15981,
+    16006,
+    21668,
+    22127,
+    24085,
+    24699
+   ],
+   "summons": [
+    13440,
+    13446,
+    13449,
+    13576
+   ],
+   "lists": false
+  },
+  "npc_av_trigger_for_quest": {
+   "file": "src/scripts/battlegrounds/battleground_alterac.cpp",
+   "ai": "npc_av_trigger_for_questAI",
+   "spells": [],
+   "lists": true
+  },
+  "npc_AV_troops_chief": {
+   "file": "src/scripts/battlegrounds/battleground_alterac.cpp",
+   "ai": "AV_npc_troops_chief_EventAI",
+   "spells": [],
+   "lists": false
+  },
+  "npc_Balinda": {
+   "file": "src/scripts/battlegrounds/battleground_alterac.cpp",
+   "ai": "npc_BalindaAI",
+   "spells": [
+    5530,
+    15534,
+    19712,
+    20420,
+    22746
+   ],
+   "lists": false
+  },
+  "npc_bartleby": {
+   "file": "src/scripts/eastern_kingdoms/stormwind_city/stormwind_city.cpp",
+   "ai": "npc_bartlebyAI",
+   "spells": [],
+   "lists": true
+  },
+  "npc_belnistrasz": {
+   "file": "src/scripts/kalimdor/the_barrens/razorfen_downs/razorfen_downs.cpp",
+   "ai": "npc_belnistraszAI",
+   "spells": [
+    9053,
+    11831,
+    12774
+   ],
+   "summons": [
+    8611
+   ],
+   "lists": false
+  },
+  "npc_blackhand_veteran": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackrock_spire/ubrs_trash.cpp",
+   "ai": "npc_blackhand_veteranAI",
+   "spells": [
+    11972,
+    14516,
+    15749
+   ],
+   "lists": false
+  },
+  "npc_blackwing_technician": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackwing_lair/instance_blackwing_lair.cpp",
+   "ai": "npc_blackwing_technicianAI",
+   "spells": [
+    22334,
+    22335
+   ],
+   "lists": false,
+   "unresolved": [
+    "victim->GetPositionY()"
+   ]
+  },
+  "npc_blastmaster_emi_shortfuse": {
+   "file": "src/scripts/eastern_kingdoms/dun_morogh/gnomeregan/gnomeregan.cpp",
+   "ai": "npc_blastmaster_emi_shortfuseAI",
+   "spells": [
+    11542,
+    12158,
+    12159
+   ],
+   "lists": false
+  },
+  "npc_blazing_invader": {
+   "file": "src/scripts/world/elemental_invasions.cpp",
+   "ai": "npc_invaderAI",
+   "spells": [
+    11428,
+    11968,
+    12550,
+    17207,
+    19133,
+    20005,
+    23113,
+    23114
+   ],
+   "lists": false
+  },
+  "npc_cannonball_runner": {
+   "file": "src/scripts/world/npcs_special.cpp",
+   "ai": "npc_cannonball_runnerAI",
+   "spells": [
+    17501
+   ],
+   "lists": false
+  },
+  "npc_captured_arkonarin": {
+   "file": "src/scripts/kalimdor/felwood/felwood.cpp",
+   "ai": "npc_captured_arkonarinAI",
+   "spells": [
+    15496,
+    16856,
+    18163
+   ],
+   "summons": [
+    9862,
+    11141
+   ],
+   "lists": false
+  },
+  "npc_captured_sprite_darter": {
+   "file": "src/scripts/kalimdor/feralas/feralas.cpp",
+   "ai": "npc_captured_sprite_darterAI",
+   "spells": [
+    11981
+   ],
+   "lists": false
+  },
+  "npc_caravan_mule": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/eastern_plaguelands.cpp",
+   "ai": "npc_caravan_muleAI",
+   "spells": [],
+   "lists": true
+  },
+  "npc_cavalry": {
+   "file": "src/scripts/battlegrounds/battleground_alterac.cpp",
+   "ai": "AV_NpcEventTroopsAI",
+   "spells": [],
+   "lists": false
+  },
+  "npc_chicken_cluck": {
+   "file": "src/scripts/world/npcs_special.cpp",
+   "ai": "npc_chicken_cluckAI",
+   "spells": [],
+   "lists": false
+  },
+  "npc_colossus": {
+   "file": "src/scripts/kalimdor/silithus/silithus.cpp",
+   "ai": "npc_colossusAI",
+   "spells": [
+    26167
+   ],
+   "lists": false
+  },
+  "npc_cork_gizelton": {
+   "file": "src/scripts/kalimdor/desolace/desolace.cpp",
+   "ai": "npc_cork_gizeltonAI",
+   "spells": [],
+   "lists": true
+  },
+  "npc_corrupted_totem": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackwing_lair/boss_nefarian.cpp",
+   "ai": "npc_corrupted_totemAI",
+   "spells": [
+    11311,
+    17507,
+    23198
+   ],
+   "lists": false
+  },
+  "npc_corrupted_whelp": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackwing_lair/instance_blackwing_lair.cpp",
+   "ai": "CorruptedWhelpAI",
+   "spells": [],
+   "lists": false
+  },
+  "npc_creeping_doom": {
+   "file": "src/scripts/kalimdor/silithus/silithus.cpp",
+   "ai": "npc_creeping_doomAI",
+   "spells": [],
+   "lists": true
+  },
+  "npc_crimson_guardsman": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/stratholme/boss_timmy_the_cruel.cpp",
+   "ai": "npc_crimson_guardsmanAI",
+   "spells": [
+    6713,
+    11972,
+    15749
+   ],
+   "summons": [
+    10808
+   ],
+   "lists": false
+  },
+  "npc_cursed_ooze": {
+   "file": "src/scripts/kalimdor/felwood/felwood.cpp",
+   "ai": "npc_cursed_oozeAI",
+   "spells": [
+    13483
+   ],
+   "lists": false
+  },
+  "npc_dalinda_malem": {
+   "file": "src/scripts/kalimdor/desolace/desolace.cpp",
+   "ai": "npc_dalinda_malemAI",
+   "spells": [],
+   "lists": true
+  },
+  "npc_daphne_stilwell": {
+   "file": "src/scripts/eastern_kingdoms/westfall/westfall.cpp",
+   "ai": "npc_daphne_stilwellAI",
+   "spells": [
+    6660
+   ],
+   "summons": [
+    6180
+   ],
+   "lists": false
+  },
+  "npc_dashel_stonefist": {
+   "file": "src/scripts/eastern_kingdoms/stormwind_city/stormwind_city.cpp",
+   "ai": "npc_dashel_stonefistAI",
+   "spells": [],
+   "lists": true
+  },
+  "npc_death_talon": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackwing_lair/instance_blackwing_lair.cpp",
+   "ai": "npc_death_talonAI",
+   "spells": [
+    15284,
+    20623,
+    24375
+   ],
+   "lists": false,
+   "unresolved": [
+    "m_uiBroodPower",
+    "m_uiSchoolSensibility"
+   ]
+  },
+  "npc_death_talon_Captain": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackwing_lair/boss_vaelastrasz.cpp",
+   "ai": "npc_death_talon_CaptainAI",
+   "spells": [
+    15496,
+    22436,
+    22440,
+    25050
+   ],
+   "lists": false
+  },
+  "npc_death_talon_Seether": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackwing_lair/boss_vaelastrasz.cpp",
+   "ai": "npc_death_talon_SeetherAI",
+   "spells": [
+    22428,
+    22433
+   ],
+   "lists": false
+  },
+  "npc_deathstalker_erland": {
+   "file": "src/scripts/eastern_kingdoms/silverpine_forest/silverpine_forest.cpp",
+   "ai": "npc_deathstalker_erlandAI",
+   "spells": [],
+   "lists": true
+  },
+  "npc_demented_druid": {
+   "file": "src/scripts/world/dragons_of_nightmare/boss_dragon_of_nightmare.cpp",
+   "ai": "npc_demented_druidAI",
+   "spells": [],
+   "lists": true
+  },
+  "npc_demetria": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/eastern_plaguelands.cpp",
+   "ai": "npc_demetriaAI",
+   "spells": [
+    13704,
+    14515,
+    16592,
+    17146,
+    17165,
+    17194,
+    17201,
+    19476
+   ],
+   "summons": [
+    12352
+   ],
+   "lists": false
+  },
+  "npc_dirt_mound": {
+   "file": "src/scripts/kalimdor/silithus/temple_of_ahnqiraj/boss_ouro.cpp",
+   "ai": "npc_dirt_moundAI",
+   "spells": [
+    26060,
+    26092
+   ],
+   "lists": false
+  },
+  "npc_disciple_of_naralex": {
+   "file": "src/scripts/kalimdor/the_barrens/wailing_caverns/wailing_caverns.cpp",
+   "ai": "npc_disciple_of_naralexAI",
+   "spells": [
+    1090,
+    5232,
+    6270,
+    6271,
+    8141,
+    8153
+   ],
+   "lists": false
+  },
+  "npc_doctor": {
+   "file": "src/scripts/world/npcs_special.cpp",
+   "ai": "npc_doctorAI",
+   "spells": [],
+   "lists": true
+  },
+  "npc_dream_fog": {
+   "file": "src/scripts/world/dragons_of_nightmare/boss_dragon_of_nightmare.cpp",
+   "ai": "npc_dream_fogAI",
+   "spells": [
+    24777
+   ],
+   "lists": true
+  },
+  "npc_DrekThar": {
+   "file": "src/scripts/battlegrounds/battleground_alterac.cpp",
+   "ai": "npc_DrekTharAI",
+   "spells": [
+    13736,
+    19128,
+    28747
+   ],
+   "lists": false
+  },
+  "npc_druid_of_the_grove": {
+   "file": "src/scripts/battlegrounds/battleground_alterac.cpp",
+   "ai": "DruidOfTheGroveAI",
+   "spells": [
+    11206,
+    21668,
+    22127,
+    22128
+   ],
+   "lists": false
+  },
+  "npc_dughal_stormwing": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackrock_depths/blackrock_depths.cpp",
+   "ai": "npc_dughal_stormwingAI",
+   "spells": [],
+   "lists": true
+  },
+  "npc_emberstrife": {
+   "file": "src/scripts/kalimdor/dustwallow_marsh/dustwallow_marsh.cpp",
+   "ai": "npc_emberstrifeAI",
+   "spells": [
+    8269,
+    9573,
+    19983
+   ],
+   "lists": false
+  },
+  "npc_emerald_dragon_whelp": {
+   "file": "src/scripts/world/npcs_special.cpp",
+   "ai": "npc_emerald_dragon_whelpAI",
+   "spells": [
+    9591
+   ],
+   "lists": true
+  },
+  "npc_Emissary_Romankhan": {
+   "file": "src/scripts/kalimdor/silithus/silithus.cpp",
+   "ai": "npc_Emissary_RomankhanAI",
+   "spells": [
+    23772,
+    23773,
+    23774
+   ],
+   "lists": false
+  },
+  "npc_enraged_foulweald": {
+   "file": "src/scripts/kalimdor/ashenvale/ashenvale.cpp",
+   "ai": "npc_enraged_foulwealdAI",
+   "spells": [
+    6821,
+    20786
+   ],
+   "lists": false,
+   "unresolved": [
+    "y"
+   ]
+  },
+  "npc_eris_havenfire": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/eastern_plaguelands.cpp",
+   "ai": "npc_eris_havenfireAI",
+   "spells": [
+    23108
+   ],
+   "summons": [
+    14486,
+    14489,
+    14503
+   ],
+   "lists": false
+  },
+  "npc_eris_havenfire_peasant": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/eastern_plaguelands.cpp",
+   "ai": "npc_eris_havenfire_peasantAI",
+   "spells": [
+    23127
+   ],
+   "summons": [
+    14503
+   ],
+   "lists": false
+  },
+  "npc_esprit_vaudou": {
+   "file": "src/scripts/eastern_kingdoms/stranglethorn_vale/zulgurub/zulgurub_trash.cpp",
+   "ai": "npc_esprit_vaudou",
+   "spells": [],
+   "lists": false
+  },
+  "npc_etendard": {
+   "file": "src/scripts/battlegrounds/battleground.cpp",
+   "ai": "npc_etendardAI",
+   "spells": [
+    23235
+   ],
+   "lists": false,
+   "unresolved": [
+    "m_bAutoRepeatSpell"
+   ]
+  },
+  "npc_evolving_ectoplasm": {
+   "file": "src/scripts/kalimdor/the_barrens/wailing_caverns/wailing_caverns.cpp",
+   "ai": "EvolvingEctoplasmAI",
+   "spells": [
+    7743,
+    7940,
+    7941,
+    7942,
+    7943,
+    7944,
+    7945,
+    7946
+   ],
+   "lists": false
+  },
+  "npc_explosive_sheep": {
+   "file": "src/scripts/world/npcs_special.cpp",
+   "ai": "npc_explosive_sheepAI",
+   "spells": [
+    4050,
+    4051
+   ],
+   "lists": false
+  },
+  "npc_feero_ironhand": {
+   "file": "src/scripts/kalimdor/ashenvale/ashenvale.cpp",
+   "ai": "npc_feero_ironhandAI",
+   "spells": [],
+   "summons": [
+    3898,
+    3899,
+    3900
+   ],
+   "lists": true
+  },
+  "npc_felhound_minion": {
+   "file": "src/scripts/world/npcs_special.cpp",
+   "ai": "npc_felhound_minionAI",
+   "spells": [
+    15980
+   ],
+   "lists": false
+  },
+  "npc_frostwolf_shaman": {
+   "file": "src/scripts/battlegrounds/battleground_alterac.cpp",
+   "ai": "FrostwolfShamanAI",
+   "spells": [
+    11206,
+    12492,
+    12550,
+    21401
+   ],
+   "lists": false
+  },
+  "npc_galen_goodward": {
+   "file": "src/scripts/eastern_kingdoms/swamp_of_sorrows/swamp_of_sorrows.cpp",
+   "ai": "npc_galen_goodwardAI",
+   "spells": [],
+   "lists": false
+  },
+  "npc_Galvangar": {
+   "file": "src/scripts/battlegrounds/battleground_alterac.cpp",
+   "ai": "npc_GalvangarAI",
+   "spells": [
+    13736,
+    15284,
+    16856,
+    19134
+   ],
+   "lists": false
+  },
+  "npc_Geologist_Larksbane": {
+   "file": "src/scripts/kalimdor/silithus/silithus.cpp",
+   "ai": "npc_Geologist_LarksbaneAI",
+   "spells": [],
+   "lists": false
+  },
+  "npc_gilthares": {
+   "file": "src/scripts/kalimdor/the_barrens/the_barrens.cpp",
+   "ai": "npc_giltharesAI",
+   "spells": [],
+   "lists": true
+  },
+  "npc_gnomish_battle_chicken": {
+   "file": "src/scripts/world/npcs_special.cpp",
+   "ai": "npc_gnomish_battle_chickenAI",
+   "spells": [
+    13168,
+    23060
+   ],
+   "lists": true
+  },
+  "npc_goblin_bomb_dispenser": {
+   "file": "src/scripts/world/npcs_special.cpp",
+   "ai": "npc_goblin_bomb_dispenserAI",
+   "spells": [
+    13259,
+    13260
+   ],
+   "lists": false
+  },
+  "npc_goblin_land_mine": {
+   "file": "src/scripts/world/npcs_special.cpp",
+   "ai": "npc_goblin_land_mineAI",
+   "spells": [
+    4043
+   ],
+   "lists": false
+  },
+  "npc_golem_lord_argelmach": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackrock_depths/blackrock_depths.cpp",
+   "ai": "npc_golem_lord_argelmachAI",
+   "spells": [
+    15305,
+    15507,
+    15605
+   ],
+   "lists": false
+  },
+  "npc_gordok_brute": {
+   "file": "src/scripts/kalimdor/feralas/dire_maul/instance_dire_maul.cpp",
+   "ai": "GordokBruteAI",
+   "spells": [
+    6253,
+    15615,
+    15716,
+    18072,
+    22572
+   ],
+   "lists": false
+  },
+  "npc_grark_lorkrub": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/burning_steppes.cpp",
+   "ai": "npc_grark_lorkrubAI",
+   "spells": [],
+   "summons": [
+    7042,
+    7046,
+    9522,
+    9538,
+    9539,
+    9605
+   ],
+   "lists": false
+  },
+  "npc_grenka_bloodscreech": {
+   "file": "src/scripts/kalimdor/thousand_needles/thousand_needles.cpp",
+   "ai": "npc_grenka_bloodscreechAI",
+   "spells": [],
+   "lists": true
+  },
+  "npc_grimstone": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackrock_depths/blackrock_depths.cpp",
+   "ai": "npc_grimstoneAI",
+   "spells": [
+    6422
+   ],
+   "summons": [
+    16059
+   ],
+   "lists": true
+  },
+  "npc_guard_didier": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/eastern_plaguelands.cpp",
+   "ai": "npc_guard_didierAI",
+   "spells": [],
+   "lists": true
+  },
+  "npc_guru_bat_rider": {
+   "file": "src/scripts/eastern_kingdoms/stranglethorn_vale/zulgurub/boss_jeklik.cpp",
+   "ai": "npc_guru_bat_riderAI",
+   "spells": [
+    3391,
+    5115,
+    16128,
+    23511,
+    24024
+   ],
+   "lists": false
+  },
+  "npc_gurubashi_berserker": {
+   "file": "src/scripts/eastern_kingdoms/stranglethorn_vale/zulgurub/zulgurub_trash.cpp",
+   "ai": "GurubashiBerserkerAI",
+   "spells": [
+    8269,
+    11130,
+    15588,
+    16508
+   ],
+   "lists": false
+  },
+  "npc_hakkari_doctor": {
+   "file": "src/scripts/eastern_kingdoms/stranglethorn_vale/zulgurub/zulgurub_trash.cpp",
+   "ai": "npc_hakkari_doctor",
+   "spells": [
+    17289,
+    24053
+   ],
+   "lists": false
+  },
+  "npc_henze_faulk": {
+   "file": "src/scripts/eastern_kingdoms/elwynn_forest/elwynn_forest.cpp",
+   "ai": "npc_henze_faulkAI",
+   "spells": [],
+   "lists": false
+  },
+  "npc_highprotectorlorik": {
+   "file": "src/scripts/eastern_kingdoms/western_plaguelands/western_plaguelands.cpp",
+   "ai": "npc_highprotectorlorikAI",
+   "spells": [
+    8990,
+    10833,
+    13874,
+    15493,
+    15655
+   ],
+   "lists": false
+  },
+  "npc_injured_patient": {
+   "file": "src/scripts/world/npcs_special.cpp",
+   "ai": "npc_injured_patientAI",
+   "spells": [],
+   "lists": false
+  },
+  "npc_ironforge_infantry": {
+   "file": "src/scripts/world/world_event_wareffort.cpp",
+   "ai": "npc_ironforge_infantryAI",
+   "spells": [],
+   "lists": true
+  },
+  "npc_j_eevee": {
+   "file": "src/scripts/world/npc_j_eevee.cpp",
+   "ai": "npc_j_eevee_dreadsteedAI",
+   "spells": [],
+   "lists": true
+  },
+  "npc_jinxed_voodoo_pile": {
+   "file": "src/scripts/eastern_kingdoms/stranglethorn_vale/zulgurub/zulgurub_trash.cpp",
+   "ai": "npc_jinxed_voodoo_pileAI",
+   "spells": [
+    24178
+   ],
+   "lists": false
+  },
+  "npc_joseph_redpath": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/eastern_plaguelands.cpp",
+   "ai": "npc_joseph_redpathAI",
+   "spells": [],
+   "lists": false
+  },
+  "npc_keeper_remulos": {
+   "file": "src/scripts/kalimdor/moonglade/moonglade.cpp",
+   "ai": "npc_keeper_remulosAI",
+   "spells": [
+    20664,
+    20665,
+    21668,
+    23381,
+    25004,
+    25813
+   ],
+   "summons": [
+    15362,
+    15629
+   ],
+   "lists": true
+  },
+  "npc_kerlonian": {
+   "file": "src/scripts/kalimdor/darkshore/darkshore.cpp",
+   "ai": "npc_kerlonianAI",
+   "spells": [
+    25148
+   ],
+   "lists": true
+  },
+  "npc_kernobee": {
+   "file": "src/scripts/eastern_kingdoms/dun_morogh/gnomeregan/gnomeregan.cpp",
+   "ai": "npc_kernobeeAI",
+   "spells": [],
+   "lists": true
+  },
+  "npc_kindal_moonweaver": {
+   "file": "src/scripts/kalimdor/feralas/feralas.cpp",
+   "ai": "npc_kindal_moonweaverAI",
+   "spells": [],
+   "lists": true
+  },
+  "npc_kinelory": {
+   "file": "src/scripts/eastern_kingdoms/arathi_highlands/arathi_highlands.cpp",
+   "ai": "npc_kineloryAI",
+   "spells": [
+    3627,
+    4948
+   ],
+   "lists": false
+  },
+  "npc_klinfran": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/burning_steppes.cpp",
+   "ai": "npc_klinfranAI",
+   "spells": [
+    23257,
+    23260
+   ],
+   "summons": [
+    14503
+   ],
+   "lists": false
+  },
+  "npc_knot_thimblejack": {
+   "file": "src/scripts/kalimdor/feralas/dire_maul/instance_dire_maul.cpp",
+   "ai": "npc_knot_thimblejackAI",
+   "spells": [],
+   "lists": true
+  },
+  "npc_korrak_the_bloodrager": {
+   "file": "src/scripts/battlegrounds/battleground_alterac.cpp",
+   "ai": "npc_korrak_the_bloodragerAI",
+   "spells": [],
+   "lists": false
+  },
+  "npc_korv": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackrock_depths/arena_challenge_ai.cpp",
+   "ai": "npc_korvAI",
+   "spells": [
+    11314,
+    15786,
+    21401
+   ],
+   "lists": false
+  },
+  "npc_Krug_SkullSplit": {
+   "file": "src/scripts/kalimdor/silithus/silithus.cpp",
+   "ai": "npc_Krug_SkullSplitAI",
+   "spells": [],
+   "summons": [
+    15620
+   ],
+   "lists": false
+  },
+  "npc_kwee_peddlefeet": {
+   "file": "src/scripts/world/npcs_special.cpp",
+   "ai": "npc_kwee_peddlefeetAI",
+   "spells": [
+    27572
+   ],
+   "lists": true
+  },
+  "npc_lady_jaina_proudmoore": {
+   "file": "src/scripts/kalimdor/dustwallow_marsh/dustwallow_marsh.cpp",
+   "ai": "npc_lady_jaina_proudmooreAI",
+   "spells": [
+    20678,
+    20679,
+    20680,
+    20681,
+    20682
+   ],
+   "lists": false
+  },
+  "npc_lady_sylvanas_windrunner": {
+   "file": "src/scripts/eastern_kingdoms/undercity/undercity.cpp",
+   "ai": "boss_sylvanasAI",
+   "spells": [
+    20463,
+    20464,
+    20672,
+    20733,
+    20735
+   ],
+   "lists": false
+  },
+  "npc_lakota_windsong": {
+   "file": "src/scripts/kalimdor/thousand_needles/thousand_needles.cpp",
+   "ai": "npc_lakota_windsongAI",
+   "spells": [],
+   "summons": [
+    10758
+   ],
+   "lists": true
+  },
+  "npc_lefty": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackrock_depths/arena_challenge_ai.cpp",
+   "ai": "npc_leftyAI",
+   "spells": [
+    27673
+   ],
+   "lists": false
+  },
+  "npc_magrami_spetre": {
+   "file": "src/scripts/kalimdor/desolace/desolace.cpp",
+   "ai": "npc_magrami_spetreAI",
+   "spells": [
+    17327,
+    18159,
+    18951
+   ],
+   "lists": false
+  },
+  "npc_malfurion_stormrage": {
+   "file": "src/scripts/eastern_kingdoms/swamp_of_sorrows/sunken_temple/sunken_temple.cpp",
+   "ai": "npc_malfurionAI",
+   "spells": [
+    20761
+   ],
+   "lists": false
+  },
+  "npc_malgen_longspear": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackrock_depths/arena_challenge_ai.cpp",
+   "ai": "npc_malgen_longspearAI",
+   "spells": [
+    5384,
+    13809,
+    20735,
+    20902
+   ],
+   "summons": [
+    16095
+   ],
+   "lists": false
+  },
+  "npc_marshal_reginald_windsor": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackrock_depths/blackrock_depths.cpp",
+   "ai": "npc_marshal_reginald_windsorAI",
+   "spells": [
+    15167
+   ],
+   "lists": true
+  },
+  "npc_marshal_windsor": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackrock_depths/blackrock_depths.cpp",
+   "ai": "npc_marshal_windsorAI",
+   "spells": [],
+   "summons": [
+    9682
+   ],
+   "lists": true
+  },
+  "npc_melizza_brimbuzzle": {
+   "file": "src/scripts/kalimdor/desolace/desolace.cpp",
+   "ai": "npc_melizza_brimbuzzleAI",
+   "spells": [],
+   "summons": [
+    4655,
+    4659,
+    4660
+   ],
+   "lists": true
+  },
+  "npc_miran": {
+   "file": "src/scripts/eastern_kingdoms/loch_modan/loch_modan.cpp",
+   "ai": "npc_miranAI",
+   "spells": [],
+   "summons": [
+    2149
+   ],
+   "lists": true
+  },
+  "npc_mission_possible_but_not_probable": {
+   "file": "src/scripts/kalimdor/the_barrens/the_barrens.cpp",
+   "ai": "npc_mission_possible_but_not_probableAI",
+   "spells": [
+    10265,
+    10266,
+    10267,
+    10268
+   ],
+   "lists": true
+  },
+  "npc_mistress_nagmara": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackrock_depths/blackrock_depths.cpp",
+   "ai": "npc_mistress_nagmaraAI",
+   "spells": [
+    14928,
+    15064
+   ],
+   "lists": false
+  },
+  "npc_mizzle_the_crafty": {
+   "file": "src/scripts/kalimdor/feralas/dire_maul/instance_dire_maul.cpp",
+   "ai": "npc_mizzle_the_craftyAI",
+   "spells": [],
+   "lists": true
+  },
+  "npc_murkdeep": {
+   "file": "src/scripts/kalimdor/darkshore/darkshore.cpp",
+   "ai": "npc_murkdeepAI",
+   "spells": [
+    6533,
+    11971
+   ],
+   "summons": [
+    2202,
+    2205,
+    2206
+   ],
+   "lists": false
+  },
+  "npc_narm_faulk": {
+   "file": "src/scripts/eastern_kingdoms/dun_morogh/dun_morogh.cpp",
+   "ai": "npc_narm_faulkAI",
+   "spells": [],
+   "lists": false
+  },
+  "npc_obsidion": {
+   "file": "src/scripts/eastern_kingdoms/searing_gorge/searing_gorge.cpp",
+   "ai": "npc_obsidionAI",
+   "spells": [
+    10101,
+    12734
+   ],
+   "summons": [
+    8421
+   ],
+   "lists": false
+  },
+  "npc_onyxian_whelp": {
+   "file": "src/scripts/kalimdor/dustwallow_marsh/onyxias_lair/boss_onyxia.cpp",
+   "ai": "OnyxianWhelpAI",
+   "spells": [],
+   "lists": false
+  },
+  "npc_oozeling_jubjub": {
+   "file": "src/scripts/world/npcs_special.cpp",
+   "ai": "npc_oozeling_jubjubAI",
+   "spells": [],
+   "lists": false
+  },
+  "npc_orgrimmar_infantry": {
+   "file": "src/scripts/world/world_event_wareffort.cpp",
+   "ai": "npc_orgrimmar_infantryAI",
+   "spells": [],
+   "lists": true
+  },
+  "npc_orgrimmar_rifleman": {
+   "file": "src/scripts/world/world_event_wareffort.cpp",
+   "ai": "npc_orgrimmar_riflemanAI",
+   "spells": [],
+   "lists": true
+  },
+  "npc_ouro_scarab": {
+   "file": "src/scripts/kalimdor/silithus/temple_of_ahnqiraj/boss_ouro.cpp",
+   "ai": "npc_ouro_scarabAI",
+   "spells": [],
+   "lists": false
+  },
+  "npc_ouro_spawner": {
+   "file": "src/scripts/kalimdor/silithus/temple_of_ahnqiraj/boss_ouro.cpp",
+   "ai": "npc_ouro_spawnerAI",
+   "spells": [
+    26061,
+    26092
+   ],
+   "lists": false
+  },
+  "npc_pallid_horror": {
+   "file": "src/scripts/world/scourge_invasion.cpp",
+   "ai": "PallidHorrorAI",
+   "spells": [
+    1497,
+    28313,
+    28364,
+    28424,
+    28699
+   ],
+   "onDeath": [
+    1497,
+    28424,
+    28699
+   ],
+   "summons": [
+    16383
+   ],
+   "lists": false
+  },
+  "npc_paoka_swiftmountain": {
+   "file": "src/scripts/kalimdor/thousand_needles/thousand_needles.cpp",
+   "ai": "npc_paoka_swiftmountainAI",
+   "spells": [],
+   "summons": [
+    4107
+   ],
+   "lists": true
+  },
+  "npc_pats_firework_guy": {
+   "file": "src/scripts/world/npcs_special.cpp",
+   "ai": "npc_pats_firework_guyAI",
+   "spells": [],
+   "lists": false,
+   "unresolved": [
+    "Fireworks[m_uiIndex].m_uiSpellEntry[0]",
+    "Fireworks[m_uiIndex].m_uiSpellEntry[i]"
+   ]
+  },
+  "npc_pats_hellfire_guy": {
+   "file": "src/scripts/eastern_kingdoms/stranglethorn_vale/stranglethorn_vale.cpp",
+   "ai": "npc_pats_hellfire_guyAI",
+   "spells": [
+    24207
+   ],
+   "lists": false
+  },
+  "npc_piznik": {
+   "file": "src/scripts/kalimdor/stonetalon_mountains/stonetalon_mountains.cpp",
+   "ai": "npc_piznikAI",
+   "spells": [],
+   "summons": [
+    3998,
+    4001,
+    4003
+   ],
+   "lists": false
+  },
+  "npc_plains_vision": {
+   "file": "src/scripts/kalimdor/mulgore/mulgore.cpp",
+   "ai": "plainVisionAI",
+   "spells": [],
+   "lists": false
+  },
+  "npc_plucky_johnson": {
+   "file": "src/scripts/kalimdor/thousand_needles/thousand_needles.cpp",
+   "ai": "npc_plucky_johnsonAI",
+   "spells": [
+    9192,
+    9220
+   ],
+   "lists": false
+  },
+  "npc_polly": {
+   "file": "src/scripts/kalimdor/the_barrens/the_barrens.cpp",
+   "ai": "npc_pollyAI",
+   "spells": [],
+   "lists": true
+  },
+  "npc_precious_the_devourer": {
+   "file": "src/scripts/kalimdor/ungoro_crater/ungoro_crater.cpp",
+   "ai": "npc_precious_the_devourerAI",
+   "spells": [],
+   "lists": false
+  },
+  "npc_priestess": {
+   "file": "src/scripts/world/world_event_wareffort.cpp",
+   "ai": "npc_priestessAI",
+   "spells": [],
+   "lists": true
+  },
+  "npc_professor_phizzlethorpe": {
+   "file": "src/scripts/eastern_kingdoms/arathi_highlands/arathi_highlands.cpp",
+   "ai": "npc_professor_phizzlethorpeAI",
+   "spells": [],
+   "summons": [
+    2776
+   ],
+   "lists": true
+  },
+  "npc_prospector_remtravel": {
+   "file": "src/scripts/kalimdor/darkshore/darkshore.cpp",
+   "ai": "npc_prospector_remtravelAI",
+   "spells": [],
+   "summons": [
+    2158,
+    2159,
+    2160
+   ],
+   "lists": true
+  },
+  "npc_rabid_thistle_bear": {
+   "file": "src/scripts/kalimdor/darkshore/darkshore.cpp",
+   "ai": "npc_rabid_thistle_bearAI",
+   "spells": [],
+   "lists": true
+  },
+  "npc_reanimated_corpse": {
+   "file": "src/scripts/eastern_kingdoms/western_plaguelands/scholomance/scholo_trash.cpp",
+   "ai": "npc_reanimated_corpseAI",
+   "spells": [
+    12038,
+    17683
+   ],
+   "lists": false
+  },
+  "npc_reginald_windsor": {
+   "file": "src/scripts/eastern_kingdoms/stormwind_city/quest_stormwind_rendezvous.cpp",
+   "ai": "npc_reginald_windsorAI",
+   "spells": [],
+   "lists": true
+  },
+  "npc_residual_montruosity": {
+   "file": "src/scripts/kalimdor/feralas/dire_maul/instance_dire_maul.cpp",
+   "ai": "npc_residual_montruosityAI",
+   "spells": [
+    13748,
+    22939,
+    22940
+   ],
+   "onDeath": [
+    22939
+   ],
+   "lists": false
+  },
+  "npc_resonating_Crystal": {
+   "file": "src/scripts/world/world_event_wareffort.cpp",
+   "ai": "npc_resonating_CrystalAI",
+   "spells": [],
+   "lists": false,
+   "unresolved": [
+    "SPELL_WHISPERINGS"
+   ]
+  },
+  "npc_reste_mana": {
+   "file": "src/scripts/kalimdor/feralas/dire_maul/instance_dire_maul.cpp",
+   "ai": "npc_reste_manaAI",
+   "spells": [
+    14514,
+    15659
+   ],
+   "lists": false
+  },
+  "npc_riggle_bassbait": {
+   "file": "src/scripts/world/npcs_special.cpp",
+   "ai": "npc_riggle_bassbaitAI",
+   "spells": [],
+   "lists": true
+  },
+  "npc_ringo": {
+   "file": "src/scripts/kalimdor/ungoro_crater/ungoro_crater.cpp",
+   "ai": "npc_ringoAI",
+   "spells": [],
+   "lists": true
+  },
+  "npc_rinji": {
+   "file": "src/scripts/eastern_kingdoms/hinterlands/hinterlands.cpp",
+   "ai": "npc_rinjiAI",
+   "spells": [],
+   "summons": [
+    2691,
+    2694
+   ],
+   "lists": false
+  },
+  "npc_rocknot": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackrock_depths/blackrock_depths.cpp",
+   "ai": "npc_rocknotAI",
+   "spells": [
+    14872
+   ],
+   "lists": false
+  },
+  "npc_ruul_snowhoof": {
+   "file": "src/scripts/kalimdor/ashenvale/ashenvale.cpp",
+   "ai": "npc_ruul_snowhoofAI",
+   "spells": [
+    20514
+   ],
+   "summons": [
+    3921,
+    3922,
+    3926
+   ],
+   "lists": true
+  },
+  "npc_sapphiron_blizzard": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/naxxramas/boss_sapphiron.cpp",
+   "ai": "npc_sapphiron_blizzardAI",
+   "spells": [],
+   "lists": false
+  },
+  "npc_sarilus_foulborne": {
+   "file": "src/scripts/kalimdor/the_barrens/the_barrens.cpp",
+   "ai": "npc_sarilus_foulborneAI",
+   "spells": [
+    6490,
+    20806
+   ],
+   "lists": false
+  },
+  "npc_scholomance_student": {
+   "file": "src/scripts/eastern_kingdoms/western_plaguelands/scholomance/boss_vectus.cpp",
+   "ai": "npc_scholomance_studentAI",
+   "spells": [
+    18115
+   ],
+   "lists": true
+  },
+  "npc_sergeant_bly": {
+   "file": "src/scripts/kalimdor/tanaris/zulfarrak/zulfarrak.cpp",
+   "ai": "npc_sergeant_blyAI",
+   "spells": [
+    11972,
+    12170
+   ],
+   "lists": false
+  },
+  "npc_shade_of_taerar": {
+   "file": "src/scripts/world/dragons_of_nightmare/boss_dragon_of_nightmare.cpp",
+   "ai": "npc_shade_of_taerarAI",
+   "spells": [],
+   "lists": true
+  },
+  "npc_shahram": {
+   "file": "src/scripts/world/npcs_special.cpp",
+   "ai": "npc_shahramAI",
+   "spells": [
+    16596,
+    16597,
+    16598,
+    16599,
+    16600,
+    16601
+   ],
+   "lists": false
+  },
+  "npc_Shai": {
+   "file": "src/scripts/kalimdor/silithus/silithus.cpp",
+   "ai": "npc_ShaiAI",
+   "spells": [
+    17138
+   ],
+   "lists": false
+  },
+  "npc_shakes_o_breen": {
+   "file": "src/scripts/eastern_kingdoms/arathi_highlands/arathi_highlands.cpp",
+   "ai": "npc_shakes_o_breenAI",
+   "spells": [],
+   "lists": true
+  },
+  "npc_shay_leafrunner": {
+   "file": "src/scripts/kalimdor/feralas/feralas.cpp",
+   "ai": "npc_shay_leafrunnerAI",
+   "spells": [],
+   "lists": true
+  },
+  "npc_sickly_critter": {
+   "file": "src/scripts/world/npcs_special.cpp",
+   "ai": "npc_sickly_critterAI",
+   "spells": [],
+   "lists": false
+  },
+  "npc_simone_seductress": {
+   "file": "src/scripts/kalimdor/ungoro_crater/ungoro_crater.cpp",
+   "ai": "npc_simone_seductressAI",
+   "spells": [
+    23205,
+    23206,
+    23207
+   ],
+   "summons": [
+    14503,
+    14538
+   ],
+   "lists": false
+  },
+  "npc_simone_the_inconspicuous": {
+   "file": "src/scripts/kalimdor/ungoro_crater/ungoro_crater.cpp",
+   "ai": "npc_simone_the_inconspicuousAI",
+   "spells": [
+    23504
+   ],
+   "summons": [
+    14528,
+    14533,
+    14538
+   ],
+   "lists": false
+  },
+  "npc_sirra_vonindi": {
+   "file": "src/scripts/eastern_kingdoms/duskwood/duskwood.cpp",
+   "ai": "npc_sirra_vonindiAI",
+   "spells": [],
+   "summons": [
+    412
+   ],
+   "lists": true
+  },
+  "npc_slims_friend": {
+   "file": "src/scripts/eastern_kingdoms/wetlands/wetlands.cpp",
+   "ai": "npc_slims_friendAI",
+   "spells": [
+    3616,
+    7992,
+    15582
+   ],
+   "lists": false
+  },
+  "npc_snokh_blackspine": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackrock_depths/arena_challenge_ai.cpp",
+   "ai": "npc_snokh_blackspineAI",
+   "spells": [
+    13323,
+    13878,
+    17273,
+    18399
+   ],
+   "lists": false
+  },
+  "npc_snufflenose_gopher": {
+   "file": "src/scripts/kalimdor/the_barrens/razorfen_kraul/razorfen_kraul.cpp",
+   "ai": "npc_snufflenose_gopherAI",
+   "spells": [],
+   "lists": true
+  },
+  "npc_solenor": {
+   "file": "src/scripts/kalimdor/silithus/silithus.cpp",
+   "ai": "npc_solenorAI",
+   "spells": [
+    23272,
+    23275,
+    23279,
+    23589
+   ],
+   "summons": [
+    14503
+   ],
+   "lists": false
+  },
+  "npc_spectral_projection": {
+   "file": "src/scripts/eastern_kingdoms/western_plaguelands/scholomance/scholo_trash.cpp",
+   "ai": "npc_spectral_projectionAI",
+   "spells": [],
+   "lists": true
+  },
+  "npc_spirit_guide": {
+   "file": "src/scripts/battlegrounds/battleground.cpp",
+   "ai": "npc_spirit_guideAI",
+   "spells": [
+    22011
+   ],
+   "lists": false
+  },
+  "npc_spirit_shade": {
+   "file": "src/scripts/world/dragons_of_nightmare/boss_dragon_of_nightmare.cpp",
+   "ai": "npc_spirit_shadeAI",
+   "spells": [],
+   "lists": true
+  },
+  "npc_squire_rowe": {
+   "file": "src/scripts/eastern_kingdoms/stormwind_city/quest_stormwind_rendezvous.cpp",
+   "ai": "npc_squire_roweAI",
+   "spells": [],
+   "lists": true
+  },
+  "npc_steam_tonk": {
+   "file": "src/scripts/world/npcs_special.cpp",
+   "ai": "npc_steam_tonkAI",
+   "spells": [],
+   "lists": false
+  },
+  "npc_stinky_ignatz": {
+   "file": "src/scripts/kalimdor/dustwallow_marsh/dustwallow_marsh.cpp",
+   "ai": "npc_stinky_ignatzAI",
+   "spells": [],
+   "lists": true
+  },
+  "npc_stitches": {
+   "file": "src/scripts/eastern_kingdoms/duskwood/duskwood.cpp",
+   "ai": "npc_stitchesAI",
+   "spells": [
+    3106
+   ],
+   "lists": false
+  },
+  "npc_summon_possessed": {
+   "file": "src/scripts/world/npcs_special.cpp",
+   "ai": "npc_summon_possessedAI",
+   "spells": [],
+   "lists": true
+  },
+  "npc_tainted_ooze": {
+   "file": "src/scripts/kalimdor/felwood/felwood.cpp",
+   "ai": "npc_tainted_oozeAI",
+   "spells": [
+    3335
+   ],
+   "lists": false
+  },
+  "npc_tapoke_slim_jahn": {
+   "file": "src/scripts/eastern_kingdoms/wetlands/wetlands.cpp",
+   "ai": "npc_tapoke_slim_jahnAI",
+   "spells": [
+    6634,
+    12555,
+    16457
+   ],
+   "lists": false
+  },
+  "npc_target_dummy": {
+   "file": "src/scripts/world/npcs_special.cpp",
+   "ai": "npc_target_dummyAI",
+   "spells": [
+    4044,
+    4048,
+    4092,
+    4507,
+    19809
+   ],
+   "lists": false
+  },
+  "npc_tesla_coil": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/naxxramas/boss_thaddius.cpp",
+   "ai": "npc_tesla_coilAI",
+   "spells": [
+    28096,
+    28099,
+    28111
+   ],
+   "lists": false
+  },
+  "npc_the_cleaner": {
+   "file": "src/scripts/world/npcs_special.cpp",
+   "ai": "npc_the_cleanerAI",
+   "spells": [
+    29230
+   ],
+   "lists": false
+  },
+  "npc_the_scourge_cauldron": {
+   "file": "src/scripts/eastern_kingdoms/western_plaguelands/western_plaguelands.cpp",
+   "ai": "npc_the_scourge_cauldronAI",
+   "spells": [],
+   "summons": [
+    11075,
+    11076,
+    11077,
+    11078
+   ],
+   "lists": true
+  },
+  "npc_theldren": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackrock_depths/arena_challenge_ai.cpp",
+   "ai": "npc_theldrenAI",
+   "spells": [
+    17547,
+    19134,
+    22911
+   ],
+   "lists": false
+  },
+  "npc_therylune": {
+   "file": "src/scripts/kalimdor/darkshore/darkshore.cpp",
+   "ai": "npc_theryluneAI",
+   "spells": [],
+   "lists": true
+  },
+  "npc_threshwackonator": {
+   "file": "src/scripts/kalimdor/darkshore/darkshore.cpp",
+   "ai": "npc_threshwackonatorAI",
+   "spells": [],
+   "lists": true
+  },
+  "npc_thundering_invader": {
+   "file": "src/scripts/world/elemental_invasions.cpp",
+   "ai": "npc_invaderAI",
+   "spells": [
+    11428,
+    11968,
+    12550,
+    17207,
+    19133,
+    20005,
+    23113,
+    23114
+   ],
+   "lists": false
+  },
+  "npc_tobias_seecher": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackrock_depths/blackrock_depths.cpp",
+   "ai": "npc_tobias_seecherAI",
+   "spells": [],
+   "lists": true
+  },
+  "npc_tonk_mine": {
+   "file": "src/scripts/world/npcs_special.cpp",
+   "ai": "npc_tonk_mineAI",
+   "spells": [
+    25099
+   ],
+   "lists": false
+  },
+  "npc_tonk_mortar": {
+   "file": "src/scripts/world/npcs_special.cpp",
+   "ai": "npc_tonk_mortarAI",
+   "spells": [
+    27745
+   ],
+   "lists": false
+  },
+  "npc_tooga": {
+   "file": "src/scripts/kalimdor/tanaris/tanaris.cpp",
+   "ai": "npc_toogaAI",
+   "spells": [],
+   "lists": true
+  },
+  "npc_torek": {
+   "file": "src/scripts/kalimdor/ashenvale/ashenvale.cpp",
+   "ai": "npc_torekAI",
+   "spells": [
+    8078,
+    11977
+   ],
+   "summons": [
+    12860,
+    12896,
+    12897
+   ],
+   "lists": false
+  },
+  "npc_twiggy_flathead": {
+   "file": "src/scripts/kalimdor/the_barrens/the_barrens.cpp",
+   "ai": "npc_twiggy_flatheadAI",
+   "spells": [],
+   "summons": [
+    6238,
+    6240
+   ],
+   "lists": false
+  },
+  "npc_twilight_corrupter": {
+   "file": "src/scripts/eastern_kingdoms/duskwood/duskwood.cpp",
+   "ai": "npc_twilight_corrupterAI",
+   "spells": [
+    21307,
+    25805,
+    25806
+   ],
+   "lists": false
+  },
+  "npc_umi_yeti": {
+   "file": "src/scripts/kalimdor/winterspring/winterspring.cpp",
+   "ai": "npc_umi_yetiAI",
+   "spells": [],
+   "lists": false
+  },
+  "npc_unstable_corpse": {
+   "file": "src/scripts/eastern_kingdoms/western_plaguelands/scholomance/scholo_trash.cpp",
+   "ai": "npc_unstable_corpseAI",
+   "spells": [
+    12038,
+    17689
+   ],
+   "onDeath": [
+    17689
+   ],
+   "lists": false
+  },
+  "npc_urok_enforcer": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackrock_spire/boss_urok.cpp",
+   "ai": "urokEnforcerAI",
+   "spells": [
+    16557
+   ],
+   "lists": true,
+   "unresolved": [
+    "y"
+   ]
+  },
+  "npc_urok_ogre_magus": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackrock_spire/boss_urok.cpp",
+   "ai": "urokOgreMagusAI",
+   "spells": [
+    16557
+   ],
+   "lists": true,
+   "unresolved": [
+    "y"
+   ]
+  },
+  "npc_va_jashni": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackrock_depths/arena_challenge_ai.cpp",
+   "ai": "npc_va_jashniAI",
+   "spells": [
+    17138,
+    20697,
+    23895
+   ],
+   "lists": false
+  },
+  "npc_Vanndar": {
+   "file": "src/scripts/battlegrounds/battleground_alterac.cpp",
+   "ai": "npc_VanndarAI",
+   "spells": [
+    15588,
+    19135,
+    19136
+   ],
+   "lists": false
+  },
+  "npc_volcor": {
+   "file": "src/scripts/kalimdor/darkshore/darkshore.cpp",
+   "ai": "npc_volcorAI",
+   "spells": [
+    10849
+   ],
+   "summons": [
+    2170,
+    2171
+   ],
+   "lists": true
+  },
+  "npc_volida": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackrock_depths/arena_challenge_ai.cpp",
+   "ai": "npc_volidaAI",
+   "spells": [
+    12557,
+    27618
+   ],
+   "lists": false
+  },
+  "npc_WarMaster": {
+   "file": "src/scripts/battlegrounds/battleground_alterac.cpp",
+   "ai": "npc_WarMasterAI",
+   "spells": [
+    8599,
+    13736,
+    20684,
+    22911,
+    23511
+   ],
+   "lists": false
+  },
+  "npc_watchman_doomgrip": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackrock_depths/blackrock_depths.cpp",
+   "ai": "npc_watchman_doomgripAI",
+   "spells": [
+    11971,
+    15504
+   ],
+   "lists": false
+  },
+  "npc_watery_invader": {
+   "file": "src/scripts/world/elemental_invasions.cpp",
+   "ai": "npc_invaderAI",
+   "spells": [
+    11428,
+    11968,
+    12550,
+    17207,
+    19133,
+    20005,
+    23113,
+    23114
+   ],
+   "lists": false
+  },
+  "npc_weegli_blastfuse": {
+   "file": "src/scripts/kalimdor/tanaris/zulfarrak/zulfarrak.cpp",
+   "ai": "npc_weegli_blastfuseAI",
+   "spells": [
+    6660,
+    8858
+   ],
+   "lists": false
+  },
+  "npc_whirling_invader": {
+   "file": "src/scripts/world/elemental_invasions.cpp",
+   "ai": "npc_invaderAI",
+   "spells": [
+    11428,
+    11968,
+    12550,
+    17207,
+    19133,
+    20005,
+    23113,
+    23114
+   ],
+   "lists": false
+  },
+  "npc_willix_the_importer": {
+   "file": "src/scripts/kalimdor/the_barrens/razorfen_kraul/razorfen_kraul.cpp",
+   "ai": "npc_willix_the_importerAI",
+   "spells": [],
+   "summons": [
+    4514
+   ],
+   "lists": true
+  },
+  "npc_witch_doctor_unbagwa": {
+   "file": "src/scripts/eastern_kingdoms/stranglethorn_vale/stranglethorn_vale.cpp",
+   "ai": "npc_witch_doctor_unbagwaAI",
+   "spells": [],
+   "lists": false
+  },
+  "npc_wizzlecranks_shredder": {
+   "file": "src/scripts/kalimdor/the_barrens/the_barrens.cpp",
+   "ai": "npc_wizzlecranks_shredderAI",
+   "spells": [],
+   "summons": [
+    3282,
+    3451
+   ],
+   "lists": false
+  },
+  "npc_worldboss_a_av": {
+   "file": "src/scripts/battlegrounds/battleground_alterac.cpp",
+   "ai": "AV_NpcEventWorldBoss_A_AI",
+   "spells": [
+    20654,
+    21667,
+    21668,
+    21669,
+    21670
+   ],
+   "lists": false
+  },
+  "npc_worldboss_h_av": {
+   "file": "src/scripts/battlegrounds/battleground_alterac.cpp",
+   "ai": "AV_NpcEventWorldBoss_H_AI",
+   "spells": [
+    14907,
+    15878,
+    16869,
+    19133,
+    21307,
+    21367,
+    21369
+   ],
+   "lists": false
+  },
+  "npc_yehkinya": {
+   "file": "src/scripts/kalimdor/tanaris/tanaris.cpp",
+   "ai": "npc_yehkinyaAI",
+   "spells": [
+    24085
+   ],
+   "lists": false
+  },
+  "scourge_invasion_cultist_engineer": {
+   "file": "src/scripts/world/scourge_invasion.cpp",
+   "ai": "npc_cultist_engineer",
+   "spells": [
+    3617,
+    28132,
+    28234
+   ],
+   "lists": false
+  },
+  "scourge_invasion_minion": {
+   "file": "src/scripts/world/scourge_invasion.cpp",
+   "ai": "ScourgeMinion",
+   "spells": [
+    10389,
+    12542,
+    16568,
+    28056,
+    28091,
+    28265,
+    28314,
+    28323,
+    28329
+   ],
+   "onDeath": [
+    28056,
+    28323
+   ],
+   "lists": false
+  },
+  "scourge_invasion_minion_spawner": {
+   "file": "src/scripts/world/scourge_invasion.cpp",
+   "ai": "MinionspawnerAI",
+   "spells": [],
+   "lists": false
+  },
+  "scourge_invasion_mouth": {
+   "file": "src/scripts/world/scourge_invasion.cpp",
+   "ai": "MouthAI",
+   "spells": [],
+   "lists": false
+  },
+  "scourge_invasion_necropolis": {
+   "file": "src/scripts/world/scourge_invasion.cpp",
+   "ai": "NecropolisAI",
+   "spells": [
+    28395
+   ],
+   "lists": false
+  },
+  "scourge_invasion_necropolis_health": {
+   "file": "src/scripts/world/scourge_invasion.cpp",
+   "ai": "NecropolisHealthAI",
+   "spells": [
+    28349,
+    28386
+   ],
+   "onDeath": [
+    28349
+   ],
+   "lists": false
+  },
+  "scourge_invasion_necropolis_proxy": {
+   "file": "src/scripts/world/scourge_invasion.cpp",
+   "ai": "NecropolisProxyAI",
+   "spells": [
+    28351,
+    28366,
+    28367
+   ],
+   "lists": false
+  },
+  "scourge_invasion_necropolis_relay": {
+   "file": "src/scripts/world/scourge_invasion.cpp",
+   "ai": "NecropolisRelayAI",
+   "spells": [
+    28326,
+    28351,
+    28365
+   ],
+   "lists": false
+  },
+  "scourge_invasion_necrotic_shard": {
+   "file": "src/scripts/world/scourge_invasion.cpp",
+   "ai": "NecroticShard",
+   "spells": [
+    28197,
+    28198,
+    28199,
+    28201,
+    28351,
+    28449,
+    28681
+   ],
+   "onDeath": [
+    28351,
+    28681
+   ],
+   "summons": [
+    16172
+   ],
+   "lists": false
+  },
+  "soldier_frozen_wastes_ai": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/naxxramas/boss_kelthuzad.cpp",
+   "ai": "mob_soldierAI",
+   "spells": [],
+   "lists": false
+  },
+  "soul_weaver_ai": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/naxxramas/boss_kelthuzad.cpp",
+   "ai": "mob_soulweaverAI",
+   "spells": [],
+   "lists": false
+  },
+  "spell_anchor": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/naxxramas/boss_gothik.cpp",
+   "ai": "gothikTriggerAI",
+   "spells": [],
+   "lists": false
+  },
+  "spirit_of_naxxramas_ai": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/naxxramas/instance_naxxramas.cpp",
+   "ai": "mob_spiritOfNaxxramasAI",
+   "spells": [
+    18950,
+    28599
+   ],
+   "summons": [
+    16420
+   ],
+   "lists": false
+  },
+  "TotemGlebe": {
+   "file": "src/scripts/world/totems.cpp",
+   "ai": "TotemGlebeAI",
+   "spells": [],
+   "lists": true
+  },
+  "toxic_tunnel_ai": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/naxxramas/instance_naxxramas.cpp",
+   "ai": "mob_toxic_tunnelAI",
+   "spells": [
+    28370
+   ],
+   "lists": false
+  },
+  "trigger_orb_of_command": {
+   "file": "src/scripts/eastern_kingdoms/burning_steppes/blackwing_lair/boss_razorgore.cpp",
+   "ai": "trigger_orb_of_commandAI",
+   "spells": [],
+   "lists": false
+  },
+  "unstoppable_abomination_ai": {
+   "file": "src/scripts/eastern_kingdoms/eastern_plaguelands/naxxramas/boss_kelthuzad.cpp",
+   "ai": "mob_abomAI",
+   "spells": [
+    28467
+   ],
+   "lists": false
+  },
+  "ward_zumrah": {
+   "file": "src/scripts/kalimdor/tanaris/zulfarrak/zulfarrak.cpp",
+   "ai": "ward_zumrahAI",
+   "spells": [
+    11088
+   ],
+   "lists": false
+  },
+  "watcher_blomberg": {
+   "file": "src/scripts/eastern_kingdoms/duskwood/duskwood.cpp",
+   "ai": "npc_watcher_blombergAI",
+   "spells": [],
+   "lists": true
+  },
+  "watcher_selkin": {
+   "file": "src/scripts/eastern_kingdoms/duskwood/duskwood.cpp",
+   "ai": "npc_watcher_selkinAI",
+   "spells": [],
+   "lists": true
+  }
+ }
+}

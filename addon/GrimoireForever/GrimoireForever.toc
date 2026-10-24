@@ -1,0 +1,58 @@
+## Interface: 16001
+## Title: Grimoire
+## Notes: The WoW Forever field guide in game: a leveling guide with an arrow and the route on your map, gear upgrades for your build, your talent build point by point, dungeon quests and loot, rare alerts, a raid buff check, Legacy challenges and every Grimoire guide.
+## Author: gimzdev
+## Version: 1.0.0
+## X-Website: https://wowgrimoire.app
+## X-License: GPL-3.0-or-later
+## IconTexture: Interface\AddOns\GrimoireForever\Media\Emblem.tga
+## SavedVariables: GrimoireForeverDB
+## SavedVariablesPerCharacter: GrimoireForeverCharDB
+## AddonCompartmentFunc: GrimoireForever_OnAddonCompartmentClick
+## AddonCompartmentFuncOnEnter: GrimoireForever_OnAddonCompartmentEnter
+## AddonCompartmentFuncOnLeave: GrimoireForever_OnAddonCompartmentLeave
+
+Core.lua
+
+Data\Meta.lua
+Data\World.lua
+Data\Dungeons.lua
+Data\Talents.lua
+Data\Abilities.lua
+Data\Items1.lua
+Data\Items2.lua
+Data\Items3.lua
+Data\Minor.lua
+Data\Npcs.lua
+Data\Guides.lua
+Data\Legacy.lua
+Data\Guide.lua
+
+Player.lua
+Builds.lua
+Tooltip.lua
+Notify.lua
+Legacy.lua
+Guide.lua
+Gear.lua
+Vendor.lua
+
+UI\Widgets.lua
+UI\Main.lua
+UI\Home.lua
+UI\Planner.lua
+UI\Talents.lua
+UI\Abilities.lua
+UI\Leveling.lua
+UI\GuideFrame.lua
+UI\WorldMap.lua
+UI\Rares.lua
+UI\Kill.lua
+UI\Dungeons.lua
+UI\Items.lua
+UI\Raid.lua
+UI\Legacy.lua
+UI\Guides.lua
+UI\About.lua
+UI\Minimap.lua
+UI\Options.lua

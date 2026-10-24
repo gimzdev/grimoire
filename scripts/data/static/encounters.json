@@ -1,0 +1,591 @@
+{
+ "_": "Grimoire's own list: the bosses of every Classic dungeon and raid in the order of a normal run, per wing; runs: each wing is a run of its own. n is the name shown, npc the creature ids (first is the boss), f the flags (rare: not always there; optional: not on the way to the end; oneOf: one of the listed creatures appears; quest: summoned with a quest item; summon: players call it up with something in the instance), note a fact about how it appears, chest a boss chest whose loot is the boss's. Corrections, each with its reason in why: spellList, a creature's spell list where VMaNGOS points at another creature's; spells, spells the server casts that neither the database nor the extraction of the C++ scripts (boss-scripts.json) shows; texts, what a spell does where its numbers or its effect live in the server code; hide, spells such a text tells instead or that only show a visual; schools, the school of what a spell does where the spell itself has another; when, the phase or timer of the fight a spell belongs to, where only the script says it. Texts, hide, schools and when hold for the creatures of their boss only. The data build checks every name and id against VMaNGOS and finds out itself whether a boss is spawned, summoned or tied to a world event.",
+ "ragefire-chasm": {
+  "map": 389,
+  "wings": [
+   {
+    "bosses": [
+     { "n": "Oggleflint", "npc": [11517] },
+     { "n": "Taragaman the Hungerer", "npc": [11520] },
+     { "n": "Jergosh the Invoker", "npc": [11518] },
+     { "n": "Bazzalan", "npc": [11519] }
+    ]
+   }
+  ]
+ },
+ "the-deadmines": {
+  "map": 36,
+  "wings": [
+   {
+    "bosses": [
+     { "n": "Rhahk'Zor", "npc": [644] },
+     { "n": "Miner Johnson", "npc": [3586], "f": ["rare"] },
+     { "n": "Sneed's Shredder", "npc": [642] },
+     { "n": "Sneed", "npc": [643], "note": "Comes out of Sneed's Shredder when it is destroyed." },
+     { "n": "Gilnid", "npc": [1763] },
+     { "n": "Mr. Smite", "npc": [646] },
+     { "n": "Captain Greenskin", "npc": [647] },
+     { "n": "Edwin VanCleef", "npc": [639] },
+     { "n": "Cookie", "npc": [645], "f": ["optional"] }
+    ]
+   }
+  ]
+ },
+ "wailing-caverns": {
+  "map": 43,
+  "wings": [
+   {
+    "bosses": [
+     { "n": "Lady Anacondra", "npc": [3671] },
+     { "n": "Lord Cobrahn", "npc": [3669] },
+     { "n": "Kresh", "npc": [3653], "f": ["optional"] },
+     { "n": "Lord Pythas", "npc": [3670] },
+     { "n": "Skum", "npc": [3674], "f": ["optional"] },
+     { "n": "Lord Serpentis", "npc": [3673] },
+     { "n": "Deviate Faerie Dragon", "npc": [5912], "f": ["rare"] },
+     { "n": "Verdan the Everliving", "npc": [5775] },
+     { "n": "Mutanus the Devourer", "npc": [3654], "note": "Appears at the end of the Disciple of Naralex's ritual." }
+    ]
+   }
+  ]
+ },
+ "shadowfang-keep": {
+  "map": 33,
+  "wings": [
+   {
+    "bosses": [
+     { "n": "Rethilgore", "npc": [3914] },
+     { "n": "Razorclaw the Butcher", "npc": [3886] },
+     { "n": "Baron Silverlaine", "npc": [3887] },
+     { "n": "Commander Springvale", "npc": [4278] },
+     { "n": "Odo the Blindwatcher", "npc": [4279] },
+     { "n": "Deathsworn Captain", "npc": [3872], "f": ["rare"] },
+     { "n": "Fenrus the Devourer", "npc": [4274] },
+     { "n": "Wolf Master Nandos", "npc": [3927] },
+     { "n": "Archmage Arugal", "npc": [4275] },
+     { "n": "Sever", "npc": [14682] }
+    ]
+   }
+  ]
+ },
+ "blackfathom-deeps": {
+  "map": 48,
+  "wings": [
+   {
+    "bosses": [
+     { "n": "Ghamoo-ra", "npc": [4887] },
+     { "n": "Lady Sarevess", "npc": [4831] },
+     { "n": "Gelihast", "npc": [6243] },
+     { "n": "Lorgus Jett", "npc": [12902] },
+     { "n": "Baron Aquanis", "npc": [12876], "f": ["quest"] },
+     { "n": "Twilight Lord Kelris", "npc": [4832] },
+     { "n": "Old Serra'kis", "npc": [4830] },
+     { "n": "Aku'mai", "npc": [4829] }
+    ]
+   }
+  ]
+ },
+ "the-stockade": {
+  "map": 34,
+  "wings": [
+   {
+    "bosses": [
+     { "n": "Targorr the Dread", "npc": [1696] },
+     { "n": "Kam Deepfury", "npc": [1666] },
+     { "n": "Hamhock", "npc": [1717] },
+     { "n": "Bazil Thredd", "npc": [1716] },
+     { "n": "Dextren Ward", "npc": [1663] },
+     { "n": "Bruegal Ironknuckle", "npc": [1720], "f": ["rare"] }
+    ]
+   }
+  ]
+ },
+ "gnomeregan": {
+  "map": 90,
+  "wings": [
+   {
+    "bosses": [
+     { "n": "Grubbis", "npc": [7361, 6215], "note": "Comes with Chomper during Blastmaster Emi Shortfuse's event." },
+     { "n": "Viscous Fallout", "npc": [7079] },
+     { "n": "Electrocutioner 6000", "npc": [6235] },
+     { "n": "Crowd Pummeler 9-60", "npc": [6229] },
+     { "n": "Dark Iron Ambassador", "npc": [6228], "f": ["rare"] },
+     { "n": "Mekgineer Thermaplugg", "npc": [7800] }
+    ]
+   }
+  ]
+ },
+ "razorfen-kraul": {
+  "map": 47,
+  "wings": [
+   {
+    "bosses": [
+     { "n": "Roogug", "npc": [6168] },
+     { "n": "Aggem Thorncurse", "npc": [4424] },
+     { "n": "Death Speaker Jargba", "npc": [4428] },
+     { "n": "Overlord Ramtusk", "npc": [4420] },
+     { "n": "Earthcaller Halmgar", "npc": [4842], "f": ["rare"] },
+     { "n": "Agathelos the Raging", "npc": [4422] },
+     { "n": "Blind Hunter", "npc": [4425], "f": ["rare"] },
+     { "n": "Charlga Razorflank", "npc": [4421] }
+    ]
+   }
+  ]
+ },
+ "scarlet-monastery": {
+  "map": 189,
+  "runs": true,
+  "wings": [
+   {
+    "name": "Graveyard",
+    "bosses": [
+     { "n": "Interrogator Vishas", "npc": [3983] },
+     { "n": "Azshir the Sleepless", "npc": [6490], "f": ["rare"] },
+     { "n": "Fallen Champion", "npc": [6488], "f": ["rare"] },
+     { "n": "Ironspine", "npc": [6489], "f": ["rare"] },
+     { "n": "Bloodmage Thalnos", "npc": [4543] }
+    ]
+   },
+   {
+    "name": "Library",
+    "bosses": [
+     { "n": "Houndmaster Loksey", "npc": [3974] },
+     { "n": "Arcanist Doan", "npc": [6487] }
+    ]
+   },
+   {
+    "name": "Armory",
+    "bosses": [
+     { "n": "Herod", "npc": [3975] }
+    ]
+   },
+   {
+    "name": "Cathedral",
+    "bosses": [
+     { "n": "High Inquisitor Fairbanks", "npc": [4542], "f": ["optional"] },
+     { "n": "Scarlet Commander Mograine", "npc": [3976] },
+     { "n": "High Inquisitor Whitemane", "npc": [3977] }
+    ]
+   }
+  ]
+ },
+ "razorfen-downs": {
+  "map": 129,
+  "wings": [
+   {
+    "bosses": [
+     { "n": "Tuten'kash", "npc": [7355], "note": "Comes with the third wave called by striking the gong." },
+     { "n": "Plaguemaw the Rotting", "npc": [7356], "note": "Appears at the end of Belnistrasz's ritual (quest Extinguishing the Idol)." },
+     { "n": "Mordresh Fire Eye", "npc": [7357] },
+     { "n": "Glutton", "npc": [8567] },
+     { "n": "Ragglesnout", "npc": [7354], "f": ["rare"] },
+     { "n": "Amnennar the Coldbringer", "npc": [7358] },
+     { "n": "Lady Falther'ess", "npc": [14686] }
+    ]
+   }
+  ]
+ },
+ "uldaman": {
+  "map": 70,
+  "wings": [
+   {
+    "bosses": [
+     { "n": "Revelosh", "npc": [6910] },
+     { "n": "The Lost Dwarves", "npc": [6906, 6907, 6908] },
+     { "n": "Ironaya", "npc": [7228] },
+     { "n": "Obsidian Sentinel", "npc": [7023] },
+     { "n": "Ancient Stone Keeper", "npc": [7206] },
+     { "n": "Galgann Firehammer", "npc": [7291] },
+     { "n": "Grimlok", "npc": [4854] },
+     { "n": "Archaedas", "npc": [2748] }
+    ]
+   }
+  ]
+ },
+ "zulfarrak": {
+  "map": 209,
+  "wings": [
+   {
+    "bosses": [
+     { "n": "Antu'sul", "npc": [8127] },
+     { "n": "Theka the Martyr", "npc": [7272] },
+     { "n": "Zerillis", "npc": [10082], "f": ["rare"] },
+     { "n": "Sandarr Dunereaver", "npc": [10080], "f": ["rare"] },
+     { "n": "Witch Doctor Zum'rah", "npc": [7271] },
+     { "n": "Hydromancer Velratha", "npc": [7795] },
+     { "n": "Gahz'rilla", "npc": [7273], "note": "Summoned by striking the gong with the Mallet of Zul'Farrak." },
+     { "n": "Sergeant Bly", "npc": [7604] },
+     { "n": "Nekrum Gutchewer", "npc": [7796], "note": "Comes down at the end of the pyramid event." },
+     { "n": "Shadowpriest Sezz'ziz", "npc": [7275], "note": "Comes down at the end of the pyramid event." },
+     { "n": "Chief Ukorz Sandscalp", "npc": [7267, 7797] }
+    ]
+   }
+  ]
+ },
+ "maraudon": {
+  "map": 349,
+  "wings": [
+   {
+    "name": "Foulspore Cavern",
+    "bosses": [
+     { "n": "Noxxion", "npc": [13282] },
+     { "n": "Razorlash", "npc": [12258] }
+    ]
+   },
+   {
+    "name": "The Wicked Grotto",
+    "bosses": [
+     { "n": "Lord Vyletongue", "npc": [12236] },
+     { "n": "Meshlok the Harvester", "npc": [12237], "f": ["rare"] }
+    ]
+   },
+   {
+    "name": "Earth Song Falls",
+    "bosses": [
+     { "n": "Celebras the Cursed", "npc": [12225] },
+     { "n": "Landslide", "npc": [12203] },
+     { "n": "Tinkerer Gizlock", "npc": [13601] },
+     { "n": "Rotgrip", "npc": [13596] },
+     { "n": "Princess Theradras", "npc": [12201] }
+    ]
+   }
+  ]
+ },
+ "the-temple-of-atalhakkar": {
+  "map": 109,
+  "wings": [
+   {
+    "bosses": [
+     { "n": "Atal'alarion", "npc": [8580] },
+     { "n": "Gasher", "npc": [5713] },
+     { "n": "Loro", "npc": [5714] },
+     { "n": "Hukku", "npc": [5715] },
+     { "n": "Zolo", "npc": [5712] },
+     { "n": "Mijan", "npc": [5717] },
+     { "n": "Zul'Lor", "npc": [5716] },
+     { "n": "Dreamscythe", "npc": [5721] },
+     { "n": "Weaver", "npc": [5720] },
+     { "n": "Avatar of Hakkar", "npc": [8443], "f": ["quest"], "note": "Summoned with the Egg of Hakkar (quest The God Hakkar)." },
+     { "n": "Jammal'an the Prophet", "npc": [5710, 5711] },
+     { "n": "Morphaz", "npc": [5719] },
+     { "n": "Hazzas", "npc": [5722] },
+     { "n": "Shade of Eranikus", "npc": [5709] }
+    ]
+   }
+  ]
+ },
+ "blackrock-depths": {
+  "map": 230,
+  "wings": [
+   {
+    "bosses": [
+     { "n": "High Interrogator Gerstahn", "npc": [9018] },
+     { "n": "Lord Roccor", "npc": [9025] },
+     { "n": "Houndmaster Grebmar", "npc": [9319], "spellList": { "9319": 93190 }, "why": "VMaNGOS gives him list 89130 (Blackrock Depths - Twilight Emissary); his own list, 93190 (Blackrock Depths - Houndmaster Grebmar), goes unused." },
+     { "n": "Ring of Law", "npc": [9031, 9029, 9027, 9028, 9032, 9030], "f": ["oneOf"], "note": "One of six champions, picked at random, ends the arena event." },
+     { "n": "Theldren", "npc": [16059], "f": ["quest"], "note": "Summoned in the Ring of Law with the Banner of Provocation." },
+     { "n": "Pyromancer Loregrain", "npc": [9024] },
+     { "n": "Lord Incendius", "npc": [9017] },
+     { "n": "Warder Stilgiss", "npc": [9041, 9042] },
+     { "n": "Watchman Doomgrip", "npc": [9476], "note": "Appears when the Relic Coffers of the Vault are opened." },
+     { "n": "Fineous Darkvire", "npc": [9056] },
+     { "n": "Bael'Gar", "npc": [9016] },
+     { "n": "General Angerforge", "npc": [9033] },
+     { "n": "Golem Lord Argelmach", "npc": [8983] },
+     { "n": "Panzor the Invincible", "npc": [8923], "f": ["rare"] },
+     { "n": "Hurley Blackbreath", "npc": [9537], "note": "Appears after the Thunderbrew Lager kegs are used." },
+     { "n": "Phalanx", "npc": [9502] },
+     { "n": "Ribbly Screwspigot", "npc": [9543] },
+     { "n": "Plugger Spazzring", "npc": [9499] },
+     { "n": "Ambassador Flamelash", "npc": [9156] },
+     { "n": "The Seven", "npc": [9039, 9034, 9035, 9036, 9037, 9038, 9040], "chest": 169243 },
+     { "n": "Magmus", "npc": [9938] },
+     { "n": "Emperor Dagran Thaurissan", "npc": [9019, 8929] }
+    ]
+   }
+  ]
+ },
+ "blackrock-spire": {
+  "map": 229,
+  "runs": true,
+  "wings": [
+   {
+    "name": "Lower Blackrock Spire",
+    "bosses": [
+     { "n": "Highlord Omokk", "npc": [9196] },
+     { "n": "Spirestone Battle Lord", "npc": [9218], "f": ["rare"] },
+     { "n": "Spirestone Lord Magus", "npc": [9217], "f": ["rare"] },
+     { "n": "Ghok Bashguud", "npc": [9718], "f": ["rare"] },
+     { "n": "Shadow Hunter Vosh'gajin", "npc": [9236] },
+     { "n": "Spirestone Butcher", "npc": [9219], "f": ["rare"] },
+     { "n": "War Master Voone", "npc": [9237] },
+     { "n": "Mor Grayhoof", "npc": [16080], "f": ["quest"], "note": "Summoned with a Brazier of Beckoning." },
+     { "n": "Mother Smolderweb", "npc": [10596] },
+     { "n": "Crystal Fang", "npc": [10376], "f": ["rare"] },
+     { "n": "Urok Doomhowl", "npc": [10584], "note": "Summoned at Urok's Tribute Pile." },
+     { "n": "Quartermaster Zigris", "npc": [9736] },
+     { "n": "Halycon", "npc": [10220] },
+     { "n": "Gizrul the Slavener", "npc": [10268], "note": "Appears when Halycon dies." },
+     { "n": "Overlord Wyrmthalak", "npc": [9568] }
+    ]
+   },
+   {
+    "name": "Upper Blackrock Spire",
+    "bosses": [
+     { "n": "Pyroguard Emberseer", "npc": [9816] },
+     { "n": "Solakar Flamewreath", "npc": [10264], "note": "Comes after the waves called by the Father Flame in the Rookery." },
+     { "n": "Jed Runewatcher", "npc": [10509], "f": ["rare"] },
+     { "n": "Goraluk Anvilcrack", "npc": [10899] },
+     { "n": "Warchief Rend Blackhand", "npc": [10429, 10339] },
+     { "n": "The Beast", "npc": [10430] },
+     { "n": "Lord Valthalak", "npc": [16042], "f": ["quest"], "note": "Summoned with a Brazier of Beckoning." },
+     { "n": "General Drakkisath", "npc": [10363] }
+    ]
+   }
+  ]
+ },
+ "dire-maul": {
+  "map": 429,
+  "runs": true,
+  "wings": [
+   {
+    "name": "Warpwood Quarter",
+    "bosses": [
+     { "n": "Pusillin", "npc": [14354] },
+     { "n": "Zevrim Thornhoof", "npc": [11490] },
+     { "n": "Hydrospawn", "npc": [13280] },
+     { "n": "Lethtendris", "npc": [14327, 14349] },
+     { "n": "Alzzin the Wildshaper", "npc": [11492] },
+     { "n": "Isalien", "npc": [16097], "f": ["quest"], "note": "Summoned with a Brazier of Beckoning." }
+    ]
+   },
+   {
+    "name": "Capital Gardens",
+    "bosses": [
+     { "n": "Tendris Warpwood", "npc": [11489] },
+     { "n": "Illyanna Ravenoak", "npc": [11488, 14308] },
+     { "n": "Magister Kalendris", "npc": [11487] },
+     { "n": "Tsu'zee", "npc": [11467], "f": ["rare"] },
+     { "n": "Immol'thar", "npc": [11496] },
+     { "n": "Prince Tortheldrin", "npc": [11486] },
+     { "n": "Revanchion", "npc": [14690] }
+    ]
+   },
+   {
+    "name": "Gordok Commons",
+    "bosses": [
+     { "n": "Guard Mol'dar", "npc": [14326] },
+     { "n": "Stomper Kreeg", "npc": [14322] },
+     { "n": "Guard Fengus", "npc": [14321] },
+     { "n": "Guard Slip'kik", "npc": [14323] },
+     { "n": "Captain Kromcrush", "npc": [14325] },
+     { "n": "Cho'Rush the Observer", "npc": [14324] },
+     { "n": "King Gordok", "npc": [11501] }
+    ]
+   }
+  ]
+ },
+ "scholomance": {
+  "map": 289,
+  "wings": [
+   {
+    "bosses": [
+     { "n": "Kirtonos the Herald", "npc": [10506], "note": "Summoned by placing the Blood of Innocents in the brazier." },
+     { "n": "Jandice Barov", "npc": [10503] },
+     { "n": "Rattlegore", "npc": [11622] },
+     { "n": "Death Knight Darkreaver", "npc": [14516], "f": ["quest"], "note": "Summoned for the quest The Darkreaver Menace." },
+     { "n": "Marduk Blackpool", "npc": [10433] },
+     { "n": "Vectus", "npc": [10432] },
+     { "n": "Ras Frostwhisper", "npc": [10508] },
+     { "n": "Kormok", "npc": [16118], "f": ["quest"], "note": "Summoned with a Brazier of Beckoning." },
+     { "n": "Instructor Malicia", "npc": [10505] },
+     { "n": "Doctor Theolen Krastinov", "npc": [11261] },
+     { "n": "Lorekeeper Polkelt", "npc": [10901] },
+     { "n": "The Ravenian", "npc": [10507] },
+     { "n": "Lord Alexei Barov", "npc": [10504] },
+     { "n": "Lady Illucia Barov", "npc": [10502] },
+     { "n": "Darkmaster Gandling", "npc": [1853], "note": "Appears when Malicia, Krastinov, Polkelt, The Ravenian and both Barovs are dead." },
+     { "n": "Lord Blackwood", "npc": [14695] }
+    ]
+   }
+  ]
+ },
+ "stratholme": {
+  "map": 329,
+  "wings": [
+   {
+    "name": "Main Gate",
+    "bosses": [
+     { "n": "Skul", "npc": [10393], "f": ["rare"] },
+     { "n": "Hearthsinger Forresten", "npc": [10558], "f": ["rare"] },
+     { "n": "The Unforgiven", "npc": [10516] },
+     { "n": "Timmy the Cruel", "npc": [10808] },
+     { "n": "Postmaster Malown", "npc": [11143], "f": ["summon"], "note": "Summoned by opening the postboxes with the Key to the City." },
+     { "n": "Malor the Zealous", "npc": [11032] },
+     { "n": "Crimson Hammersmith", "npc": [11120], "f": ["summon"], "note": "Appears when the Blacksmithing Plans are looted." },
+     { "n": "Cannon Master Willey", "npc": [10997] },
+     { "n": "Archivist Galford", "npc": [10811] },
+     { "n": "Jarien and Sothos", "npc": [16101, 16102], "f": ["quest"], "note": "Summoned with a Brazier of Beckoning." },
+     { "n": "Balnazzar", "npc": [10812, 10813], "note": "Grand Crusader Dathrohan becomes Balnazzar below 40% health." },
+     { "n": "Balzaphon", "npc": [14684] }
+    ]
+   },
+   {
+    "name": "Service Entrance",
+    "bosses": [
+     { "n": "Magistrate Barthilas", "npc": [10435] },
+     { "n": "Baroness Anastari", "npc": [10436] },
+     { "n": "Nerub'enkan", "npc": [10437] },
+     { "n": "Maleki the Pallid", "npc": [10438] },
+     { "n": "Stonespine", "npc": [10809], "f": ["rare"] },
+     { "n": "Ramstein the Gorger", "npc": [10439], "note": "Appears after the abominations of the slaughterhouse are killed." },
+     { "n": "Black Guard Swordsmith", "npc": [11121], "f": ["summon"], "note": "Appears when the Blacksmithing Plans are looted." },
+     { "n": "Baron Rivendare", "npc": [10440] }
+    ]
+   }
+  ]
+ },
+ "onyxias-lair": {
+  "map": 249,
+  "wings": [
+   {
+    "bosses": [
+     { "n": "Onyxia", "npc": [10184], "spells": { "10184": [17086, 18351, 18564, 18576, 18584, 18596, 18609, 18617] }, "why": "Deep Breath: the script casts these eight Breath spells from its table of flight points (m_pPointData->uiSpellId in boss_onyxia.cpp), which the extraction cannot follow; the phases (65% and 40% health), timers, the threat loss after a Fireball and the egg pits are in the same script.", "when": { "17086": "65% to 40% health", "18351": "65% to 40% health", "18564": "65% to 40% health", "18576": "65% to 40% health", "18584": "65% to 40% health", "18596": "65% to 40% health", "18609": "65% to 40% health", "18617": "65% to 40% health", "18392": "65% to 40% health", "22191": "65% to 40% health", "22197": "65% to 40% health", "18431": "below 40% health" }, "texts": { "17086": "When she moves to another spot in the air (every 15 to 25 sec), there is a 30% chance she flies across the room instead, breathing fire along her path: 1275 to 1725 Fire damage to enemies within 30 yards of each blast.", "18351": "When she moves to another spot in the air (every 15 to 25 sec), there is a 30% chance she flies across the room instead, breathing fire along her path: 1275 to 1725 Fire damage to enemies within 30 yards of each blast.", "18564": "When she moves to another spot in the air (every 15 to 25 sec), there is a 30% chance she flies across the room instead, breathing fire along her path: 1275 to 1725 Fire damage to enemies within 30 yards of each blast.", "18576": "When she moves to another spot in the air (every 15 to 25 sec), there is a 30% chance she flies across the room instead, breathing fire along her path: 1275 to 1725 Fire damage to enemies within 30 yards of each blast.", "18584": "When she moves to another spot in the air (every 15 to 25 sec), there is a 30% chance she flies across the room instead, breathing fire along her path: 1275 to 1725 Fire damage to enemies within 30 yards of each blast.", "18596": "When she moves to another spot in the air (every 15 to 25 sec), there is a 30% chance she flies across the room instead, breathing fire along her path: 1275 to 1725 Fire damage to enemies within 30 yards of each blast.", "18609": "When she moves to another spot in the air (every 15 to 25 sec), there is a 30% chance she flies across the room instead, breathing fire along her path: 1275 to 1725 Fire damage to enemies within 30 yards of each blast.", "18617": "When she moves to another spot in the air (every 15 to 25 sec), there is a 30% chance she flies across the room instead, breathing fire along her path: 1275 to 1725 Fire damage to enemies within 30 yards of each blast.", "18392": "Every 3 sec while she hovers she throws a Fireball at her current target, who then loses all threat: 801 to 1199 Fire damage and Engulfing Flames (1500 Fire damage over 6 sec, and panic) to everyone within 8 yards of the impact. The flames also scorch each burning player's nearby allies for 250 damage now and then.", "22191": "During a Deep Breath the egg pits on both sides heat up: 413 to 587 Fire damage every second for 4 sec to anyone standing in them.", "22197": "During a Deep Breath the egg pits on both sides heat up: 413 to 587 Fire damage every second for 4 sec to anyone standing in them.", "18431": "Every 15 to 30 sec: everyone nearby flees in fear for 3 sec." } }
+    ]
+   }
+  ]
+ },
+ "zone-2717": {
+  "map": 409,
+  "wings": [
+   {
+    "bosses": [
+     { "n": "Lucifron", "npc": [12118] },
+     { "n": "Magmadar", "npc": [11982] },
+     { "n": "Gehennas", "npc": [12259] },
+     { "n": "Garr", "npc": [12057] },
+     { "n": "Shazzrah", "npc": [12264], "texts": { "23138": "Every 25 to 35 sec he teleports to a random player, drops all threat and attacks that player." }, "why": "Gate of Shazzrah: the teleport and threat reset are in the script (boss_shazzrah.cpp)." },
+     { "n": "Baron Geddon", "npc": [12056], "texts": { "19695": "Surrounds him with an inferno for 8 sec that deals Fire damage to nearby enemies every second, more each time: 500, 500, 1000, 1000, 2000, 2000, 3000, then 5000. Meanwhile he cannot move or use his abilities." }, "why": "Inferno: the script deals its damage tick by tick with its own amounts (Inferno, 19698, in boss_baron_geddon.cpp)." },
+     { "n": "Golemagg the Incinerator", "npc": [11988] },
+     { "n": "Sulfuron Harbinger", "npc": [12098] },
+     { "n": "Majordomo Executus", "npc": [12018], "chest": 179703 },
+     { "n": "Ragnaros", "npc": [11502], "note": "Summoned by Majordomo Executus.", "schools": { "21154": 2 }, "texts": { "20565": "When nobody has been in his melee range for 3 sec, he hits a random player for 6000 Fire damage every 2.5 sec.", "20566": "Every 25 to 30 sec: 1000 Fire damage to nearby enemies and a knockback, after which he drops all threat.", "21154": "Every 9 to 14 sec a Flame of Ragnaros appears at a random player who uses mana and blasts those near it with Intense Heat: 2000 Fire damage and a knockback.", "21859": "After each 3 min above ground he submerges, immune to all damage, and 8 Sons of Flame appear. He comes back after 90 sec, or sooner once every Son of Flame is dead or banished." }, "why": "Submerge, Might of Ragnaros (a Flame of Ragnaros casting Intense Heat, 21155, by EventAI), Wrath's threat reset and Magma Blast's condition are in the script (boss_ragnaros.cpp)." }
+    ]
+   }
+  ]
+ },
+ "zone-2677": {
+  "map": 469,
+  "wings": [
+   {
+    "bosses": [
+     { "n": "Razorgore the Untamed", "npc": [12435] },
+     { "n": "Vaelastrasz the Corrupt", "npc": [13020] },
+     { "n": "Broodlord Lashlayer", "npc": [12017] },
+     { "n": "Firemaw", "npc": [11983] },
+     { "n": "Ebonroc", "npc": [14601] },
+     { "n": "Flamegor", "npc": [11981] },
+     { "n": "Chromaggus", "npc": [14020], "spells": { "14020": [23174] }, "texts": { "23170": "Every 5 sec the afflicted target has a 25% chance to be stunned for 4 sec (Time Stop). Hourglass Sand removes it.", "23174": "A player who carries all five Brood Afflictions turns into a Chromatic Drakonid under Chromaggus's control; a pet dies instead.", "23155": "Deals 50 Fire damage every 3 sec for 10 min. Stacks up to 50 times. When a player dies with it, Chromaggus heals 150000 health." }, "why": "Brood Affliction: Bronze works in the core (SpellAuras.cpp, Time Stop 23171; Hourglass Sand in SpellEffects.cpp), and the breath pair, the timers, the healing when a player dies with Brood Affliction: Red (23168) and Chromatic Mutation are in the script (boss_chromaggus.cpp, instance_blackwing_lair.cpp), so no record says them.", "note": "He uses two of the five breaths, the same two for the whole raid ID: one 30 sec into the fight and the other at 60 sec, each again every 60 sec. Every 7.5 sec a Brood Affliction of one colour, picked at random, hits 11 to 15 random attackers.", "when": { "23308": "every 60 sec", "23310": "every 60 sec", "23313": "every 60 sec", "23315": "every 60 sec", "23187": "every 60 sec", "22277": "every 20 sec", "23128": "every 15 sec", "28747": "below 20% health" } },
+     { "n": "Nefarian", "npc": [11583, 10162], "note": "Lord Victor Nefarius opens the fight; Nefarian lands after the drakonid waves.", "texts": { "10610": "While a Corrupted Windfury Totem from his shaman call stands, each of his melee hits has a 1 in 5 chance of an extra attack with 315 more attack power." }, "why": "Windfury Totem: he casts it on himself only while the corrupted totem gives him its aura (boss_nefarian.cpp)." }
+    ]
+   }
+  ]
+ },
+ "zone-1977": {
+  "map": 309,
+  "wings": [
+   {
+    "bosses": [
+     { "n": "High Priestess Jeklik", "npc": [14517] },
+     { "n": "High Priest Venoxis", "npc": [14507] },
+     { "n": "High Priestess Mar'li", "npc": [14510] },
+     { "n": "Bloodlord Mandokir", "npc": [11382, 14988], "f": ["optional"] },
+     { "n": "Edge of Madness", "npc": [15082, 15083, 15084, 15085], "f": ["optional", "oneOf"], "note": "One of four is summoned with Gurubashi Mojo Madness, by rotation." },
+     { "n": "Gahz'ranka", "npc": [15114], "f": ["optional"], "note": "Fished up with a Mudskunk Lure." },
+     { "n": "High Priest Thekal", "npc": [14509, 11347, 11348] },
+     { "n": "High Priestess Arlokk", "npc": [14515], "note": "Summoned by striking her gong." },
+     { "n": "Jin'do the Hexxer", "npc": [11380], "f": ["optional"] },
+     { "n": "Hakkar", "npc": [14834], "texts": { "24324": "Every 90 sec he and everyone nearby are stunned for 8 sec. Each player without Poisonous Blood loses 200 health per sec and heals him for 1000 per sec; each one with it deals him 200 Nature damage per sec instead. A Son of Hakkar leaves the poison cloud when it dies." }, "why": "Blood Siphon: the core picks Blood Siphon 24322 or 24323 by Poisonous Blood (SpellEffects.cpp), patched by spell_effect_mod; Son of Hakkar casts Poisonous Blood on death (EventAI). Each Aspect is used only while that High Priest or Priestess has not been killed, and Berserk comes after 10 min (boss_hakkar.cpp).", "when": { "24687": "if Jeklik lives", "24688": "if Venoxis lives", "24686": "if Mar'li lives", "24689": "if Thekal lives", "24690": "if Arlokk lives", "27680": "after 10 min" } }
+    ]
+   }
+  ]
+ },
+ "zone-3429": {
+  "map": 509,
+  "wings": [
+   {
+    "bosses": [
+     { "n": "Kurinnaxx", "npc": [15348], "schools": { "26524": 3 }, "texts": { "26524": "Every 8 sec he puts a sand trap under a random attacker. Anyone near it when it goes off takes 1750 to 2250 Nature damage, is silenced and has a 75% lower chance to hit for 20 sec; a trap nobody sets off is gone after 5 sec." }, "why": "Sand Trap: the script places the trap object (180647, spell 25656, Nature) and removes it after 5 sec (boss_kurinnaxx.cpp)." },
+     { "n": "General Rajaxx", "npc": [15341], "texts": { "25599": "Deals Nature damage equal to half the current health of each nearby enemy (at least 200) and knocks them back." }, "why": "Thundercrash: its damage comes from the spell script (RajaxxThundercrashScript in ruins_of_ahnqiraj.cpp), not the record." },
+     { "n": "Moam", "npc": [15340], "f": ["optional"], "texts": { "25684": "Every 90 sec he calls 3 Mana Fiends and turns to stone (Energize). He comes out when the fiends are all dead, when his mana is full or after 90 sec.", "25754": "Every 6 sec drains 500 mana from each enemy nearby, and he gains twice as much. At 25000 mana he casts Arcane Eruption." }, "why": "Stone form and mana drain are in the script (boss_moam.cpp) and the core (Drain Mana 25671 in SpellEffects.cpp)." },
+     { "n": "Buru the Gorger", "npc": [15370], "f": ["optional"] },
+     { "n": "Ayamiss the Hunter", "npc": [15369], "f": ["optional"] },
+     { "n": "Ossirian the Unscarred", "npc": [15339] }
+    ]
+   }
+  ]
+ },
+ "zone-3428": {
+  "map": 531,
+  "wings": [
+   {
+    "bosses": [
+     { "n": "The Prophet Skeram", "npc": [15263] },
+     { "n": "Lord Kri, Princess Yauj and Vem", "npc": [15511, 15543, 15544], "f": ["optional"] },
+     { "n": "Battleguard Sartura", "npc": [15516] },
+     { "n": "Fankriss the Unyielding", "npc": [15510] },
+     { "n": "Viscidus", "npc": [15299], "f": ["optional"], "spells": { "15299": [25989] }, "texts": { "26034": "After 100 Frost hits (Frost spells or wands) he attacks 18% slower and moves 15% slower.", "26036": "After 150 Frost hits he attacks 43% slower and moves 30% slower.", "25937": "After 200 Frost hits he freezes. 150 physical hits on him while he is frozen (wands do not count) make him burst.", "25865": "When he bursts he splits into one glob per 5% of his health. Each glob killed takes 5% of his health away; each one that reaches him merges back in. A burst below 5% health kills him.", "25989": "Every 30 to 40 sec a toxin cloud forms under a random attacker and stays for 3 min. Inside it: 1313 to 1687 Nature damage every 2 sec and 40% slower movement." }, "hide": [25897, 26601], "why": "The frost, freeze and burst counts are in the script (SpellHit in boss_viscidus.cpp) and the core (Viscidus Freeze in UnitAuraProcHandler.cpp, Viscidus explode in SpellEffects.cpp). Viscidus Grows only marks a glob merging back in. The Toxin cloud comes from a trigger creature the script places at a random attacker for 3 min (Toxin, 26575, casts it again every 10 sec); the Poison Bolt it throws at that trigger (26601) is only the visual." },
+     { "n": "Princess Huhuran", "npc": [15509] },
+     { "n": "Twin Emperors", "npc": [15276, 15275], "texts": { "800": "Every 30 to 40 sec the emperors swap places. Each one drops all threat, stands still for 2 sec, then attacks the nearest player.", "7393": "While the two emperors stand within 60 yards of each other, they heal each other every 1.5 sec (30000 per heal)." }, "why": "Twin Teleport and Heal Brother are timed and placed by the script (boss_twinemperors.cpp)." },
+     { "n": "Ouro", "npc": [15517], "f": ["optional"] },
+     { "n": "C'Thun", "npc": [15727, 15589], "spells": { "15589": [26029] }, "why": "Dark Glare: the core casts it while the Eye turns (the Rotate auras, SpellAuras.cpp), started by the script's Rotate Trigger." }
+    ]
+   }
+  ]
+ },
+ "zone-3456": {
+  "map": 533,
+  "wings": [
+   {
+    "name": "Arachnid Quarter",
+    "bosses": [
+     { "n": "Anub'Rekhan", "npc": [15956] },
+     { "n": "Grand Widow Faerlina", "npc": [15953] },
+     { "n": "Maexxna", "npc": [15952] }
+    ]
+   },
+   {
+    "name": "Plague Quarter",
+    "bosses": [
+     { "n": "Noth the Plaguebringer", "npc": [15954] },
+     { "n": "Heigan the Unclean", "npc": [15936] },
+     { "n": "Loatheb", "npc": [16011], "texts": { "29201": "Every 10 sec on each priest, druid, paladin and shaman nearby: after their next helpful spell, their heals, dispels, Holy Nova and Power Word: Shield fizzle for 1 min. Potions and other items still work." }, "why": "Corrupted Mind: the class spells come from the script (boss_loatheb.cpp) and the core makes those spells fizzle (Spell.cpp, class script 4327)." }
+    ]
+   },
+   {
+    "name": "Military Quarter",
+    "bosses": [
+     { "n": "Instructor Razuvious", "npc": [16061] },
+     { "n": "Gothik the Harvester", "npc": [16060], "texts": { "28679": "Every 20 sec once he is down in the room: everyone nearby loses 10% of all stats (and so of health and mana) for 1 min. Stacks up to 20 times." }, "why": "Harvest Soul: its timer is in the script (boss_gothik.cpp); the record lowers all stats by 10% (aura 137) and stacks to 20." },
+     { "n": "The Four Horsemen", "npc": [16064, 16065, 16062, 16063], "chest": 181366, "spells": { "16065": [28863] }, "schools": { "28832": 5, "28833": 5, "28834": 5, "28835": 5 }, "texts": { "25104": "When his target gets more than 100 yards away, he summons that player back to him.", "28832": "Marks every enemy nearby every 12 sec. Each time a target gets the same mark again, it takes Shadow damage by its number of marks: 250 at 2, 1000 at 3, 3000 at 4, then 1000 per mark. Each mark also halves everyone's threat on the Horseman.", "28833": "Marks every enemy nearby every 12 sec. Each time a target gets the same mark again, it takes Shadow damage by its number of marks: 250 at 2, 1000 at 3, 3000 at 4, then 1000 per mark. Each mark also halves everyone's threat on the Horseman.", "28834": "Marks every enemy nearby every 12 sec. Each time a target gets the same mark again, it takes Shadow damage by its number of marks: 250 at 2, 1000 at 3, 3000 at 4, then 1000 per mark. Each mark also halves everyone's threat on the Horseman.", "28835": "Marks every enemy nearby every 12 sec. Each time a target gets the same mark again, it takes Shadow damage by its number of marks: 250 at 2, 1000 at 3, 3000 at 4, then 1000 per mark. Each mark also halves everyone's threat on the Horseman.", "28863": "Every 12 sec a Void Zone appears under a random player and drifts slowly for 90 sec; anyone standing in it takes 3960 to 4840 Shadow damage every second.", "28884": "Every 12 to 15 sec at a random player: 12825 to 14175 Fire damage, split evenly among everyone within 8 yards.", "28928": "When Highlord Mograine dies, his spirit stays in his place, rooted, and keeps casting the Mark of Mograine every 12 sec.", "28931": "When Lady Blaumeux dies, her spirit stays in her place, rooted, and keeps casting the Mark of Blaumeux every 12 sec.", "28932": "When Thane Korth'azz dies, his spirit stays in his place, rooted, and keeps casting the Mark of Korth'azz every 12 sec.", "28934": "When Sir Zeliek dies, his spirit stays in his place, rooted, and keeps casting the Mark of Zeliek every 12 sec." }, "hide": [28836], "why": "The marks have no text and do nothing by themselves: their damage comes from the script (SpellHitTarget in boss_four_horsemen.cpp, cast as the plain Mark, 28836, Shadow), which the texts tell, as they tell the spirits that keep marking after a death, Summon Player's range, Meteor's split (MeteorScript in spell_special.cpp) and Lady Blaumeux's Void Zone (a creature, 16697, whose aura casts Consumption, 28865)." }
+    ]
+   },
+   {
+    "name": "Construct Quarter",
+    "bosses": [
+     { "n": "Patchwerk", "npc": [16028], "texts": { "28308": "Every 1.2 sec: 22100 to 29900 Physical damage to the player with the most health among the first four on his threat list in melee reach, other than his current target (who is struck only when nobody else is in reach).", "32309": "From 30 sec after his Berserk at 7 min, every 5 sec: 3238 to 3762 Nature damage to enemies around him, then 2375 to 2625 more every 3 sec for 6 sec." }, "why": "Hateful Strike's target and both timers are in the script (boss_patchwerk.cpp).", "when": { "27680": "after 7 min", "28131": "below 5% health" } },
+     { "n": "Grobbulus", "npc": [15931] },
+     { "n": "Gluth", "npc": [15932], "texts": { "28374": "Every 105 sec every player in Naxxramas, and each Zombie Chow it hits, drops to 5% health (no lower); the zombies then walk to him. Every 3 sec he eats each Zombie Chow within 15 yards and heals 5% of his health for each." }, "why": "Decimate and the zombie feeding are in the script (boss_gluth.cpp, Decimate 28375)." },
+     { "n": "Thaddius", "npc": [15928, 15929, 15930], "texts": { "28089": "Every 30 sec he shifts polarity; 3 sec later every player gets a Positive or a Negative Charge. Every 5 sec each charged player deals 2000 Nature damage to nearby players without the same charge, and does 10% more damage for each player with the same charge within 13 yards." }, "why": "Polarity Shift: the charges are given by the script and their damage and bonus are aura and spell scripts (boss_thaddius.cpp)." }
+    ]
+   },
+   {
+    "name": "Frostwyrm Lair",
+    "bosses": [
+     { "n": "Sapphiron", "npc": [15989] },
+     { "n": "Kel'Thuzad", "npc": [15990], "texts": { "28408": "From phase two, every 60 to 75 sec: he mind controls his current target and up to 3 other random players for 20 sec, then drops all threat. They grow, deal 200% more damage and receive 500% more healing." }, "why": "Chains of Kel'Thuzad: targets and effects come from the core (SpellEffects.cpp, Chains 28410) and the timer from the script (boss_kelthuzad.cpp)." }
+    ]
+   }
+  ]
+ }
+}
