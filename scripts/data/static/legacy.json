@@ -1,0 +1,79 @@
+{
+  "_about": "Grimoire's own facts about the Legacy system, added to the challenges and perk trees the talentsforever export reads from the beta client. Ladders: challenges of one kind reached in order (a level 60 Warrior reached 25 and 45 first), so ticking a step ticks the steps before it. Spelunker: the dungeons each dungeon challenge lists in the game's Legacy window (Blizzard's announcement gives the level bands; one slot takes either Ragefire Chasm or the Hall of Thanes). Factions: the battleground reputations, with the VMaNGOS faction ids where the faction is Classic's. Builds: Grimoire's recommended perk plans, each a full character's points in the order to spend them (plan codes as in the planner's links).",
+  "builds": [
+    {
+      "id": "leveling",
+      "name": "Leveling an alt",
+      "kind": "leveling",
+      "summary": "Well Rested and Talented for faster levels and talent points from level 5, then Thrill of Adventure to keep questing without stopping to drink.",
+      "code": "kkkkklllllooooot"
+    },
+    {
+      "id": "raiding",
+      "name": "Raiding",
+      "kind": "raid",
+      "summary": "Raid buffs and food that last twice as long, no vendor reagents for your class abilities, cheaper wipes and more reputation.",
+      "code": "EEAAABBIIIGJJJJJ"
+    },
+    {
+      "id": "battlegrounds",
+      "name": "Battlegrounds",
+      "kind": "pvp",
+      "summary": "10% more Honor, free buffs after a resurrection, 40% less durability lost when you die and no vendor reagents.",
+      "code": "EEIIIxxxxxIIGAAA"
+    },
+    {
+      "id": "crafting",
+      "name": "Crafting and gathering",
+      "kind": "crafting",
+      "summary": "More skill-ups, twice the Scarce materials, cheaper vendors, a skill point a day from Dedicated Study and a 15% chance of double Merchant’s Favor on crates.",
+      "code": "4444488888556999"
+    }
+  ],
+  "ladders": {
+    "class": [25, 45, 60],
+    "prof": [150, 225, 300],
+    "rank": [3, 7, 10, 13, 14],
+    "season": [4, 7, 10]
+  },
+  "professions": {
+    "Alchemy": { "key": "alchemy", "icon": "trade_alchemy", "skillLine": 171 },
+    "Blacksmithing": { "key": "blacksmithing", "icon": "trade_blacksmithing", "skillLine": 164 },
+    "Enchanting": { "key": "enchanting", "icon": "trade_engraving", "skillLine": 333 },
+    "Engineering": { "key": "engineering", "icon": "trade_engineering", "skillLine": 202 },
+    "Leatherworking": { "key": "leatherworking", "icon": "trade_leatherworking", "skillLine": 165 },
+    "Tailoring": { "key": "tailoring", "icon": "trade_tailoring", "skillLine": 197 }
+  },
+  "battlegrounds": {
+    "Warsong Gulch": { "slug": "warsong-gulch", "alliance": { "name": "Silverwing Sentinels", "id": 890 }, "horde": { "name": "Warsong Outriders", "id": 889 } },
+    "Arathi Basin": { "slug": "arathi-basin", "alliance": { "name": "League of Arathor", "id": 509 }, "horde": { "name": "The Defilers", "id": 510 } },
+    "Alterac Valley": { "slug": "alterac-valley", "alliance": { "name": "Stormpike Guard", "id": 730 }, "horde": { "name": "Frostwolf Clan", "id": 729 } },
+    "Darkspear Islands": { "slug": "darkspear-islands", "alliance": { "name": "Theramore Expeditionary Force" }, "horde": { "name": "Darkspear Raiders" } }
+  },
+  "spelunker": {
+    "Novice Spelunker": {
+      "key": "dungeons-15",
+      "band": "15 to 25",
+      "dungeons": [["ragefire-chasm", "hall-of-thanes"], "ruins-of-lordaeron", "wailing-caverns", "the-deadmines", "shadowfang-keep", "whelgars-excavation"]
+    },
+    "Experienced Spelunker": {
+      "key": "dungeons-26",
+      "band": "26 to 45",
+      "dungeons": ["city-of-dalaran", "blackfathom-deeps", "gnomeregan", "drowned-city", { "slug": "scarlet-monastery", "parts": "Graveyard, Library, Armory and Cathedral" }, "razorfen-kraul", "kroldok-stronghold"]
+    },
+    "Master Spelunker": {
+      "key": "dungeons-46",
+      "band": "46 to 60",
+      "dungeons": ["razorfen-downs", "uldaman", "zulfarrak", "maraudon", "alcaz-prison", "the-temple-of-atalhakkar", "blackrock-depths", "blackmaw-hold", { "slug": "blackrock-spire", "parts": "Lower and Upper" }, "scholomance", { "slug": "stratholme", "parts": "both sides" }, { "slug": "dire-maul", "parts": "East, North and West" }, "shapers-terrace"]
+    }
+  },
+  "raids": {
+    "Conqueror of the Lair": { "key": "onyxia", "slug": "onyxias-lair" },
+    "Conqueror of the Wilds": { "key": "hyjal", "slug": "hyjal-summit" },
+    "Conqueror of the Deeps": { "key": "barrow", "slug": "barrow-deeps" }
+  },
+  "other": {
+    "Explorer": { "key": "explore", "icon": "inv_misc_map_01" },
+    "Lord Valthalak Laid to Rest": { "key": "valthalak", "icon": "inv_misc_bone_elfskull_01" }
+  }
+}

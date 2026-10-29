@@ -1,0 +1,194 @@
+{
+  "about": "Grimoire's leveling routes: where each starting zone begins and the flight paths a new character knows, the zones each faction quests in, each route's plan (its zones in order, each with the level it runs to: the zones the route may go to, from two levels before their turn, and the ones it prefers at each level; where it goes is what pays best for the time), and the boats, zeppelins and the Deeprun Tram (docks placed on the World Trigger and zeppelin master spawns of the VMaNGOS database, the tram's ends on its area triggers), with the time each takes, and the gates: where two zones meet on foot (a road, a pass, a bridge, a tunnel), placed on spawns at both sides, with the walk through when it is longer than the step across. The steps themselves are worked out by scripts/data/lib/guide.mjs.",
+  "alliance": [12, 1, 141, 1519, 1537, 1657, 40, 38, 148, 44, 10, 11, 331, 406, 267, 45, 36, 405, 400, 33, 15, 3, 8, 357, 440, 47, 51, 4, 16, 490, 361, 46, 28, 139, 618, 1377, 493],
+  "horde": [14, 215, 85, 1637, 1638, 1497, 17, 130, 406, 331, 267, 400, 405, 45, 36, 33, 15, 3, 8, 357, 440, 47, 51, 4, 16, 490, 361, 46, 28, 139, 618, 1377, 493],
+  "routes": [
+    {
+      "id": "human",
+      "name": "Human",
+      "faction": "alliance",
+      "races": [1],
+      "startQuest": 783,
+      "startZone": "Northshire Valley",
+      "plan": [[12,10], [40,14], [38,16], [44,18], [148,20], [331,21], "alliance-20"],
+      "taxi": [2]
+    },
+    {
+      "id": "dwarf-gnome",
+      "name": "Dwarf and Gnome",
+      "faction": "alliance",
+      "races": [4, 64],
+      "startQuest": 179,
+      "startZone": "Coldridge Valley",
+      "plan": [[1,11], [38,14], [40,16], [44,18], [148,20], [331,21], "alliance-20"],
+      "taxi": [6]
+    },
+    {
+      "id": "night-elf",
+      "name": "Night Elf",
+      "faction": "alliance",
+      "races": [8],
+      "startQuest": 456,
+      "startZone": "Shadowglen",
+      "plan": [[141,11], [148,18], [331,20], [406,21], "alliance-20"],
+      "taxi": [26, 27]
+    },
+    {
+      "id": "orc-troll",
+      "name": "Orc and Troll",
+      "faction": "horde",
+      "races": [2, 128],
+      "startQuest": 4641,
+      "startZone": "Valley of Trials",
+      "plan": [[14,11], [17,20], "horde-20"],
+      "taxi": [23]
+    },
+    {
+      "id": "tauren",
+      "name": "Tauren",
+      "faction": "horde",
+      "races": [32],
+      "startQuest": 747,
+      "startZone": "Camp Narache",
+      "plan": [[215,11], [17,20], "horde-20"],
+      "taxi": [22]
+    },
+    {
+      "id": "undead",
+      "name": "Undead",
+      "faction": "horde",
+      "races": [16],
+      "startQuest": 363,
+      "startZone": "Deathknell",
+      "plan": [[85,11], [130,15], [17,20], "horde-20"],
+      "taxi": [11]
+    }
+  ],
+  "transports": [
+    {
+      "id": "menethil-auberdine",
+      "kind": "boat",
+      "side": "alliance",
+      "a": {"area": 11, "x": 5.2, "y": 57.73, "name": "Menethil Harbor"},
+      "b": {"area": 148, "x": 32.3, "y": 43.76, "name": "Auberdine"},
+      "time": 300
+    },
+    {
+      "id": "menethil-theramore",
+      "kind": "boat",
+      "side": "alliance",
+      "a": {"area": 11, "x": 5.75, "y": 63.39, "name": "Menethil Harbor"},
+      "b": {"area": 15, "x": 71.63, "y": 56.06, "name": "Theramore Isle"},
+      "time": 300
+    },
+    {
+      "id": "auberdine-ruttheran",
+      "kind": "boat",
+      "side": "alliance",
+      "a": {"area": 148, "x": 33.3, "y": 40.18, "name": "Auberdine"},
+      "b": {"area": 141, "x": 55, "y": 96, "name": "Rut'theran Village"},
+      "time": 280
+    },
+    {
+      "id": "bootybay-ratchet",
+      "kind": "boat",
+      "side": "both",
+      "a": {"area": 33, "x": 26.08, "y": 73.35, "name": "Booty Bay"},
+      "b": {"area": 17, "x": 63.74, "y": 38.5, "name": "Ratchet"},
+      "time": 300
+    },
+    {
+      "id": "orgrimmar-undercity",
+      "kind": "zeppelin",
+      "side": "horde",
+      "a": {"area": 14, "x": 50.82, "y": 13.54, "name": "the zeppelin tower outside Orgrimmar"},
+      "b": {"area": 85, "x": 60.74, "y": 58.87, "name": "the zeppelin tower outside the Undercity"},
+      "time": 320
+    },
+    {
+      "id": "orgrimmar-gromgol",
+      "kind": "zeppelin",
+      "side": "horde",
+      "a": {"area": 14, "x": 50.69, "y": 12.89, "name": "the zeppelin tower outside Orgrimmar"},
+      "b": {"area": 33, "x": 31.54, "y": 29.36, "name": "Grom'gol Base Camp"},
+      "time": 280
+    },
+    {
+      "id": "undercity-gromgol",
+      "kind": "zeppelin",
+      "side": "horde",
+      "a": {"area": 85, "x": 61.78, "y": 59.18, "name": "the zeppelin tower outside the Undercity"},
+      "b": {"area": 33, "x": 31.43, "y": 29.91, "name": "Grom'gol Base Camp"},
+      "time": 300
+    },
+    {
+      "id": "deeprun-tram",
+      "kind": "tram",
+      "side": "alliance",
+      "time": 120,
+      "a": {"area": 1519, "x": 69.58, "y": 30.26, "name": "the Deeprun Tram in Stormwind"},
+      "b": {"area": 1537, "x": 78.02, "y": 51.37, "name": "the Deeprun Tram in Ironforge"}
+    },
+    {
+      "id": "darnassus-ruttheran",
+      "kind": "portal",
+      "side": "alliance",
+      "time": 15,
+      "a": {"area": 1657, "x": 29.1, "y": 41.2, "name": "Darnassus"},
+      "b": {"area": 141, "x": 55.9, "y": 89.3, "name": "Rut'theran Village"}
+    }
+  ],
+  "plans": {
+    "alliance-20": [
+      [11,22], [44,24], [10,27], [331,28], [11,29], [267,32], [33,34], [45,35], [15,37], [405,38], [400,38],
+      [3,39], [33,41], [8,42], [440,44], [357,46], [47,48], [440,49], [51,50], [4,51], [490,53], [16,54],
+      [361,54], [46,55], [28,56], [618,57], [139,58], [28,59], [1377,60]
+    ],
+    "horde-20": [
+      [406,23], [17,25], [331,26], [400,29], [267,31], [405,34], [45,36], [33,38], [15,39], [3,41], [33,42],
+      [8,43], [440,45], [357,47], [47,48], [440,49], [51,50], [16,51], [490,53], [361,54], [46,55], [28,56],
+      [618,57], [139,58], [28,59], [1377,60]
+    ]
+  },
+  "gates": [
+    { "name": "Dun Morogh's South Gate", "a": { "area": 1, "x": 87.0, "y": 50.3 }, "b": { "area": 38, "x": 21.4, "y": 67.3 } },
+    { "name": "Dun Algaz", "a": { "area": 38, "x": 25.4, "y": 10.4 }, "b": { "area": 11, "x": 55.7, "y": 85.0 } },
+    { "name": "the Badlands road", "a": { "area": 38, "x": 34.3, "y": 91.6 }, "b": { "area": 3, "x": 34.3, "y": 17.3 } },
+    { "name": "Thandol Span", "a": { "area": 11, "x": 48.6, "y": 15.0 }, "b": { "area": 45, "x": 45.3, "y": 93.2 } },
+    { "name": "Thoradin's Wall", "a": { "area": 45, "x": 19.5, "y": 21.3 }, "b": { "area": 267, "x": 82.3, "y": 48.4 } },
+    { "name": "the Hinterlands road", "a": { "area": 267, "x": 88.2, "y": 24.8 }, "b": { "area": 47, "x": 11.2, "y": 57.1 } },
+    { "name": "Alterac's foothills", "a": { "area": 267, "x": 57.6, "y": 15.1 }, "b": { "area": 36, "x": 56.6, "y": 74.9 } },
+    { "name": "the Silverpine road", "a": { "area": 267, "x": 7.9, "y": 45.3 }, "b": { "area": 130, "x": 62.1, "y": 80.1 } },
+    { "name": "Tirisfal's southern woods", "a": { "area": 130, "x": 35.2, "y": 9.9 }, "b": { "area": 85, "x": 23.4, "y": 81.2 } },
+    { "name": "the Bulwark", "a": { "area": 85, "x": 83.5, "y": 68.0 }, "b": { "area": 28, "x": 26.6, "y": 56.0 } },
+    { "name": "the Thondroril River", "a": { "area": 28, "x": 80.6, "y": 61.6 }, "b": { "area": 139, "x": 18.6, "y": 72.6 } },
+    { "name": "Westfall's border", "a": { "area": 12, "x": 21.4, "y": 94.8 }, "b": { "area": 40, "x": 62.1, "y": 32.5 } },
+    { "name": "Duskwood's border", "a": { "area": 12, "x": 35.8, "y": 88.6 }, "b": { "area": 10, "x": 19.2, "y": 16.8 } },
+    { "name": "Three Corners", "a": { "area": 12, "x": 91.1, "y": 78.8 }, "b": { "area": 44, "x": 3.4, "y": 77.5 } },
+    { "name": "the Raven Hill road", "a": { "area": 40, "x": 73.6, "y": 65.6 }, "b": { "area": 10, "x": 14.6, "y": 67.3 } },
+    { "name": "Three Corners", "a": { "area": 10, "x": 99.4, "y": 3.8 }, "b": { "area": 44, "x": 7.7, "y": 83.1 } },
+    { "name": "the Stranglethorn road", "a": { "area": 10, "x": 37.3, "y": 84.2 }, "b": { "area": 33, "x": 38.0, "y": 2.9 } },
+    { "name": "Deadwind Pass", "a": { "area": 10, "x": 87.5, "y": 35.3 }, "b": { "area": 8, "x": 4.0, "y": 60.0 }, "yards": 2200 },
+    { "name": "the Blasted Lands road", "a": { "area": 8, "x": 38.1, "y": 75.7 }, "b": { "area": 4, "x": 55.8, "y": 9.9 } },
+    { "name": "the Burning Steppes pass", "a": { "area": 44, "x": 29.8, "y": 8.3 }, "b": { "area": 46, "x": 70.1, "y": 84.9 } },
+    { "name": "Blackrock Mountain", "a": { "area": 46, "x": 27.0, "y": 18.2 }, "b": { "area": 51, "x": 33.0, "y": 85.3 }, "yards": 600 },
+    { "name": "the Southfury River", "a": { "area": 14, "x": 15.5, "y": 34.8 }, "b": { "area": 17, "x": 53.2, "y": 15.5 } },
+    { "name": "Mulgore's gate", "a": { "area": 17, "x": 39.0, "y": 47.6 }, "b": { "area": 215, "x": 61.7, "y": 45.6 } },
+    { "name": "the Ashenvale road", "a": { "area": 17, "x": 59.8, "y": 3.3 }, "b": { "area": 331, "x": 89.2, "y": 85.3 } },
+    { "name": "the Stonetalon road", "a": { "area": 17, "x": 21.9, "y": 24.0 }, "b": { "area": 406, "x": 58.2, "y": 89.8 } },
+    { "name": "the Dustwallow road", "a": { "area": 17, "x": 64.6, "y": 58.7 }, "b": { "area": 15, "x": 56.7, "y": 9.2 } },
+    { "name": "the Great Lift", "a": { "area": 17, "x": 48.5, "y": 96.3 }, "b": { "area": 400, "x": 41.5, "y": 32.9 } },
+    { "name": "the Darkshore road", "a": { "area": 331, "x": 20.4, "y": 10.2 }, "b": { "area": 148, "x": 38.0, "y": 91.4 } },
+    { "name": "the Talondeep Path", "a": { "area": 331, "x": 42.3, "y": 71.0 }, "b": { "area": 406, "x": 78.0, "y": 43.1 }, "yards": 500 },
+    { "name": "the Azshara road", "a": { "area": 331, "x": 93.7, "y": 50.5 }, "b": { "area": 16, "x": 11.1, "y": 78.2 } },
+    { "name": "the Felwood road", "a": { "area": 331, "x": 14.0, "y": 9.2 }, "b": { "area": 361, "x": 13.3, "y": 73.0 } },
+    { "name": "Timbermaw Hold", "a": { "area": 361, "x": 64.9, "y": 5.6 }, "b": { "area": 618, "x": 24.8, "y": 33.3 }, "yards": 700 },
+    { "name": "Timbermaw Hold", "a": { "area": 361, "x": 64.9, "y": 5.6 }, "b": { "area": 493, "x": 35.7, "y": 72.3 }, "yards": 700 },
+    { "name": "the Desolace road", "a": { "area": 406, "x": 57.3, "y": 89.6 }, "b": { "area": 405, "x": 80.6, "y": 16.3 } },
+    { "name": "the Feralas road", "a": { "area": 405, "x": 38.4, "y": 97.1 }, "b": { "area": 357, "x": 43.7, "y": 8.3 } },
+    { "name": "Thalanaar", "a": { "area": 357, "x": 90.5, "y": 46.4 }, "b": { "area": 400, "x": 9.5, "y": 16.6 } },
+    { "name": "the Shimmering Flats road", "a": { "area": 400, "x": 66.3, "y": 84.5 }, "b": { "area": 440, "x": 44.7, "y": 12.8 } },
+    { "name": "the Un'Goro ramp", "a": { "area": 440, "x": 30.9, "y": 33.5 }, "b": { "area": 490, "x": 77.2, "y": 59.7 } },
+    { "name": "the Silithus path", "a": { "area": 490, "x": 30.0, "y": 24.0 }, "b": { "area": 1377, "x": 82.0, "y": 18.0 } }
+  ]
+}

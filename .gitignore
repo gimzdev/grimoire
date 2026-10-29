@@ -1,0 +1,33 @@
+# dependencies
+/node_modules
+
+# next.js
+/.next/
+/out/
+next-env.d.ts
+*.tsbuildinfo
+
+# local caches
+/.data/
+
+# env files
+.env
+.env*.local
+
+# installer state, and the secrets accounts are signed with
+.grimoire-settings
+.grimoire-secrets
+.grimoire-files
+*.sh
+
+# misc
+.DS_Store
+npm-debug.log*
+.vercel
+
+# the in-game addon: its data and zip are built by npm run addon
+/addon/GrimoireForever/Data/
+/addon/dist/
+
+.vercel
+.env*
