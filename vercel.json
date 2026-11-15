@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "npm run build",
+  "regions": ["fra1"],
+  "crons": [{ "path": "/api/cron", "schedule": "17 3 * * *" }],
+  "redirects": [
+    { "source": "/:path*", "has": [{ "type": "host", "value": "www.wowgrimoire.app" }], "destination": "https://wowgrimoire.app/:path*", "permanent": true }
+  ],
+  "git": { "deploymentEnabled": false }
+}

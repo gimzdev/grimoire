@@ -1,0 +1,94 @@
+[
+ {
+  "id": 1,
+  "slug": "human",
+  "name": "Human",
+  "faction": "alliance",
+  "icon": "race_human_male",
+  "start": "Elwynn Forest",
+  "source": "Human"
+ },
+ {
+  "id": 3,
+  "slug": "dwarf",
+  "name": "Dwarf",
+  "faction": "alliance",
+  "icon": "race_dwarf_male",
+  "start": "Dun Morogh",
+  "source": "Dwarf"
+ },
+ {
+  "id": 4,
+  "slug": "night-elf",
+  "name": "Night Elf",
+  "faction": "alliance",
+  "icon": "achievement_character_nightelf_male",
+  "start": "Teldrassil",
+  "source": "Night Elf"
+ },
+ {
+  "id": 7,
+  "slug": "gnome",
+  "name": "Gnome",
+  "faction": "alliance",
+  "icon": "race_gnome_male",
+  "start": "Dun Morogh",
+  "source": "Gnome"
+ },
+ {
+  "id": 95,
+  "slug": "high-order-skyborne",
+  "name": "High Order Skyborne",
+  "faction": "alliance",
+  "icon": "inv_elemental_primal_air",
+  "start": "Zephras Isle",
+  "isNew": true,
+  "source": "Skyborne (High Order)"
+ },
+ {
+  "id": 2,
+  "slug": "orc",
+  "name": "Orc",
+  "faction": "horde",
+  "icon": "race_orc_male",
+  "start": "Durotar",
+  "source": "Orc"
+ },
+ {
+  "id": 5,
+  "slug": "undead",
+  "name": "Undead",
+  "faction": "horde",
+  "icon": "race_undead_male",
+  "start": "Tirisfal Glades",
+  "source": "Undead"
+ },
+ {
+  "id": 6,
+  "slug": "tauren",
+  "name": "Tauren",
+  "faction": "horde",
+  "icon": "race_tauren_male",
+  "start": "Mulgore",
+  "source": "Tauren"
+ },
+ {
+  "id": 8,
+  "slug": "troll",
+  "name": "Troll",
+  "faction": "horde",
+  "icon": "race_troll_male",
+  "start": "Durotar",
+  "source": "Troll"
+ },
+ {
+  "id": 96,
+  "slug": "windshaper-skyborne",
+  "name": "Windshaper Skyborne",
+  "faction": "horde",
+  "icon": "inv_misc_volatileair",
+  "start": "Zephras Isle",
+  "isNew": true,
+  "source": "Skyborne (Windshaper)"
+ }
+]

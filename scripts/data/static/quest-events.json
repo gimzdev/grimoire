@@ -1,0 +1,405 @@
+{
+  "about": "Hand-written objectives for quests whose scripted part scripts/data/lib/events.mjs cannot work out from the VMaNGOS world database alone, mostly because a VMaNGOS core (C++) script runs it, or because the database leaves a choice the quest text makes (which lockbox, which hot spot). Facts only: every id is a VMaNGOS creature, object, item or area trigger id, and every explicit point is a position from the VMaNGOS world database (spawns, area triggers, script rows) or from a core script, as each source says. VMaNGOS (world database and core, github.com/vmangos/core) is GPL-2.0-or-later; nothing here is copied from it but these facts. Entries here take precedence over the methods of events.mjs. quests: { id: { objectives: [{ kind, npc?, object?, item?, text, rq?, at?, points? }], giver?, ender?, source } } - rq is the index of the quests.json row the objective stands for; at says where it is done when that is not where its npc or object stands ({ npc | object | areatrigger: id or [ids], waypoint: [script_waypoint entry, point] }); giver and ender place a giver or ender with no fixed spot. skip: { id: reason } quests left out even if a method resolves them. text: { id: [line, ...] } better lines for what a method resolves, by objective (null keeps the method's line).",
+  "quests": {
+    "30": {
+      "objectives": [
+        { "kind": "use", "object": 177794, "item": 15883, "text": "Take the Half Pendant of Aquatic Agility from the Strange Lockbox in the heart of the Sludge Fen, the Barrens" },
+        { "kind": "use", "object": 177844, "item": 15882, "text": "Take the Half Pendant of Aquatic Endurance from the Strange Lockbox off the Silverpine coast, west of the North Tide's Run" },
+        { "kind": "item", "item": 15883, "object": 177788, "text": "Form the Pendant of the Sea Lion from the two halves near the Shrine of Remulos", "rq": 0 }
+      ],
+      "source": "VMaNGOS gossip_menu_option 4041/4042 (condition 233: quest 30 taken) on Silva Fil'naveth 11800 and Bunthen Plainswind 11798 lead to npc_text 5376 and 5374 (broadcast_text 8040 Sludge Fen, 8038 Silverpine Forest); gameobject 177794 (gameobject_loot_template 14628: item 15883) at the Sludge Fen and 177844 (loot 14626: item 15882) off Silverpine; item 15883 spell 19720 Combine Pendants (reagent 15882, creates 15885) needs spell focus 1043, gameobject 177788 Shrine of Remulos."
+    },
+    "272": {
+      "objectives": [
+        { "kind": "use", "object": 177792, "item": 15883, "text": "Take the Half Pendant of Aquatic Agility from the Strange Lockbox at the Stone Claw, off northern Darkshore" },
+        { "kind": "use", "object": 177790, "item": 15882, "text": "Take the Half Pendant of Aquatic Endurance from the Strange Lockbox by the sunken boat off the Gold Coast Quarry, Westfall" },
+        { "kind": "item", "item": 15883, "object": 177788, "text": "Form the Pendant of the Sea Lion from the two halves near the Shrine of Remulos", "rq": 0 }
+      ],
+      "source": "VMaNGOS gossip_menu_option 4041/4042 (condition 234: quest 272 taken) on Silva Fil'naveth 11800 and Bunthen Plainswind 11798 lead to npc_text 5375 and 5373 (broadcast_text 8039 Darkshore, 8037 Westfall); gameobject 177792 (loot 14628: item 15883) off Darkshore and 177790 (loot 14626: item 15882) off Westfall; item 15883 spell 19720 Combine Pendants needs spell focus 1043, gameobject 177788 Shrine of Remulos."
+    },
+    "273": {
+      "objectives": [
+        { "kind": "explore", "at": { "areatrigger": 171 }, "text": "Follow the road south around the loch to Huldar, Miran and Saean, and help them against the ambush" }
+      ],
+      "source": "VMaNGOS areatrigger_template 171 'Loch Modan, The Loch - Quest Resupplying the Excavation, Ambush' (script at_huldar_miran); core eastern_kingdoms/loch_modan/loch_modan.cpp AreaTrigger_at_huldar_miran completes quest 273 when the trigger is entered; Huldar 2057 spawns there."
+    },
+    "434": {
+      "objectives": [
+        { "kind": "explore", "points": [{ "map": 0, "x": -8402.6, "y": 465.7 }], "text": "Wait in the garden until Lord Gregor Lescovar and Marzon the Silent Blade have had their conversation" },
+        { "kind": "kill", "npc": 1754, "points": [{ "map": 0, "x": -8402.6, "y": 465.7 }], "text": "Kill Lord Gregor Lescovar", "rq": 0 },
+        { "kind": "kill", "npc": 1755, "points": [{ "map": 0, "x": -8401.2, "y": 491.1 }], "text": "Kill Marzon the Silent Blade", "rq": 1 }
+      ],
+      "source": "VMaNGOS creature_movement_template 1754 (Lord Gregor Lescovar) point 7 at -8402.6, 465.7 runs creature_movement_scripts 175407: SUMMON_CREATURE 1755 Marzon the Silent Blade at -8401.2, 491.1 and 'The Attack: Player - Complete Quest' (QUEST_EXPLORED 434)."
+    },
+    "944": {
+      "objectives": [
+        { "kind": "explore", "at": { "areatrigger": [223, 224, 225] }, "text": "Explore the Master's Glaive" },
+        { "kind": "item", "item": 5251, "at": { "areatrigger": [223, 224, 225] }, "text": "Use the Phial of Scrying to create a Scrying Bowl, then speak with Onu through it" }
+      ],
+      "ender": { "object": 10076, "at": { "areatrigger": [223, 224, 225] } },
+      "source": "VMaNGOS areatrigger_involvedrelation 223, 224, 225 (The Master's Glaive) for quest 944; item 5251 Phial of Scrying spell 5809 Create Scrying Bowl summons gameobject 10076 Scrying Bowl, the quest's ender (gameobject_involvedrelation), which has no spawn of its own."
+    },
+    "974": {
+      "objectives": [
+        { "kind": "item", "item": 12472, "object": 148503, "points": [{ "map": 1, "x": -7092.4, "y": -1305.2 }], "text": "Use Krakle's Thermometer at the hottest spot of Fire Plume Ridge", "rq": 0 }
+      ],
+      "source": "VMaNGOS creature_ai_events 1054101 (Krakle's Thermometer 10541, hit by spell 16378): creature_ai_scripts 1054101 grants the quest credit only under condition 23716, the thermometer spawned at creature guid 23716 (-7092.4, -1305.9), next to gameobject guid 17502 Fire Plume Ridge Hot Spot (148503) at -7092.42, -1305.23; the other hot spots only say a lower temperature."
+    },
+    "995": {
+      "objectives": [
+        { "kind": "escort", "npc": 3692, "points": [{ "map": 1, "x": 4640.3, "y": 33.7 }], "text": "Sneak out of the Blackwood furbolg camp with Volcor without a fight" }
+      ],
+      "source": "VMaNGOS core kalimdor/darkshore/darkshore.cpp npc_volcor: for quest 995 Volcor walks the aVolcorLocations points and completes the quest at the last, 4640.33, 33.74."
+    },
+    "1090": {
+      "objectives": [
+        { "kind": "escort", "npc": 4276, "text": "Protect Piznik from the patrols while he mines the ore" }
+      ],
+      "source": "VMaNGOS core kalimdor/stonetalon_mountains/stonetalon_mountains.cpp npc_piznik: Piznik mines on quest 1090 and completes it (GroupEventHappens) unless he dies; creature 4276 spawn."
+    },
+    "1249": {
+      "objectives": [
+        { "kind": "kill", "npc": 4962, "text": "Subdue Tapoke \"Slim\" Jahn before he escapes" }
+      ],
+      "source": "VMaNGOS core eastern_kingdoms/wetlands/wetlands.cpp npc_tapoke_slim_jahn (quest 1249 started by npc_mikhail): beaten, he completes the quest (GroupEventHappens); creature 4962 spawn in Menethil Harbor."
+    },
+    "1265": {
+      "objectives": [
+        { "kind": "explore", "at": { "areatrigger": 1667 }, "text": "Search the tower at Sentry Point for any sign of Private Hendel" }
+      ],
+      "source": "VMaNGOS areatrigger_template 1667 'Dustwallow Marsh, Sentry Point - Quest The Missing Diplomat 14, Tower Entrance' (script at_sentry_point); core kalimdor/dustwallow_marsh/dustwallow_marsh.cpp AreaTrigger_at_sentry_point completes quest 1265."
+    },
+    "1273": {
+      "objectives": [
+        { "kind": "escort", "npc": 4983, "at": { "npc": 4980 }, "text": "Go with Ogron to Paval Reethe and keep Ogron alive while Reethe is questioned" }
+      ],
+      "source": "VMaNGOS quest_start_scripts 1273 starts scripted map event 1273 and Ogron's 4983 walk; generic_scripts 12731 'Questioning Reethe Completed: Complete Quest', 12732 fails it, 12733 brings Lieutenant Caldwell 5046; creature 4980 Paval Reethe spawn."
+    },
+    "1447": {
+      "objectives": [
+        { "kind": "kill", "npc": 4961, "text": "Defeat Dashel Stonefist" }
+      ],
+      "source": "VMaNGOS core eastern_kingdoms/stormwind_city/stormwind_city.cpp npc_dashel_stonefist: beaten on quest 1447, he completes it (GroupEventHappens); creature 4961 spawn."
+    },
+    "1560": {
+      "objectives": [
+        { "kind": "escort", "npc": 5955, "at": { "npc": 6015 }, "text": "Show Tooga the way back to his wife, Torta" }
+      ],
+      "source": "VMaNGOS core kalimdor/tanaris/tanaris.cpp npc_tooga: Tooga follows the player on quest 1560 and completes it near Torta 6015; creature 5955 and 6015 spawns."
+    },
+    "1640": {
+      "objectives": [
+        { "kind": "kill", "npc": 6090, "text": "Beat Bartleby (he gives up when nearly dead), then talk to him" }
+      ],
+      "source": "VMaNGOS core eastern_kingdoms/stormwind_city/stormwind_city.cpp npc_bartleby: accepting quest 1640 makes Bartleby hostile; below 15% health he stops and the quest completes (AreaExploredOrEventHappens)."
+    },
+    "1719": {
+      "objectives": [
+        { "kind": "explore", "at": { "areatrigger": 522 }, "text": "Step onto the grate on Fray Island to begin the Affray" },
+        { "kind": "kill", "npc": 6238, "points": [{ "map": 1, "x": -1713.8, "y": -4342.1 }], "text": "Kill the challengers, then Big Will", "rq": 0 }
+      ],
+      "source": "VMaNGOS areatrigger_template 522 'The Barrens, Fray Island - Quest The Affray' (script at_twiggy_flathead); core kalimdor/the_barrens/the_barrens.cpp: the trigger starts Twiggy Flathead's 6248 event for quest 1719, challengers come, then Big Will 6238 is summoned at -1713.79, -4342.09."
+    },
+    "1846": {
+      "objectives": [
+        { "kind": "kill", "npc": 1034, "item": 7131, "at": { "npc": [1034, 1035, 1036, 1037] }, "text": "Kill Dragonmaw orcs in the Wetlands for Dragonmaw Shinbones" },
+        { "kind": "item", "item": 7131, "at": { "npc": [1034, 1035, 1036, 1037] }, "text": "Test the Dragonmaw Shinbones to find Sturdy Dragonmaw Shinbones", "rq": 0 }
+      ],
+      "source": "VMaNGOS creature_loot_template: item 7131 Dragonmaw Shinbone from creatures 1034, 1035, 1036, 1037; item 7131 on use casts spell 8856 Bending Shinbone; spell 8854 Bending Shinbone creates item 7134 Sturdy Dragonmaw Shinbone; quest_template 1846 ReqSourceId 7131."
+    },
+    "1920": {
+      "objectives": [
+        { "kind": "item", "item": 7308, "object": 103708, "text": "Use the Cantation of Manifestation in the Blue Recluse to make the Rift Spawns visible" },
+        { "kind": "item", "item": 7247, "npc": 6492, "at": { "object": 103708 }, "text": "Subdue a Rift Spawn, use the Chest of Containment Coffers on it and take the Filled Containment Coffer", "rq": 0 }
+      ],
+      "source": "VMaNGOS item 7308 spell 9095 and item 7247 spell 9082 Create Containment Coffer (summons gameobject 122088) need spell focus 183, gameobject 103708 Mana Rift Disturbance, and target creature 6492 Rift Spawn (spell_script_target); item 7292 Filled Containment Coffer is in gameobject 103574's loot; quest 1920 Details."
+    },
+    "1950": {
+      "objectives": [
+        { "kind": "talk", "npc": 6626, "text": "Find Plucky Johnson the chicken at the race track, /beckon him, then ask him for the phrase" }
+      ],
+      "source": "VMaNGOS core kalimdor/thousand_needles/thousand_needles.cpp npc_plucky_johnson: on quest 1950 the beckon emote turns him human, and his gossip option 'Please tell me the Phrase..' completes the quest (AreaExploredOrEventHappens); creature 6626 spawn."
+    },
+    "1960": {
+      "objectives": [
+        { "kind": "item", "item": 7308, "object": 103708, "text": "Use the Cantation of Manifestation in Algernon's alchemist shop to make the Rift Spawns visible" },
+        { "kind": "item", "item": 7247, "npc": 6492, "at": { "object": 103708 }, "text": "Subdue a Rift Spawn, use the Chest of Containment Coffers on it and take the Filled Containment Coffer", "rq": 0 }
+      ],
+      "source": "VMaNGOS item 7308 spell 9095 and item 7247 spell 9082 Create Containment Coffer need spell focus 183, gameobject 103708 Mana Rift Disturbance, and target creature 6492 Rift Spawn; item 7292 Filled Containment Coffer is in gameobject 103574's loot; quest 1960 Details."
+    },
+    "2118": {
+      "objectives": [
+        { "kind": "item", "item": 7586, "npc": 2164, "text": "Set Tharnariun's Hope by a Rabid Thistle Bear and lure the bear into the trap", "rq": 0 },
+        { "kind": "escort", "npc": 11836, "at": { "npc": 3701 }, "text": "Lead the Captured Rabid Thistle Bear back to Tharnariun Treetender" }
+      ],
+      "source": "VMaNGOS item 7586 spell 9437 Placing Bear Trap summons gameobject 111148 Night Elven Bear Trap (trap spell 9439); core kalimdor/darkshore/darkshore.cpp: spell 9439 on a Rabid Thistle Bear 2164 turns it into Captured Rabid Thistle Bear 11836 that follows the player and gives the kill credit; quest_end_scripts 2118 looks for that bear by Tharnariun 3701."
+    },
+    "2845": {
+      "objectives": [
+        { "kind": "escort", "npc": 7774, "at": { "npc": 7765 }, "text": "Escort Shay Leafrunner to Rockbiter's camp; ring Shay's Bell when she wanders off" }
+      ],
+      "source": "VMaNGOS core kalimdor/feralas/feralas.cpp npc_shay_leafrunner: Shay follows the player on quest 2845 and completes it near Rockbiter 7765; creature 7774 and 7765 spawns."
+    },
+    "2932": {
+      "objectives": [
+        { "kind": "kill", "npc": 2649, "item": 9320, "at": { "npc": [2649, 2650, 2651, 2652] }, "text": "Kill Witherbark trolls in the Hinterlands for 20 Witherbark Skulls" },
+        { "kind": "item", "item": 15002, "at": { "npc": [2649, 2650, 2651, 2652] }, "text": "Use Nimboya's Pike to put the skulls on it" },
+        { "kind": "item", "item": 9319, "object": 142698, "at": { "object": [142698, 142700] }, "text": "Drive Nimboya's Laden Pike into the ground at Hiri'watha or Zun'watha" }
+      ],
+      "source": "VMaNGOS item 15002 spell 18887 creates item 9319 from 20 item 9320 (creature_loot_template 2649, 2650, 2651, 2652); item 9319 spell 11547 Drive Nimboya's Laden Pike (QUEST_COMPLETE 2932) needs spell focus 303, gameobjects 142698 and 142700 Witherbark Village; quest 2932 Details."
+    },
+    "2969": {
+      "objectives": [
+        { "kind": "item", "item": 12301, "object": 143979, "at": { "object": 143979 }, "text": "Free the Sprite Darters from the Grimtotem camp's pen with the Bamboo Cage Key; keep Kindal and 6 darters alive" }
+      ],
+      "source": "VMaNGOS core kalimdor/feralas/feralas.cpp npc_kindal_moonweaver and npc_captured_sprite_darter: quest 2969 completes when enough Captured Sprite Darters 7997 are saved; gameobject 143979 Cage Door near Kindal 7956; item 12301 Bamboo Cage Key spell 3366 Opening."
+    },
+    "2987": {
+      "objectives": [
+        { "kind": "item", "item": 9466, "object": 144050, "text": "Use Orwin's Shovel on a glowing Gordunni Trap and take the Gordunni Cobalt from the dirt mound", "rq": 0 }
+      ],
+      "source": "VMaNGOS item 9466 spell 11757 Digging for Cobalt targets gameobject 144050 Gordunni Trap (spell_script_target); item 9463 Gordunni Cobalt is in gameobject 144064 Gordunni Dirt Mound's loot; quest 2987 Details."
+    },
+    "4021": {
+      "objectives": [
+        { "kind": "kill", "npc": 9524, "points": [{ "map": 1, "x": -297.6, "y": -1839.2 }], "text": "Fight off the Kolkar attack on Regthar Deathgate's camp until Warlord Krom'zar comes" },
+        { "kind": "kill", "npc": 9456, "points": [{ "map": 1, "x": -288.7, "y": -1857 }], "text": "Kill Warlord Krom'zar" },
+        { "kind": "use", "object": 164690, "item": 11227, "points": [{ "map": 1, "x": -288.7, "y": -1857 }], "text": "Take a Piece of Krom'zar's Banner from the banner he drops", "rq": 0 }
+      ],
+      "source": "VMaNGOS quest_start_scripts 4021 starts generic_scripts 402110 (map events 4021-4023, Kolkar attack on Regthar Deathgate's camp); generic_scripts 402102 ('Counterattack 20 Kills') summons creature 9456 Warlord Krom'zar at -297.6, -1839.2 with Kolkar Invaders 9524, 402108 sets his home at -288.7, -1857.0; creature_ai_scripts 945601 (on death) casts spell 13965, which summons gameobject 164690 Krom'zar's Banner (loot: item 11227)."
+    },
+    "4491": {
+      "objectives": [
+        { "kind": "escort", "npc": 9999, "at": { "npc": 9997 }, "text": "Lead Ringo to Spraggle Frock at Marshal's Refuge; if he faints, use Spraggle's Canteen on him" }
+      ],
+      "source": "VMaNGOS core kalimdor/ungoro_crater/ungoro_crater.cpp npc_ringo: Ringo follows the player on quest 4491 and completes it near Spraggle Frock 9997; item 11804 spell 15591 Revive Ringo targets creature 9999."
+    },
+    "4506": {
+      "objectives": [
+        { "kind": "item", "item": 12565, "object": 148501, "text": "Release Winna's kitten at the corrupted moon well in the Ruins of Constellas" },
+        { "kind": "escort", "npc": 10042, "at": { "npc": 9996 }, "text": "Bring the Corrupted Saber back to Winna Hazzard, then talk to it to release it to her" }
+      ],
+      "source": "VMaNGOS item 12565 spell 15647 Summon Common Kitten needs spell focus 644, gameobject 148501 Corrupted Moonwell; gossip_menu_option 2853 'I want to release the corrupted saber to Winna.' on creatures 9937 and 10042 runs gossip_scripts 2853 (complete quest 4506); quest 4506 Objectives."
+    },
+    "4726": {
+      "objectives": [
+        { "kind": "item", "item": 12284, "npc": 7047, "at": { "npc": [7047, 7048] }, "text": "Zap a broodling with the Draco-Incarcinatrix 900, kill it and take the Broodling Essence", "rq": 0 }
+      ],
+      "source": "VMaNGOS item 12284 spell 16007 targets creatures 7047 Black Broodling and 7048 Scalding Broodling (spell_script_target); their creature_ai_scripts 704702 and 704802 cast Create Broodling Essence, item 12283 in gameobject 175264's loot; quest 4726 Details."
+    },
+    "4740": {
+      "objectives": [
+        { "kind": "explore", "at": { "areatrigger": 1966 }, "text": "Go to the murloc huts on the shore south of Auberdine" },
+        { "kind": "kill", "npc": 10323, "points": [{ "map": 1, "x": 4984.8, "y": 597 }], "text": "Kill Murkdeep", "rq": 0 }
+      ],
+      "source": "VMaNGOS areatrigger_template 1966 'Darkshore, Twilight Shore - Spawn Murkdeep' (script at_murloc_camp); core kalimdor/darkshore/darkshore.cpp: for quest 4740 the trigger summons Murkdeep 10323 at 4984.77, 596.98 with his murlocs."
+    },
+    "4763": {
+      "objectives": [
+        { "kind": "item", "item": 12346, "object": 175337, "text": "Fill the Empty Cleansing Bowl at the Auberdine Moonwell" },
+        { "kind": "use", "object": 175330, "item": 12341, "text": "Take a Blackwood Fruit Sample from the Blackwood Fruit Stores" },
+        { "kind": "use", "object": 175329, "item": 12343, "text": "Take a Blackwood Nut Sample from the Blackwood Nut Stores" },
+        { "kind": "use", "object": 175331, "item": 12342, "text": "Take a Blackwood Grain Sample from the Blackwood Grain Stores" },
+        { "kind": "item", "item": 12347, "object": 175338, "text": "Mix the bowl and place it by the northern Blackwood bonfire, then fight off the furbolgs" },
+        { "kind": "kill", "npc": 10373, "points": [{ "map": 1, "x": 6891.9, "y": -477.8 }], "text": "Kill the satyr corruptor, Xabraxxis" },
+        { "kind": "use", "object": 177624, "item": 12355, "points": [{ "map": 1, "x": 6891.9, "y": -477.8 }], "text": "Take the Talisman of Corruption from Xabraxxis' Demon Bag", "rq": 0 }
+      ],
+      "source": "VMaNGOS item 12346 spell 16073 Filling (creates 12347) needs spell focus 703, gameobject 175337 Auberdine Moonwell; gameobjects 175330, 175329, 175331 hold items 12341, 12343, 12342; item 12347 spell 16072 Purify and Place Food (reagents 12341-12343) needs spell focus 704, gameobject 175338 Blackwood Furbolg North Bonfire, and sends event 3938: event_scripts 3938 summon Blackwood Warriors, then creature 10373 Xabraxxis at 6891.9, -477.8; creature_ai_scripts 1037304 (on death) casts spell 19127, which summons gameobject 177624 Xabraxxis' Demon Bag (loot: item 12355)."
+    },
+    "4963": {
+      "objectives": [
+        { "kind": "item", "item": 12646, "npc": 4676, "text": "Use the Infus Emerald on a Lesser Infernal in Desolace when it is close to dying, then kill it", "rq": 1 }
+      ],
+      "source": "VMaNGOS item 12646 spell 16628 Capture Infernal Spirit (channelled death item aura) gives item 12649 Imprisoned Infernal Spirit; quest 4963 Objectives and Details name the infernals of Desolace: creature 4676 Lesser Infernal spawns there."
+    },
+    "5088": {
+      "objectives": [
+        { "kind": "item", "item": 12785, "object": 175944, "text": "Toss the Incendia Powder on the Sacred Fire of Life at Darkcloud Pinnacle" },
+        { "kind": "kill", "npc": 10882, "item": 12925, "points": [{ "map": 1, "x": -5002.9, "y": -2103.5 }], "text": "Slay Arikara for the Arikara Serpent Skin", "rq": 1 }
+      ],
+      "source": "VMaNGOS item 12785 spell 16996 Incendia Powder (opens a gameobject, QUEST_COMPLETE 5088); gameobject_scripts 16778 (gameobject 175944 Sacred Fire of Life) summons creature 10882 Arikara at -5002.9, -2103.5; creature_loot_template 10882: item 12925; quest 5088 Details."
+    },
+    "5096": {
+      "objectives": [
+        { "kind": "use", "object": 176092, "item": 12814, "text": "Take a Flame in a Bottle from the Box of Incendiaries" },
+        { "kind": "item", "item": 12814, "object": 176210, "text": "Burn the Scarlet Crusade's Command Tent with the Flame in a Bottle" },
+        { "kind": "item", "item": 12807, "object": 176088, "text": "Plant the Scourge Banner by the tent" }
+      ],
+      "source": "VMaNGOS gameobject 176092 Box of Incendiaries (loot: item 12814); item 12814 spell 17015 Destroy Tent; gameobject 176210 Command Tent; item 12807 spell 16989 Planting Banner (QUEST_COMPLETE 5096) needs spell focus 804, gameobject 176088 Scarlet Crusade Forward Camp; quest 5096 Details."
+    },
+    "5206": {
+      "objectives": [
+        { "kind": "kill", "npc": 8529, "item": 13157, "text": "Kill Scourge Champions for Fetid Skulls" },
+        { "kind": "item", "item": 13156, "at": { "npc": 8529 }, "text": "Pass the Mystic Crystal over the Fetid Skulls to find Resonating Skulls", "rq": 0 }
+      ],
+      "source": "VMaNGOS creature_loot_template 8529 Scourge Champion: item 13157 Fetid Skull (quest_template 5206 ReqSourceId); item 13156 Mystic Crystal spell 17271 Test Fetid Skull; quest 5206 Details."
+    },
+    "5216": {
+      "objectives": [
+        { "kind": "kill", "npc": 11075, "item": 13194, "at": { "object": 176361 }, "text": "Go to the Scourge Cauldron at Felstone Field and kill Cauldron Lord Bilemaw when it appears for the Felstone Field Cauldron Key", "rq": 0 }
+      ],
+      "source": "VMaNGOS core eastern_kingdoms/western_plaguelands/western_plaguelands.cpp npc_the_scourge_cauldron: The Scourge Cauldron 11152 at Felstone Field summons creature 11075 Cauldron Lord Bilemaw at itself for a player on quest 5216; creature_loot_template 11075: item 13194; gameobject 176361 Scourge Cauldron (the quest's ender) stands there."
+    },
+    "5219": {
+      "objectives": [
+        { "kind": "kill", "npc": 11077, "item": 13195, "at": { "object": 177289 }, "text": "Go to the Scourge Cauldron at Dalson's Tears and kill Cauldron Lord Malvinious when it appears for the Dalson's Tears Cauldron Key", "rq": 0 }
+      ],
+      "source": "VMaNGOS core eastern_kingdoms/western_plaguelands/western_plaguelands.cpp npc_the_scourge_cauldron: The Scourge Cauldron 11152 at Dalson's Tears summons creature 11077 Cauldron Lord Malvinious at itself for a player on quest 5219; creature_loot_template 11077: item 13195; gameobject 177289 Scourge Cauldron (the quest's ender) stands there."
+    },
+    "5222": {
+      "objectives": [
+        { "kind": "kill", "npc": 11076, "item": 13197, "at": { "object": 176393 }, "text": "Go to the Scourge Cauldron at the Writhing Haunt and kill Cauldron Lord Razarch when it appears for the Writhing Haunt Cauldron Key", "rq": 0 }
+      ],
+      "source": "VMaNGOS core eastern_kingdoms/western_plaguelands/western_plaguelands.cpp npc_the_scourge_cauldron: The Scourge Cauldron 11152 at Writhing Haunt summons creature 11076 Cauldron Lord Razarch at itself for a player on quest 5222; creature_loot_template 11076: item 13197; gameobject 176393 Scourge Cauldron (the quest's ender) stands there."
+    },
+    "5225": {
+      "objectives": [
+        { "kind": "kill", "npc": 11078, "item": 13196, "at": { "object": 176392 }, "text": "Go to the Scourge Cauldron at Gahrron's Withering and kill Cauldron Lord Soulwrath when it appears for the Gahrron's Withering Cauldron Key", "rq": 0 }
+      ],
+      "source": "VMaNGOS core eastern_kingdoms/western_plaguelands/western_plaguelands.cpp npc_the_scourge_cauldron: The Scourge Cauldron 11152 at Gahrron's Withering summons creature 11078 Cauldron Lord Soulwrath at itself for a player on quest 5225; creature_loot_template 11078: item 13196; gameobject 176392 Scourge Cauldron (the quest's ender) stands there."
+    },
+    "5229": {
+      "objectives": [
+        { "kind": "kill", "npc": 11075, "item": 13194, "at": { "object": 176361 }, "text": "Go to the Scourge Cauldron at Felstone Field and kill Cauldron Lord Bilemaw when it appears for the Felstone Field Cauldron Key", "rq": 0 }
+      ],
+      "source": "VMaNGOS core eastern_kingdoms/western_plaguelands/western_plaguelands.cpp npc_the_scourge_cauldron: The Scourge Cauldron 11152 at Felstone Field summons creature 11075 Cauldron Lord Bilemaw at itself for a player on quest 5229; creature_loot_template 11075: item 13194; gameobject 176361 Scourge Cauldron (the quest's ender) stands there."
+    },
+    "5231": {
+      "objectives": [
+        { "kind": "kill", "npc": 11077, "item": 13195, "at": { "object": 177289 }, "text": "Go to the Scourge Cauldron at Dalson's Tears and kill Cauldron Lord Malvinious when it appears for the Dalson's Tears Cauldron Key", "rq": 0 }
+      ],
+      "source": "VMaNGOS core eastern_kingdoms/western_plaguelands/western_plaguelands.cpp npc_the_scourge_cauldron: The Scourge Cauldron 11152 at Dalson's Tears summons creature 11077 Cauldron Lord Malvinious at itself for a player on quest 5231; creature_loot_template 11077: item 13195; gameobject 177289 Scourge Cauldron (the quest's ender) stands there."
+    },
+    "5233": {
+      "objectives": [
+        { "kind": "kill", "npc": 11076, "item": 13197, "at": { "object": 176393 }, "text": "Go to the Scourge Cauldron at the Writhing Haunt and kill Cauldron Lord Razarch when it appears for the Writhing Haunt Cauldron Key", "rq": 0 }
+      ],
+      "source": "VMaNGOS core eastern_kingdoms/western_plaguelands/western_plaguelands.cpp npc_the_scourge_cauldron: The Scourge Cauldron 11152 at Writhing Haunt summons creature 11076 Cauldron Lord Razarch at itself for a player on quest 5233; creature_loot_template 11076: item 13197; gameobject 176393 Scourge Cauldron (the quest's ender) stands there."
+    },
+    "5235": {
+      "objectives": [
+        { "kind": "kill", "npc": 11078, "item": 13196, "at": { "object": 176392 }, "text": "Go to the Scourge Cauldron at Gahrron's Withering and kill Cauldron Lord Soulwrath when it appears for the Gahrron's Withering Cauldron Key", "rq": 0 }
+      ],
+      "source": "VMaNGOS core eastern_kingdoms/western_plaguelands/western_plaguelands.cpp npc_the_scourge_cauldron: The Scourge Cauldron 11152 at Gahrron's Withering summons creature 11078 Cauldron Lord Soulwrath at itself for a player on quest 5235; creature_loot_template 11078: item 13196; gameobject 176392 Scourge Cauldron (the quest's ender) stands there."
+    },
+    "5321": {
+      "objectives": [
+        { "kind": "escort", "npc": 11218, "at": { "npc": 11219 }, "text": "Escort Kerlonian Evershade to Liladris Moonriver at Maestra's Post; wake him with the Horn of Awakening when he falls asleep" }
+      ],
+      "source": "VMaNGOS core kalimdor/darkshore/darkshore.cpp npc_kerlonian: Kerlonian follows the player on quest 5321 and completes it near Liladris Moonriver 11219; item 13536 spell 17536 Awaken Kerlonian targets creature 11218."
+    },
+    "5561": {
+      "objectives": [
+        { "kind": "item", "item": 13892, "npc": 4701, "at": { "npc": [4700, 4701, 4702] }, "text": "Use the Kodo Kombobulator on an Aged, Dying or Ancient Kodo" },
+        { "kind": "escort", "npc": 11627, "at": { "npc": 11596 }, "text": "Bring the Tamed Kodo back to Smeed Scrabblescrew and talk to it there", "rq": 0 }
+      ],
+      "source": "VMaNGOS item 13892 spell 18153 Kodo Kombobulator; gossip_menu 3650 (creatures 4700, 4701, 4702, 11627) runs gossip_scripts 3650 'Tamed Kodo - Grant Quest Credit'; quest 5561 Details: tame aged, dying or ancient kodos and bring them back to Smeed Scrabblescrew 11596."
+    },
+    "5581": {
+      "objectives": [
+        { "kind": "item", "item": 14547, "object": 177243, "at": { "object": [177243, 177365, 177366, 177367, 177368, 177369, 177397, 177398, 177399, 177400] }, "text": "Use the Hand of Iruxos on a Demon Portal at Mannoroc Coven" },
+        { "kind": "kill", "npc": 11937, "at": { "object": [177243, 177365, 177366, 177367, 177368, 177369, 177397, 177398, 177399, 177400] }, "text": "Kill the Demon Portal Guardian that comes out to banish the portal", "rq": 0 }
+      ],
+      "source": "VMaNGOS gameobject_scripts 30899, 32567, 32568, 32570, 32571, 32572, 32661, 32663, 32664, 32665 (the Demon Portals 177243, 177365-177369, 177397-177400 at Mannoroc Coven) summon creature 11937 Demon Portal Guardian; item 14547 spell 18762 Hand of Iruxos opens a gameobject; quest 5581 Objectives."
+    },
+    "5821": {
+      "objectives": [
+        { "kind": "escort", "npc": 11625, "at": { "waypoint": [11625, 195] }, "text": "Escort the Gizelton Caravan past the Kolkar Centaur village" }
+      ],
+      "giver": { "npc": 11625, "at": { "waypoint": [11625, 164] } },
+      "source": "VMaNGOS core kalimdor/desolace/desolace.cpp (Gizelton caravan): Cork offers his quest at script_waypoint 11625 point 164 (POINT_TOP_ANNOUNCE) and quest 5821 (QUEST_TOP) completes at point 195 (POINT_TOP_COMPLETE)."
+    },
+    "5943": {
+      "objectives": [
+        { "kind": "escort", "npc": 11626, "at": { "waypoint": [11625, 42] }, "text": "Escort the Gizelton Caravan through Mannoroc Coven" }
+      ],
+      "giver": { "npc": 11626, "at": { "waypoint": [11625, 14] } },
+      "source": "VMaNGOS core kalimdor/desolace/desolace.cpp (Gizelton caravan): Rigger offers his quest at script_waypoint 11625 point 14 (POINT_BOT_ANNOUNCE) and quest 5943 (QUEST_BOTTOM) completes at point 42 (POINT_BOT_COMPLETE); creature 11626 Rigger Gizelton has no spawn of its own."
+    },
+    "5944": {
+      "objectives": [
+        { "kind": "escort", "npc": 1842, "points": [{ "map": 0, "x": 2670.2, "y": -1902.9 }], "text": "Escort Highlord Taelan Fordring out of Hearthglen and fight beside him when the Scarlet Crusade attacks" }
+      ],
+      "source": "VMaNGOS quest_start_scripts 5944 starts map event 5944 and Taelan's 1842 path (creature_movement_special 1842); point 31 at 2670.2, -1902.9 runs creature_movement_scripts 184232 (Grand Inquisitor Isillien and Crimson Elites attack); generic_scripts 6611 'In Dreams: Complete Quest'."
+    },
+    "6134": {
+      "objectives": [
+        { "kind": "item", "item": 15848, "object": 177748, "text": "Place a Ghost Magnet between the Dead Goliaths in the Valley of Bones" },
+        { "kind": "kill", "npc": 11560, "item": 15849, "at": { "object": 177748 }, "text": "Kill the Magrami Spectres it draws for Ghost-o-plasm", "rq": 1 }
+      ],
+      "source": "VMaNGOS gameobject 177748 Ghost Magnet Spell Focus (DND) in the Valley of Bones; creature_loot_template 11560 Magrami Spectre: item 15849 Ghost-o-plasm (creature 11560 has no spawn of its own); quest 6134 Details."
+    },
+    "6621": {
+      "objectives": [
+        { "kind": "item", "item": 16972, "object": 178206, "text": "Place Karang's Banner on the Foulweald Totem Mound and keep the furbolgs from destroying it" },
+        { "kind": "kill", "npc": 12918, "points": [{ "map": 1, "x": 2208.9, "y": -1567.6 }], "text": "Defeat Chief Murgut when he comes" },
+        { "kind": "use", "object": 178227, "item": 16976, "points": [{ "map": 1, "x": 2208.9, "y": -1567.6 }], "text": "Take Murgut's Totem from Murgut's Totem Basket", "rq": 0 }
+      ],
+      "source": "VMaNGOS item 16972 spell 20737 Summon Karang's Banner needs spell focus 1063, gameobject 178206 Foulweald Totem Mound, and sends event 6721; event_scripts 6721 summon creature 12918 Chief Murgut at 2208.9, -1567.6 (after 180 s); creature_ai_scripts 1291802 (on death) casts spell 20818, which summons gameobject 178227 Murgut's Totem Basket (loot: item 16976)."
+    },
+    "6641": {
+      "objectives": [
+        { "kind": "escort", "npc": 12717, "at": { "object": 178247 }, "text": "Keep Muglash safe as he travels to the Naga Brazier" },
+        { "kind": "use", "object": 178247, "text": "Put out the Naga Brazier" },
+        { "kind": "kill", "npc": 12940, "points": [{ "map": 1, "x": 3630.2, "y": 1190.3 }], "text": "Protect Muglash and kill Vorsha the Lasher" }
+      ],
+      "source": "VMaNGOS quest_start_scripts 6641 starts map event 6641 and Muglash's 12717 walk; generic_scripts 66413 summons creature 12940 Vorsha the Lasher at 3630.2, 1190.3, generic_scripts 66414 completes the quest; gameobject 178247 Naga Brazier; quest 6641 Objectives."
+    },
+    "6681": {
+      "objectives": [
+        { "kind": "explore", "at": { "areatrigger": 3066 }, "text": "Find the hidden way to Ravenholdt Manor in the hills of Hillsbrad (the Rite of Cunning)", "rq": 0 }
+      ],
+      "source": "VMaNGOS areatrigger_template 3066 'Hillsbrad Foothills - Quest The Manor, Ravenholdt' (script at_ravenholdt); core world/areatrigger_scripts.cpp AreaTrigger_at_ravenholdt gives credit for creature 13936 (the 'Rite of Cunning' row) on quest 6681."
+    },
+    "7622": {
+      "objectives": [
+        { "kind": "escort", "npc": 14494, "text": "Save 50 peasants fleeing towards the Light before 15 are slain, then speak with Eris Havenfire" }
+      ],
+      "source": "VMaNGOS core eastern_kingdoms/eastern_plaguelands/eastern_plaguelands.cpp npc_eris_havenfire: the peasant event of quest 7622 completes it (AreaExploredOrEventHappens) or fails it; creature 14494 spawn."
+    },
+    "9364": {
+      "objectives": [
+        { "kind": "kill", "npc": 16479, "at": { "npc": [6190, 6193, 6194, 6195, 6196, 7885, 7886] }, "text": "Polymorph the Spitelash naga and kill the Polymorph Clones that appear", "rq": 0 }
+      ],
+      "source": "VMaNGOS creature_ai_events of creatures 6190, 6193, 6194, 6195, 6196, 7885, 7886 (Spitelash) answer Polymorph (spells 118, 12824, 12825, 12826) with generic_scripts 619001: cast spell 28406 Polymorph Backfire, which summons creature 16479 Polymorph Clone; quest 9364 Objectives."
+    }
+  },
+  "skip": {
+    "4866": "Mother's Milk: the poison has to come from Mother Smolderweb inside Blackrock Spire before Ragged John can 'milk' it",
+    "8736": "The Nightmare Manifests: a raid event (defend Nighthaven from Eranikus)"
+  },
+  "text": {
+    "25": ["Scout the gazebo on Mystral Lake"],
+    "201": ["Find the hunters' camp, Nesingwary's Expedition"],
+    "287": ["Explore Frostmane Hold"],
+    "452": ["Help Deathstalker Faerleia kill the Pyrewood Council"],
+    "503": ["Free Gol'dir in the Strahnbrad inn"],
+    "578": ["Find the haunted island off the Savage Coast"],
+    "590": ["Defeat Calvin Montague"],
+    "611": ["Destroy the Altar of the Tides with Catelyn's Blade", null],
+    "924": ["Bring the Flawed Power Stone to the Altar of Fire before it expires and use it"],
+    "746": ["Kill Bael'dun Diggers for Prospector's Picks", "Smash the Prospector's Picks at a forge to make Broken Tools"],
+    "758": ["Use the Thunderhorn Cleansing Totem at the Thunderhorn Water Well"],
+    "984": ["Find the corrupt furbolg camp in Twilight Vale"],
+    "1448": ["Search for the Temple of Atal'Hakkar at the Pool of Tears"],
+    "1699": ["Enter the Rethban Caverns and reach the first fork in time"],
+    "2381": ["Open the Jewel of the Southsea with the Thieves' Tools from Wrenix's Gizmotronic Apparatus", null],
+    "2784": ["Listen to the Fallen Hero of the Horde tell his story"],
+    "2801": ["Listen to the Fallen Hero of the Horde tell his story"],
+    "3505": ["Find Magus Rimtori's camp on the Shattered Strand"],
+    "3628": ["Use the Ward of the Defiler at the Altar of the Defiler to summon Razelikh", null],
+    "3441": ["Listen as Kalaran Windblade tells his story"],
+    "4022": ["Show Cyrus Therepentous the Black Dragonflight Molt"],
+    "4023": ["Tell Cyrus Therepentous you are ready to prove your worth", "Kill the Frenzied Black Drake he calls up for the Black Dragonflight Molt"],
+    "4811": ["Find the large red crystal along Darkshore's eastern mountain range"],
+    "5157": ["Fill the Empty Canteen at the moon well in the center of Jaedenar"],
+    "5929": ["Seek out the Great Bear Spirit in northwestern Moonglade and talk to it"],
+    "5930": ["Seek out the Great Bear Spirit in northwestern Moonglade and talk to it"],
+    "6025": ["Find a high vantage point in Hearthglen to gauge the Scarlet Crusade's forces"],
+    "6148": ["Hunt down Demetria on the road from Tyr's Hand to Stratholme and slay her"],
+    "6504": ["Kill Ashenvale Outrunners for the 12 pages of the Shredder Operating Manual", "Put pages 1 to 4 together into Chapter 1", "Put pages 5 to 8 together into Chapter 2", "Put pages 9 to 12 together into Chapter 3"],
+    "6804": ["Use the Aspect of Neptulon on the poisoned elementals of Eastern Plaguelands", "Defeat the Discordant Surges for Discordant Bracers"],
+    "7003": ["Use Zorbin's Ultra-Shrinker on the giants of Feralas", "Kill the zapped giants for Miniaturization Residue"],
+    "7843": ["Place the Final Message to the Wildhammer by the well in the center of Aerie Peak"]
+  }
+}
