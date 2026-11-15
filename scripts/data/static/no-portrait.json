@@ -1,0 +1,4 @@
+{
+  "note": "Creature display ids Blizzard's render server (render.worldofwarcraft.com/us/npcs/zoom/creature-display-<id>.jpg) had no picture for, checked on 3 November 2026. scripts/data/maps.mjs gives a boss the first of its display ids not listed here; the site falls back to the boss's initial when a picture fails to load.",
+  "ids": [3223, 6980, 4642, 9733, 7552, 14378, 11069, 10458, 10674, 10544]
+}

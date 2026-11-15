@@ -1,0 +1,249 @@
+[
+ {
+  "id": 1,
+  "slug": "warrior",
+  "name": "Warrior",
+  "color": "#C69B6D",
+  "resource": "Rage",
+  "icon": "classicon_warrior",
+  "armor": [
+   "Cloth",
+   "Leather",
+   "Mail",
+   "Plate",
+   "Shield"
+  ],
+  "weapons": [
+   "Daggers",
+   "Fist Weapons",
+   "One-Handed Axes",
+   "Two-Handed Axes",
+   "One-Handed Maces",
+   "Two-Handed Maces",
+   "One-Handed Swords",
+   "Two-Handed Swords",
+   "Polearms",
+   "Staves",
+   "Bows",
+   "Crossbows",
+   "Guns",
+   "Thrown"
+  ],
+  "plateAt": 40,
+  "roles": {
+   "Arms": "melee",
+   "Fury": "melee",
+   "Protection": "tank"
+  }
+ },
+ {
+  "id": 2,
+  "slug": "paladin",
+  "name": "Paladin",
+  "color": "#F48CBA",
+  "resource": "Mana",
+  "icon": "classicon_paladin",
+  "armor": [
+   "Cloth",
+   "Leather",
+   "Mail",
+   "Plate",
+   "Shield"
+  ],
+  "weapons": [
+   "One-Handed Axes",
+   "Two-Handed Axes",
+   "One-Handed Maces",
+   "Two-Handed Maces",
+   "One-Handed Swords",
+   "Two-Handed Swords",
+   "Polearms"
+  ],
+  "plateAt": 40,
+  "roles": {
+   "Holy": "healer",
+   "Protection": "tank",
+   "Retribution": "melee"
+  }
+ },
+ {
+  "id": 3,
+  "slug": "hunter",
+  "name": "Hunter",
+  "color": "#AAD372",
+  "resource": "Mana",
+  "icon": "classicon_hunter",
+  "armor": [
+   "Cloth",
+   "Leather",
+   "Mail"
+  ],
+  "weapons": [
+   "Daggers",
+   "Fist Weapons",
+   "One-Handed Axes",
+   "Two-Handed Axes",
+   "One-Handed Swords",
+   "Two-Handed Swords",
+   "Polearms",
+   "Staves",
+   "Bows",
+   "Crossbows",
+   "Guns",
+   "Thrown"
+  ],
+  "mailAt": 40,
+  "roles": {
+   "Beast Mastery": "ranged",
+   "Marksmanship": "ranged",
+   "Survival": "melee"
+  }
+ },
+ {
+  "id": 4,
+  "slug": "rogue",
+  "name": "Rogue",
+  "color": "#FFF468",
+  "resource": "Energy",
+  "icon": "classicon_rogue",
+  "armor": [
+   "Cloth",
+   "Leather"
+  ],
+  "weapons": [
+   "Daggers",
+   "Fist Weapons",
+   "One-Handed Axes",
+   "One-Handed Maces",
+   "One-Handed Swords",
+   "Bows",
+   "Crossbows",
+   "Guns",
+   "Thrown"
+  ],
+  "roles": {
+   "Assassination": "melee",
+   "Combat": "melee",
+   "Subtlety": "melee"
+  }
+ },
+ {
+  "id": 5,
+  "slug": "priest",
+  "name": "Priest",
+  "color": "#FFFFFF",
+  "resource": "Mana",
+  "icon": "classicon_priest",
+  "armor": [
+   "Cloth"
+  ],
+  "weapons": [
+   "Daggers",
+   "One-Handed Maces",
+   "Staves",
+   "Wands"
+  ],
+  "roles": {
+   "Discipline": "healer",
+   "Holy": "healer",
+   "Shadow": "ranged"
+  }
+ },
+ {
+  "id": 7,
+  "slug": "shaman",
+  "name": "Shaman",
+  "color": "#0070DD",
+  "resource": "Mana",
+  "icon": "classicon_shaman",
+  "armor": [
+   "Cloth",
+   "Leather",
+   "Mail",
+   "Shield"
+  ],
+  "weapons": [
+   "Daggers",
+   "Fist Weapons",
+   "One-Handed Axes",
+   "Two-Handed Axes",
+   "One-Handed Maces",
+   "Two-Handed Maces",
+   "Staves"
+  ],
+  "mailAt": 40,
+  "roles": {
+   "Elemental": "ranged",
+   "Enhancement": "melee",
+   "Restoration": "healer"
+  }
+ },
+ {
+  "id": 8,
+  "slug": "mage",
+  "name": "Mage",
+  "color": "#3FC7EB",
+  "resource": "Mana",
+  "icon": "classicon_mage",
+  "armor": [
+   "Cloth"
+  ],
+  "weapons": [
+   "Daggers",
+   "One-Handed Swords",
+   "Staves",
+   "Wands"
+  ],
+  "roles": {
+   "Arcane": "ranged",
+   "Fire": "ranged",
+   "Frost": "ranged"
+  }
+ },
+ {
+  "id": 9,
+  "slug": "warlock",
+  "name": "Warlock",
+  "color": "#8788EE",
+  "resource": "Mana",
+  "icon": "classicon_warlock",
+  "armor": [
+   "Cloth"
+  ],
+  "weapons": [
+   "Daggers",
+   "One-Handed Swords",
+   "Staves",
+   "Wands"
+  ],
+  "roles": {
+   "Affliction": "ranged",
+   "Demonology": "ranged",
+   "Destruction": "ranged"
+  }
+ },
+ {
+  "id": 11,
+  "slug": "druid",
+  "name": "Druid",
+  "color": "#FF7C0A",
+  "resource": "Mana, Rage, Energy",
+  "icon": "classicon_druid",
+  "armor": [
+   "Cloth",
+   "Leather"
+  ],
+  "weapons": [
+   "Daggers",
+   "Fist Weapons",
+   "One-Handed Maces",
+   "Two-Handed Maces",
+   "Staves"
+  ],
+  "roles": {
+   "Balance": "ranged",
+   "Feral Combat": "melee",
+   "Restoration": "healer"
+  }
+ }
+]
