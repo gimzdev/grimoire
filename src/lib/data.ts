@@ -1,0 +1,425 @@
+import { readFileSync, readdirSync, existsSync } from 'node:fs';
+import path from 'node:path';
+import { buildGroup } from './build-groups';
+import type {
+  Ability,
+  BarSlot,
+  Build,
+  ClassInfo,
+  ClassTalents,
+  MapView,
+  DungeonInfo,
+  EncounterData,
+  Faction2,
+  Drops,
+  Item,
+  ItemSet,
+  LegacyData,
+  MinorItem,
+  Npc,
+  Quest,
+  RaceInfo,
+  SpellRecord,
+  WorldObject,
+  Zone,
+  ZonePage,
+} from './types';
+import { CLASS_COLOR } from './wow';
+
+/** Datasets live in ./data next to the app; each file is parsed once per server process. */
+const DATA_DIR = path.join(process.cwd(), 'data');
+
+const store = globalThis as unknown as { __grimoire?: Map<string, unknown> };
+const cache = (store.__grimoire ??= new Map());
+
+function memo<T>(key: string, build: () => T): T {
+  if (cache.has(key)) return cache.get(key) as T;
+  const value = build();
+  cache.set(key, value);
+  return value;
+}
+
+function readJson<T>(file: string): T {
+  return memo(`json:${file}`, () => JSON.parse(readFileSync(path.join(DATA_DIR, file), 'utf8')) as T);
+}
+
+export interface Meta {
+  build: string;
+  extracted: string;
+  launch: string;
+  raidsOpen: string;
+  betaEnds: string;
+  nameReservation: [string, string];
+  counts: Record<string, number>;
+  sources: {
+    talents: { build: string; date: string };
+    /** Blizzard's hotfix list since launch, as far as the data follows it (scripts/data/lib/live.mjs). */
+    hotfixes?: { name: string; url: string; date: string };
+    /** QuestieDB: its version, commit and the day its traces were generated (scripts/data/lib/questiedb.mjs). */
+    questiedb?: { version: string; commit: string; date: string };
+  };
+}
+
+export const getMeta = () => readJson<Meta>('meta.json');
+
+/** The classes, each in the site's own shade of its color (CLASS_COLOR): the game's Shaman blue is too dark for text on the site's night. */
+export const getClasses = () => memo('classes', () => readJson<ClassInfo[]>('classes.json').map((c) => ({ ...c, color: CLASS_COLOR[c.slug] ?? c.color })));
+export const getClass = (slug: string) => getClasses().find((c) => c.slug === slug);
+
+export const getRaces = () => readJson<RaceInfo[]>('races.json');
+export const getRace = (slug: string) => getRaces().find((r) => r.slug === slug);
+
+export const getAllTalents = () => readJson<Record<string, ClassTalents>>('talents.json');
+export const getTalents = (cls: string): ClassTalents | undefined => (Object.hasOwn(getAllTalents(), cls) ? getAllTalents()[cls] : undefined);
+
+export const getAllAbilities = () => readJson<Record<string, Ability[]>>('abilities.json');
+export const getAbilities = (cls: string) => getAllAbilities()[cls] ?? [];
+
+export const getBuilds = () => readJson<Build[]>('builds.json');
+const GROUP_RANK = { leveling: 0, pve: 1, pvp: 2 } as const;
+/** A class's builds by group, Leveling, PvE and PvP: the one marked pick first in each, the rest in the data's order. */
+/**
+ * The suggested bar 1 of each of a class's builds (data/bars.json: twelve spell names for keys 1 to =), each spell with
+ * its icon and the level its first rank is learned at; a talent's spell takes the talent's icon.
+ */
+export function getBarsFor(cls: string): Record<string, BarSlot[]> {
+  if (!existsSync(path.join(DATA_DIR, 'bars.json'))) return {};
+  const bars = readJson<Record<string, (string | null)[]>>('bars.json');
+  const spells = new Map<string, { ic: string; lv: number }>();
+  for (const a of getAbilities(cls)) {
+    const had = spells.get(a.name);
+    if (!had || a.level < had.lv) spells.set(a.name, { ic: a.icon, lv: a.level });
+  }
+  const talents = new Map<string, string>();
+  for (const t of getTalents(cls)?.trees ?? []) for (const x of t.talents) talents.set(x.name, x.icon);
+  const out: Record<string, BarSlot[]> = {};
+  for (const b of getBuilds()) {
+    if (b.cls !== cls || !bars[b.id]) continue;
+    out[b.id] = bars[b.id].map((n) => {
+      if (!n) return null;
+      const s = spells.get(n);
+      if (s) return { n, ic: s.ic, lv: s.lv };
+      const ic = talents.get(n);
+      return ic ? { n, ic } : { n, ic: 'inv_misc_questionmark' };
+    });
+  }
+  return out;
+}
+
+export const getBuildsFor = (cls: string) =>
+  getBuilds()
+    .filter((b) => b.cls === cls)
+    .map((b, i) => ({ b, i }))
+    .sort((x, y) => GROUP_RANK[buildGroup(x.b.kind)] - GROUP_RANK[buildGroup(y.b.kind)] || (y.b.pick ?? 0) - (x.b.pick ?? 0) || x.i - y.i)
+    .map(({ b }) => b);
+
+export const getItems = () => readJson<Item[]>('items.json');
+export const getItemMap = () => memo('itemMap', () => new Map(getItems().map((i) => [i.i, i])));
+export const getItem = (id: number) => getItemMap().get(id);
+
+/** Grimoire's dungeon and raid maps (scripts/data/maps.mjs): floor plans drawn from VMaNGOS's positions, with the bosses. */
+export const getMaps = () => readJson<Record<string, { views: MapView[] }>>('maps.json');
+export const getMap = (slug: string) => getMaps()[slug];
+
+/** A zone's map as Grimoire draws it (scripts/data/zone-maps.mjs): the outline of its ground, of the ground beside it,
+ * and its named places, on a map 1500 wide and 1000 high. Places: x and y in tenths of a percent, name, kind ("a" a
+ * place, "p" a capital's point of interest, "d" the way into a dungeon or raid, then that dungeon's area). */
+export interface ZoneDrawing {
+  land: string;
+  out: string;
+  places: [x: number, y: number, name: string, kind: 'a' | 'p' | 'd', area?: number][];
+  /** 1 when the add-on's arrow knows the zone: a point on its map can be sent there with /grim go */
+  go?: 1;
+}
+export const getZoneDrawings = () => readJson<Record<string, ZoneDrawing>>('zone-maps.json');
+/** Where every creature (n) and object (o) stands: zone -> x, y, x, y, ... in tenths of a percent of the zone's map,
+ * the zone with the most points first. */
+export type SpawnRow = Record<string, number[]>;
+export const getSpawnData = () => readJson<{ n: Record<string, SpawnRow>; o: Record<string, SpawnRow> }>('spawns.json');
+export const getSpawns = (kind: 'n' | 'o', id: number): SpawnRow | undefined => getSpawnData()[kind][String(id)];
+export const getSets = () => readJson<ItemSet[]>('sets.json');
+export const getSetMap = () => memo('setMap', () => new Map(getSets().map((s) => [s.id, s])));
+
+export const getZones = () => readJson<Zone[]>('zones.json');
+export const getZoneMap = () => memo('zoneMap', () => new Map(getZones().map((z) => [z.id, z])));
+export const getZonePages = () => readJson<Record<string, ZonePage>>('zone-pages.json');
+
+export const getFactions = () => readJson<Record<string, Faction2>>('factions.json');
+export const getZoneNames = () => readJson<Record<string, string>>('zone-names.json');
+
+export const getDungeons = () => readJson<DungeonInfo[]>('dungeons.json');
+
+/** Bosses in order with their abilities and loot, and the notable drops of the regular mobs, by dungeon slug. */
+export const getEncounterData = () => readJson<EncounterData>('encounters.json');
+export const getEncounters = (slug: string) => (Object.hasOwn(getEncounterData().dungeons, slug) ? getEncounterData().dungeons[slug] : undefined);
+
+export const getLegacy = () => readJson<LegacyData>('legacy.json');
+
+/** The areas Forever files a new dungeon's quests and creatures under (QuestieDB's zone list, as in
+ * scripts/data/lib/questiedb.mjs): the zone list has no entry for them. */
+const NEW_DUNGEON_AREAS: Record<number, string> = {
+  16544: 'city-of-dalaran',
+  16611: 'ruins-of-lordaeron',
+  16732: 'whelgars-excavation',
+  16919: 'hall-of-thanes',
+  16985: 'shapers-terrace',
+  17780: 'kroldok-stronghold',
+};
+
+/** The dungeon or raid a zone ID belongs to: its own zone, a quest category Classic files its quests under
+ * (Gnomeregan's 133), or a new dungeon's area. */
+export function placeDungeon(z: number | undefined): DungeonInfo | undefined {
+  if (!z || z <= 0) return undefined;
+  const slug = NEW_DUNGEON_AREAS[z];
+  return getDungeons().find((x) => (slug ? x.slug === slug : x.zoneId === z || x.questSorts?.includes(z)));
+}
+
+/** Where a zone ID leads: its zone page, else the dungeon or raid page for it, else nowhere. */
+export function placeHref(z: number | undefined): string | undefined {
+  if (!z || z <= 0) return undefined;
+  if (getZoneMap().has(z)) return `/world/${z}`;
+  const d = placeDungeon(z);
+  return d ? `/dungeons/${d.slug}` : undefined;
+}
+
+/* ── Quests, NPCs, objects and loot ─────────────────────────────────────── */
+
+/** Every quest, its side the one players meet it as: a quest open to both whose people are one side's (Ragefire Chasm's,
+ * given in Orgrimmar) is that side's (fs, from scripts/data/lib/quest-sides.mjs). */
+export const getQuests = () =>
+  memo('quests', () => readJson<Quest[]>('quests.json').map((q) => (q.fs === 1 || q.fs === 2 ? { ...q, s: q.fs } : q)));
+export const getQuestMap = () => memo('questMap', () => new Map(getQuests().map((q) => [q.i, q])));
+export const getQuest = (id: number) => getQuestMap().get(id);
+
+export const getNpcs = () => readJson<Record<string, Npc>>('npcs.json');
+export const getNpc = (id: number): Npc | undefined => getNpcs()[String(id)];
+export const getObjects = () => readJson<Record<string, WorldObject>>('objects.json');
+export const getObject = (id: number): WorldObject | undefined => getObjects()[String(id)];
+export const getMinorItems = () => readJson<Record<string, MinorItem>>('minor-items.json');
+export const getMinorItem = (id: number): MinorItem | undefined => getMinorItems()[String(id)];
+export const getAllDrops = () => readJson<Record<string, Drops>>('drops.json');
+export const getDrops = (itemId: number): Drops | undefined => getAllDrops()[String(itemId)];
+/** An NPC's loot: item, chance, quest-only, and 1 when the chance was observed in Forever rather than taken from Classic's loot tables. */
+export type NpcLootRow = [item: number, pct: number, quest: 0 | 1, observed?: 1];
+export const getNpcLoot = (npcId: number): NpcLootRow[] => readJson<Record<string, NpcLootRow[]>>('npc-loot.json')[String(npcId)] ?? [];
+export const getVendors = (itemId: number): number[] => readJson<Record<string, number[]>>('vendors.json')[String(itemId)] ?? [];
+
+/** Quests by zone or category, in level order. */
+export const getQuestsByZone = () =>
+  memo('questsByZone', () => {
+    const map = new Map<number, Quest[]>();
+    for (const q of getQuests()) {
+      const list = map.get(q.z);
+      if (list) list.push(q);
+      else map.set(q.z, [q]);
+    }
+    // Quests without a level (a few new ones) go last.
+    for (const list of map.values()) list.sort((a, b) => (a.l || 99) - (b.l || 99) || a.r - b.r || a.n.localeCompare(b.n));
+    return map;
+  });
+
+/** A dungeon's or raid's quests, in level order: those filed under it, and those whose work is inside it (a creature to
+ * kill, an object to use, an item that drops there, the giver or the taker), as the data build works them out. */
+export const getDungeonQuests = (d: { questIds?: number[] }): Quest[] =>
+  (d.questIds ?? [])
+    .map((id) => getQuest(id))
+    .filter((q): q is Quest => Boolean(q))
+    .sort((a, b) => (a.l || 99) - (b.l || 99));
+
+/** Which quests reward, ask for, provide or start with an item. */
+export const getItemQuestIndex = () =>
+  memo('itemQuestIndex', () => {
+    const map = new Map<number, { reward: number[]; choice: number[]; objective: number[]; provided: number[]; starts: number[] }>();
+    const at = (id: number) => {
+      let v = map.get(id);
+      if (!v) map.set(id, (v = { reward: [], choice: [], objective: [], provided: [], starts: [] }));
+      return v;
+    };
+    for (const q of getQuests()) {
+      for (const [id] of q.ir ?? []) at(id).reward.push(q.i);
+      for (const [id] of q.ic ?? []) at(id).choice.push(q.i);
+      for (const r of q.rq ?? []) if (r[0] === 'i' && r[1]) at(r[1]).objective.push(q.i);
+      if (q.pi) at(q.pi).provided.push(q.i);
+      for (const [k, id] of q.st ?? []) if (k === 'i') at(id).starts.push(q.i);
+    }
+    return map;
+  });
+
+/** Which quests an NPC or object starts, ends or asks you to deal with. */
+export const getEntityQuestIndex = () =>
+  memo('entityQuestIndex', () => {
+    const map = new Map<string, { starts: number[]; ends: number[]; objective: number[] }>();
+    const at = (k: string, id: number) => {
+      const key = `${k}${id}`;
+      let v = map.get(key);
+      if (!v) map.set(key, (v = { starts: [], ends: [], objective: [] }));
+      return v;
+    };
+    for (const q of getQuests()) {
+      for (const [k, id] of q.st ?? []) if (k !== 'i') at(k, id).starts.push(q.i);
+      for (const [k, id] of q.en ?? []) at(k, id).ends.push(q.i);
+      for (const r of q.rq ?? []) if ((r[0] === 'n' || r[0] === 'o') && r[1]) at(r[0], r[1]).objective.push(q.i);
+    }
+    return map;
+  });
+
+/** Items an NPC sells. */
+export const getNpcVendorIndex = () =>
+  memo('npcVendorIndex', () => {
+    const map = new Map<number, number[]>();
+    for (const [item, npcs] of Object.entries(readJson<Record<string, number[]>>('vendors.json'))) {
+      for (const n of npcs) {
+        const list = map.get(n);
+        if (list) list.push(Number(item));
+        else map.set(n, [Number(item)]);
+      }
+    }
+    return map;
+  });
+
+/** The chain a quest belongs to, oldest first: the quests that lead to it and the ones offered after it. */
+export function getQuestChain(id: number): Quest[] {
+  return memo(`chain:${id}`, () => {
+    const map = getQuestMap();
+    const prevOf = memo('questPrevIndex', () => {
+      const m = new Map<number, number>();
+      for (const q of getQuests()) if (q.nx && !m.has(q.nx)) m.set(q.nx, q.i);
+      return m;
+    });
+    const start = map.get(id);
+    if (!start) return [];
+    const chain: Quest[] = [start];
+    const seen = new Set([id]);
+    for (let cur = start, i = 0; i < 40; i++) {
+      // Walk back through "offered next" links first; a plain prerequisite counts when it does not lead elsewhere.
+      let back = prevOf.get(cur.i);
+      if (back === undefined && cur.pv && cur.pv > 0) {
+        const p = map.get(cur.pv);
+        if (p && (!p.nx || p.nx === cur.i)) back = p.i;
+      }
+      const q = back !== undefined ? map.get(back) : undefined;
+      if (!q || seen.has(q.i)) break;
+      chain.unshift(q);
+      seen.add(q.i);
+      cur = q;
+    }
+    // Forward: the quest offered next, or the only quest that needs this one done first.
+    const dependents = memo('questDependents', () => {
+      const m = new Map<number, number[]>();
+      for (const q of getQuests()) {
+        if (q.pv && q.pv > 0) {
+          const list = m.get(q.pv);
+          if (list) list.push(q.i);
+          else m.set(q.pv, [q.i]);
+        }
+      }
+      return m;
+    });
+    for (let cur = start, i = 0; i < 40; i++) {
+      const only = dependents.get(cur.i);
+      const nextId = cur.nx ?? (only && only.length === 1 ? only[0] : undefined);
+      const q = nextId ? map.get(nextId) : undefined;
+      if (!q || seen.has(q.i)) break;
+      chain.push(q);
+      seen.add(q.i);
+      cur = q;
+    }
+    return chain;
+  });
+}
+
+export const getDungeon = (slug: string) => getDungeons().find((d) => d.slug === slug);
+
+/** Every spell the site can show a tooltip for: talent ranks, trainer abilities and racials. */
+export const getSpellIndex = () =>
+  memo('spellIndex', () => {
+    const map = new Map<number, SpellRecord>();
+    for (const [cls, data] of Object.entries(getAllTalents())) {
+      for (const tree of data.trees) {
+        for (const t of tree.talents) {
+          t.spells.forEach((sid, i) => {
+            map.set(sid, { id: sid, name: t.name, icon: t.icon, rank: t.max > 1 ? `Rank ${i + 1}` : undefined, desc: t.desc[i] ?? '', kind: 'talent', cls, talentId: t.id });
+          });
+        }
+      }
+    }
+    for (const [cls, list] of Object.entries(getAllAbilities())) {
+      for (const a of list) {
+        if (!map.has(a.id)) map.set(a.id, { id: a.id, name: a.name, icon: a.icon, rank: a.rank || undefined, desc: a.desc, kind: 'ability', cls, level: a.level });
+      }
+    }
+    for (const r of getRaces()) {
+      for (const rc of [...r.racials, ...Object.values(r.racialVariants ?? {}).flat()]) {
+        if (!map.has(rc.id)) map.set(rc.id, { id: rc.id, name: rc.name, icon: rc.icon, rank: rc.passive ? 'Racial Passive' : 'Racial', desc: rc.desc, kind: 'racial' });
+      }
+    }
+    return map;
+  });
+
+export interface GuideFile {
+  slug: string;
+  title: string;
+  description: string;
+  category: string;
+  cls?: string;
+  art?: string;
+  icon?: string;
+  updated: string;
+  order: number;
+  readMinutes: number;
+  body: string;
+}
+
+const GUIDE_DIR = path.join(process.cwd(), 'content', 'guides');
+
+export function parseFrontmatter(raw: string): { data: Record<string, string>; body: string } {
+  const m = /^---\n([\s\S]*?)\n---\n?/.exec(raw);
+  if (!m) return { data: {}, body: raw };
+  const data: Record<string, string> = {};
+  for (const line of m[1].split('\n')) {
+    const i = line.indexOf(':');
+    if (i > 0) data[line.slice(0, i).trim()] = line.slice(i + 1).trim().replace(/^"(.*)"$/, '$1');
+  }
+  return { data, body: raw.slice(m[0].length) };
+}
+
+export const getGuides = () =>
+  memo('guides', () => {
+    if (!existsSync(GUIDE_DIR)) return [] as GuideFile[];
+    return readdirSync(GUIDE_DIR)
+      .filter((f) => f.endsWith('.md'))
+      .map((f) => {
+        const { data, body } = parseFrontmatter(readFileSync(path.join(GUIDE_DIR, f), 'utf8'));
+        const words = body.split(/\s+/).length;
+        return {
+          slug: f.replace(/\.md$/, ''),
+          title: data.title ?? f,
+          description: data.description ?? '',
+          category: data.category ?? 'General',
+          cls: data.class || undefined,
+          art: data.art || undefined,
+          icon: data.icon || undefined,
+          updated: data.updated ?? '2026-10-07',
+          order: Number(data.order ?? 50),
+          readMinutes: Math.max(2, Math.round(words / 230)),
+          body,
+        } satisfies GuideFile;
+      })
+      .sort((a, b) => a.order - b.order || a.title.localeCompare(b.title));
+  });
+
+export const getGuide = (slug: string) => getGuides().find((g) => g.slug === slug);
+
+/** First quest and NPC with a given name, for linking names that the source data stores as text. */
+export const getQuestNameIndex = () =>
+  memo('questNames', () => {
+    const m = new Map<string, number>();
+    for (const q of getQuests()) if (!m.has(q.n)) m.set(q.n, q.i);
+    return m;
+  });
+export const getNpcNameIndex = () =>
+  memo('npcNames', () => {
+    const m = new Map<string, number>();
+    for (const [id, n] of Object.entries(getNpcs())) if (!m.has(n[0])) m.set(n[0], Number(id));
+    return m;
+  });

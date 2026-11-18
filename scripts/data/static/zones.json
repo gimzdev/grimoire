@@ -1,0 +1,62 @@
+[
+ {
+  "id": 16593,
+  "n": "Zephras Isle",
+  "cat": -1,
+  "inst": 0,
+  "lo": 1,
+  "hi": 12,
+  "req": 0,
+  "np": 0,
+  "t": 3,
+  "st": "new"
+ },
+ {
+  "id": 16591,
+  "n": "Riverglades",
+  "cat": 0,
+  "inst": 0,
+  "lo": 0,
+  "hi": 0,
+  "req": 0,
+  "np": 0,
+  "t": 2,
+  "st": "new"
+ },
+ {
+  "id": 616,
+  "n": "Mount Hyjal",
+  "cat": 1,
+  "inst": 0,
+  "lo": 0,
+  "hi": 0,
+  "req": 0,
+  "np": 0,
+  "t": 2,
+  "st": "new"
+ },
+ {
+  "id": 16651,
+  "n": "Shen’dralas",
+  "cat": 1,
+  "inst": 0,
+  "lo": 0,
+  "hi": 0,
+  "req": 0,
+  "np": 0,
+  "t": 2,
+  "st": "new"
+ },
+ {
+  "id": 16606,
+  "n": "Darkspear Islands",
+  "cat": 6,
+  "inst": 4,
+  "lo": 0,
+  "hi": 0,
+  "req": 0,
+  "np": 15,
+  "t": 4,
+  "st": "new"
+ }
+]

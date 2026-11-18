@@ -1,0 +1,17 @@
+{
+  "_": "Raid creatures the server summons by script, so VMaNGOS has no spawn row for them: creature id -> map id. Grimoire's own list.",
+  "11502": 409,
+  "11663": 409,
+  "11664": 409,
+  "11583": 469,
+  "15517": 531,
+  "15989": 533,
+  "16783": 533,
+  "16784": 533,
+  "16785": 533,
+  "14515": 309,
+  "15082": 309,
+  "15083": 309,
+  "15084": 309,
+  "15085": 309
+}

@@ -1,0 +1,170 @@
+{
+  "_": "Items whose Forever version Blizzard has shown, applied by scripts/data/lib/items-forever.mjs on top of Classic's data. Each entry names where Blizzard showed it. replace swaps a Classic line for Forever's; add and remove add or drop lines; st, q and r replace the base stats, quality and level requirement.",
+  "items": [
+    {
+      "id": 14551,
+      "name": "Edgemaster's Handguards",
+      "replace": [
+        [
+          "Equip: Increased Axes +7.",
+          "Equip: Increased Axes +1."
+        ],
+        [
+          "Equip: Increased Daggers +7.",
+          "Equip: Increased Daggers +1."
+        ],
+        [
+          "Equip: Increased Swords +7.",
+          "Equip: Increased Swords +1."
+        ]
+      ],
+      "note": "Blizzard showed these at BlizzCon as its example of the weapon skill cut: +1 instead of +7.",
+      "source": {
+        "name": "WoW Forever Deep Dive slide, BlizzCon 2026 (via Warcraft Tavern)",
+        "url": "https://www.warcrafttavern.com/forever/news/weapon-skills-in-world-of-warcraft-forever/"
+      }
+    },
+    {
+      "id": 18510,
+      "name": "Hide of the Wild",
+      "note": "Blizzard showed it at BlizzCon with 42 bonus healing and 14 bonus damage, the healing rule at work.",
+      "source": {
+        "name": "WoW Forever Deep Dive, BlizzCon 2026 (via Icy Veins)",
+        "url": "https://www.icy-veins.com/wow-forever/news/wow-forever-is-completely-reworking-classic-itemization/"
+      }
+    },
+    {
+      "id": 8345,
+      "name": "Wolfshead Helm",
+      "replace": [
+        [
+          "Equip: When shapeshifting into Cat form the Druid gains 20 energy, when shapeshifting into Bear form the Druid gains 5 rage.",
+          "Equip: Gives you 5 additional Energy when you use Shifting Power."
+        ]
+      ],
+      "note": "Blizzard’s development notes of October 8 changed its effect: 5 more Energy when you use Shifting Power, in place of Energy and Rage when you shapeshift.",
+      "source": {
+        "name": "Blizzard, WoW Forever beta development notes, October 8",
+        "url": "https://us.forums.blizzard.com/en/wow/t/wow-forever-beta-development-notes/2360696/5"
+      }
+    },
+    {
+      "id": 6789,
+      "name": "Ceremonial Centaur Blanket",
+      "r": 35,
+      "note": "Blizzard’s development notes of October 8 put this Desolace quest reward at level 35 and adjusted its stats to that level; the new stats aren’t published, so Classic’s are shown.",
+      "source": {
+        "name": "Blizzard, WoW Forever beta development notes, October 8",
+        "url": "https://us.forums.blizzard.com/en/wow/t/wow-forever-beta-development-notes/2360696/5"
+      }
+    },
+    {
+      "id": 867,
+      "name": "Gloves of Holy Might",
+      "note": "Forever’s version has an effect Classic’s did not: since Blizzard’s hotfixes of 13 November it activates only from harmful spells and abilities that deal damage, after a fix on 9 November. Blizzard has not published its full text, so Classic’s lines are shown.",
+      "source": {
+        "name": "Blizzard, WoW: Forever hotfixes (9 and 13 November 2026)",
+        "url": "https://news.blizzard.com/en-us/article/24315281"
+      }
+    },
+    {
+      "id": 22086,
+      "name": "Soulforge Belt",
+      "note": "Since Blizzard’s hotfixes of 17 November, Soulforge Armor, the upgraded dungeon set for Paladin tanks, has Spell Power where it had Strength: Blizzard is steering Paladin tanks to Spell Power for their damage. It has not published the new numbers, so Classic’s lines are shown.",
+      "source": {
+        "name": "Blizzard, WoW: Forever hotfixes (17 November 2026)",
+        "url": "https://news.blizzard.com/en-us/article/24315281"
+      }
+    },
+    {
+      "id": 22087,
+      "name": "Soulforge Boots",
+      "note": "Since Blizzard’s hotfixes of 17 November, Soulforge Armor, the upgraded dungeon set for Paladin tanks, has Spell Power where it had Strength: Blizzard is steering Paladin tanks to Spell Power for their damage. It has not published the new numbers, so Classic’s lines are shown.",
+      "source": {
+        "name": "Blizzard, WoW: Forever hotfixes (17 November 2026)",
+        "url": "https://news.blizzard.com/en-us/article/24315281"
+      }
+    },
+    {
+      "id": 22088,
+      "name": "Soulforge Bracers",
+      "note": "Since Blizzard’s hotfixes of 17 November, Soulforge Armor, the upgraded dungeon set for Paladin tanks, has Spell Power where it had Strength: Blizzard is steering Paladin tanks to Spell Power for their damage. It has not published the new numbers, so Classic’s lines are shown.",
+      "source": {
+        "name": "Blizzard, WoW: Forever hotfixes (17 November 2026)",
+        "url": "https://news.blizzard.com/en-us/article/24315281"
+      }
+    },
+    {
+      "id": 22089,
+      "name": "Soulforge Breastplate",
+      "note": "Since Blizzard’s hotfixes of 17 November, Soulforge Armor, the upgraded dungeon set for Paladin tanks, has Spell Power where it had Strength: Blizzard is steering Paladin tanks to Spell Power for their damage. It has not published the new numbers, so Classic’s lines are shown.",
+      "source": {
+        "name": "Blizzard, WoW: Forever hotfixes (17 November 2026)",
+        "url": "https://news.blizzard.com/en-us/article/24315281"
+      }
+    },
+    {
+      "id": 22090,
+      "name": "Soulforge Gauntlets",
+      "note": "Since Blizzard’s hotfixes of 17 November, Soulforge Armor, the upgraded dungeon set for Paladin tanks, has Spell Power where it had Strength: Blizzard is steering Paladin tanks to Spell Power for their damage. It has not published the new numbers, so Classic’s lines are shown.",
+      "source": {
+        "name": "Blizzard, WoW: Forever hotfixes (17 November 2026)",
+        "url": "https://news.blizzard.com/en-us/article/24315281"
+      }
+    },
+    {
+      "id": 22091,
+      "name": "Soulforge Helm",
+      "note": "Since Blizzard’s hotfixes of 17 November, Soulforge Armor, the upgraded dungeon set for Paladin tanks, has Spell Power where it had Strength: Blizzard is steering Paladin tanks to Spell Power for their damage. It has not published the new numbers, so Classic’s lines are shown.",
+      "source": {
+        "name": "Blizzard, WoW: Forever hotfixes (17 November 2026)",
+        "url": "https://news.blizzard.com/en-us/article/24315281"
+      }
+    },
+    {
+      "id": 22092,
+      "name": "Soulforge Legplates",
+      "note": "Since Blizzard’s hotfixes of 17 November, Soulforge Armor, the upgraded dungeon set for Paladin tanks, has Spell Power where it had Strength: Blizzard is steering Paladin tanks to Spell Power for their damage. It has not published the new numbers, so Classic’s lines are shown.",
+      "source": {
+        "name": "Blizzard, WoW: Forever hotfixes (17 November 2026)",
+        "url": "https://news.blizzard.com/en-us/article/24315281"
+      }
+    },
+    {
+      "id": 22093,
+      "name": "Soulforge Spaulders",
+      "note": "Since Blizzard’s hotfixes of 17 November, Soulforge Armor, the upgraded dungeon set for Paladin tanks, has Spell Power where it had Strength: Blizzard is steering Paladin tanks to Spell Power for their damage. It has not published the new numbers, so Classic’s lines are shown.",
+      "source": {
+        "name": "Blizzard, WoW: Forever hotfixes (17 November 2026)",
+        "url": "https://news.blizzard.com/en-us/article/24315281"
+      }
+    },
+    {
+      "id": 19101,
+      "name": "Whiteout Staff",
+      "note": "Since Blizzard’s hotfixes of 17 November it has 25 Stamina, 25 Intellect and 74 Spell Power from its weapon damage, the same as Crackling Staff. Classic’s lines are shown below.",
+      "source": {
+        "name": "Blizzard, WoW: Forever hotfixes (17 November 2026)",
+        "url": "https://news.blizzard.com/en-us/article/24315281"
+      }
+    },
+    {
+      "id": 19102,
+      "name": "Crackling Staff",
+      "note": "Since Blizzard’s hotfixes of 17 November it has 25 Stamina, 25 Intellect and 74 Spell Power from its weapon damage, the same as Whiteout Staff. Classic’s lines are shown below.",
+      "source": {
+        "name": "Blizzard, WoW: Forever hotfixes (17 November 2026)",
+        "url": "https://news.blizzard.com/en-us/article/24315281"
+      }
+    },
+    {
+      "id": 2915,
+      "name": "Taran Icebreaker",
+      "note": "Since Blizzard’s hotfixes of 13 November it is a two-handed mace in Forever, as it should be; for a while it behaved as a one-handed one.",
+      "source": {
+        "name": "Blizzard, WoW: Forever hotfixes (13 November 2026)",
+        "url": "https://news.blizzard.com/en-us/article/24315281"
+      }
+    }
+  ]
+}
